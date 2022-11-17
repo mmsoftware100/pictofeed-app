@@ -41,6 +41,7 @@ end
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
   pod 'OneSignalXCFramework', '>= 3.4.3', '< 4.0'
 end
 
