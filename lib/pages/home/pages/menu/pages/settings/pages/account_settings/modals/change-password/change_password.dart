@@ -1,5 +1,4 @@
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
@@ -107,6 +106,7 @@ class OBChangePasswordModalState extends State<OBChangePasswordModal> {
                           return _localizationService
                               .auth__change_password_new_pwd_error;
                         }
+                        return null;
                       },
                     ),
                   ]),

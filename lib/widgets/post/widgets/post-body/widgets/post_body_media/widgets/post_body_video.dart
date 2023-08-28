@@ -180,7 +180,6 @@ class PostVideoNavigatorObserver extends NavigatorObserver {
   @override
   void didPop(Route route, Route? previousRoute) {
     if (identical(previousRoute, _state._route) &&
-        _state != null &&
         _state.mounted &&
         _state._wasPlaying != null && _state._wasPlaying!) {
       debugLog('Resuming video as blocking route has been popped.');

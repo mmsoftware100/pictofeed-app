@@ -6,7 +6,6 @@ import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/posts_stream/posts_stream.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBHashtagPage extends StatefulWidget {
   final OBHashtagPageController? controller;

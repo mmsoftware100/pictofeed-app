@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:Okuna/models/user.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:crypto/crypto.dart';
-import 'package:meta/meta.dart';
 import 'package:intercom_flutter/intercom_flutter.dart';
 
 class IntercomService {

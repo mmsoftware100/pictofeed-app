@@ -11,7 +11,6 @@ import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/tiles/actions/favorite_community_tile.dart';
 import 'package:Okuna/widgets/tiles/actions/report_community_tile.dart';
 import 'package:Okuna/widgets/tiles/actions/new_post_notifications_for_community_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBCommunityActionsBottomSheet extends StatefulWidget {

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:Okuna/models/community.dart';
 import 'package:Okuna/models/hashtag.dart';
 import 'package:Okuna/models/post_link.dart';
-import 'package:Okuna/models/post_links_list.dart';
 import 'package:Okuna/models/user.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/navigation_service.dart';

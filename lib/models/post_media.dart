@@ -1,6 +1,5 @@
 import 'package:Okuna/models/post_image.dart';
 import 'package:Okuna/models/post_video.dart';
-import 'package:flutter/cupertino.dart';
 
 class PostMedia {
   final int? id;

@@ -71,6 +71,7 @@ class OBDeleteAccountPageState extends State<OBDeleteAccountPage> {
                         String? validatePassword =
                             _validationService.validateUserPassword(password);
                         if (validatePassword != null) return validatePassword;
+                        return null;
                       },
                     ),
                   ]),

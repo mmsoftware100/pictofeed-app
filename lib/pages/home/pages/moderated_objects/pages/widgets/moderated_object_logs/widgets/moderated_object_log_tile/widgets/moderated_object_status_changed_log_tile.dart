@@ -4,7 +4,6 @@ import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/material.dart';
 
-import 'moderated_object_log_actor.dart';
 
 class OBModeratedObjectStatusChangedLogTile extends StatelessWidget {
   final ModeratedObjectLog log;

@@ -137,7 +137,7 @@ class OBPostCommentMoreActionsBottomSheetState
         object: widget.postComment,
         extraData: {'post': widget.post},
         onObjectReported: (dynamic reportedObject) {
-          if (widget.onPostCommentReported != null && reportedObject != null)
+          if (reportedObject != null)
             widget.onPostCommentReported(reportedObject as PostComment);
         });
   }
@@ -156,10 +156,8 @@ class OBPostCommentMoreActionsBottomSheetState
               context: context);
           if (widget.postComment.parentComment == null)
             widget.post.decreaseCommentsCount();
-          if (widget.onPostCommentDeleted != null) {
-            widget.onPostCommentDeleted(widget.postComment);
-          }
-        });
+          widget.onPostCommentDeleted(widget.postComment);
+                });
   }
 
   void _editPostComment() async {

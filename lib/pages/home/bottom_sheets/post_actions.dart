@@ -8,7 +8,6 @@ import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/modal_service.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/post/post.dart';
 import 'package:Okuna/widgets/theming/text.dart';
@@ -18,7 +17,6 @@ import 'package:Okuna/widgets/tiles/actions/exclude_community_from_profile_posts
 import 'package:Okuna/widgets/tiles/actions/exclude_community_from_top_posts_tile.dart';
 import 'package:Okuna/widgets/tiles/actions/mute_post_tile.dart';
 import 'package:Okuna/widgets/tiles/actions/report_post_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBPostActionsBottomSheet extends StatefulWidget {

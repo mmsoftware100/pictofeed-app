@@ -1,6 +1,5 @@
 import 'package:Okuna/models/post.dart';
 import 'package:Okuna/widgets/post/widgets/post-actions/post_actions.dart';
-import 'package:Okuna/widgets/post/widgets/post-actions/post_actions.dart';
 import 'package:Okuna/widgets/post/widgets/post-body/post_body.dart';
 import 'package:Okuna/widgets/post/widgets/post_circles.dart';
 import 'package:Okuna/widgets/post/widgets/post_comments/post_comments.dart';

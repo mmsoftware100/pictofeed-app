@@ -200,6 +200,7 @@ class OBAuthSetNewPasswordPageState extends State<OBAuthSetNewPasswordPage> {
                 validator: (String? password) {
                   String? validatePassword = validationService.validateUserPassword(password);
                   if (validatePassword != null) return validatePassword;
+                  return null;
                 },
                 suffixIcon: GestureDetector(
                   child: Icon(_passwordIsVisible

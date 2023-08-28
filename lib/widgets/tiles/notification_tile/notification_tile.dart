@@ -179,7 +179,7 @@ class OBNotificationTile extends StatelessWidget {
         break;
       default:
         print(
-            'Unsupported notification content object type ${notificationContentObject}');
+            'Unsupported notification content object type $notificationContentObject');
         return const SizedBox();
     }
 

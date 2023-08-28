@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/string_template.dart';
-import 'package:meta/meta.dart';
 
 class CommunitiesApiService {
   late HttpieService _httpService;
@@ -141,10 +140,8 @@ class CommunitiesApiService {
       body['video'] = video;
     }
 
-    if (isDraft != null) {
-      body['is_draft'] = isDraft;
-    }
-
+    body['is_draft'] = isDraft;
+  
     if (text != null && text.length > 0) {
       body['text'] = text;
     }

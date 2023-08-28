@@ -9,7 +9,6 @@ import 'package:Okuna/widgets/circle_color_preview.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:flutter/material.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class OBConnectionsCircleTile extends StatefulWidget {

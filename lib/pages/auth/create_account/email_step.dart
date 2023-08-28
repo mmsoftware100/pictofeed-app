@@ -201,6 +201,7 @@ class OBAuthEmailStepPageState extends State<OBAuthEmailStepPage> {
                   if (_emailTaken != null && _emailTaken!) {
                     return errorEmailTaken;
                   }
+                  return null;
                 },
                 controller: _emailController,
                 onFieldSubmitted: (v) => onPressedNextStep(context),

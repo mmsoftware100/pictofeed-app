@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 
 /// Implements a single iOS application page's layout.
 ///
@@ -23,9 +22,7 @@ class OBCupertinoPageScaffold extends StatelessWidget {
     this.backgroundColor = CupertinoColors.white,
     this.resizeToAvoidBottomInset = true,
     required this.child,
-  })  : assert(child != null),
-        assert(resizeToAvoidBottomInset != null),
-        super(key: key);
+  })  : super(key: key);
 
   /// The [navigationBar], typically a [CupertinoNavigationBar], is drawn at the
   /// top of the screen.

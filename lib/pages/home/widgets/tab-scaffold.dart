@@ -95,9 +95,7 @@ class OBCupertinoTabScaffold extends StatefulWidget {
     Key? key,
     required this.tabBar,
     required this.tabBuilder,
-  })  : assert(tabBar != null),
-        assert(tabBuilder != null),
-        super(key: key);
+  })  : super(key: key);
 
   /// The [tabBar] is a [CupertinoTabBar] drawn at the bottom of the screen
   /// that lets the user switch between different tabs in the main content area
@@ -167,65 +165,61 @@ class _OBCupertinoTabScaffoldState extends State<OBCupertinoTabScaffold> {
       tabBuilder: widget.tabBuilder,
     );
 
-    if (widget.tabBar != null) {
-      final MediaQueryData existingMediaQuery = MediaQuery.of(context);
+    final MediaQueryData existingMediaQuery = MediaQuery.of(context);
 
-      // TODO(xster): Use real size after partial layout instead of preferred size.
-      // https://github.com/flutter/flutter/issues/12912
-      final double bottomPadding = widget.tabBar.preferredSize.height +
-          existingMediaQuery.padding.bottom;
+    // TODO(xster): Use real size after partial layout instead of preferred size.
+    // https://github.com/flutter/flutter/issues/12912
+    final double bottomPadding = widget.tabBar.preferredSize.height +
+        existingMediaQuery.padding.bottom;
 
-      // If tab bar opaque, directly stop the main content higher. If
-      // translucent, let main content draw behind the tab bar but hint the
-      // obstructed area.
-      if (widget.tabBar.opaque) {
-        content = Padding(
-          padding: EdgeInsets.only(bottom: bottomPadding),
-          child: content,
-        );
-      } else {
-        content = MediaQuery(
-          data: existingMediaQuery.copyWith(
-            padding: existingMediaQuery.padding.copyWith(
-              bottom: bottomPadding,
-            ),
+    // If tab bar opaque, directly stop the main content higher. If
+    // translucent, let main content draw behind the tab bar but hint the
+    // obstructed area.
+    if (widget.tabBar.opaque) {
+      content = Padding(
+        padding: EdgeInsets.only(bottom: bottomPadding),
+        child: content,
+      );
+    } else {
+      content = MediaQuery(
+        data: existingMediaQuery.copyWith(
+          padding: existingMediaQuery.padding.copyWith(
+            bottom: bottomPadding,
           ),
-          child: content,
-        );
-      }
+        ),
+        child: content,
+      );
     }
-
+  
     // The main content being at the bottom is added to the stack first.
     stacked.add(content);
 
-    if (widget.tabBar != null) {
-      stacked.add(Align(
-        alignment: Alignment.bottomCenter,
-        // Override the tab bar's currentIndex to the current tab and hook in
-        // our own listener to update the _currentPage on top of a possibly user
-        // provided callback.
-        child: widget.tabBar.copyWith(
-            currentIndex: _currentPage,
-            onTap: (int newIndex) {
-              var changeIndex = true;
-              // Chain the user's original callback.
-              if (widget.tabBar.onTap != null) {
-                bool? changeIndexAllowed = widget.tabBar.onTap!(newIndex);
-                if (changeIndexAllowed != null && !changeIndexAllowed)
-                  changeIndex = false;
-              }
+    stacked.add(Align(
+      alignment: Alignment.bottomCenter,
+      // Override the tab bar's currentIndex to the current tab and hook in
+      // our own listener to update the _currentPage on top of a possibly user
+      // provided callback.
+      child: widget.tabBar.copyWith(
+          currentIndex: _currentPage,
+          onTap: (int newIndex) {
+            var changeIndex = true;
+            // Chain the user's original callback.
+            if (widget.tabBar.onTap != null) {
+              bool? changeIndexAllowed = widget.tabBar.onTap!(newIndex);
+              if (changeIndexAllowed != null && !changeIndexAllowed)
+                changeIndex = false;
+            }
 
-              if (changeIndex) {
-                setState(() {
-                  _currentPage = newIndex;
-                });
-              }
+            if (changeIndex) {
+              setState(() {
+                _currentPage = newIndex;
+              });
+            }
 
-              return changeIndex;
-            }),
-      ));
-    }
-
+            return changeIndex;
+          }),
+    ));
+  
     return Stack(
       children: stacked,
     );
@@ -239,9 +233,7 @@ class _TabSwitchingView extends StatefulWidget {
     required this.currentTabIndex,
     required this.tabNumber,
     required this.tabBuilder,
-  })  : assert(currentTabIndex != null),
-        assert(tabNumber != null && tabNumber > 0),
-        assert(tabBuilder != null);
+  })  : assert(tabNumber > 0);
 
   final int currentTabIndex;
   final int tabNumber;

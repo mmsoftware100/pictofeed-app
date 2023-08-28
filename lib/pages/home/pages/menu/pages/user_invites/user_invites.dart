@@ -15,9 +15,7 @@ import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:async/async.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Okuna/services/httpie.dart';
 
 class OBUserInvitesPage extends StatefulWidget {
   @override
@@ -202,6 +200,7 @@ class OBUserInvitesPageState extends State<OBUserInvitesPage> {
         _user.inviteCount = _user.inviteCount! + 1;
       }
     });
+    return null;
   }
 
   void _bootstrap() async {

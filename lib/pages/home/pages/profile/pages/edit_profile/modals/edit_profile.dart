@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:Okuna/models/user.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/media/media.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/toast.dart';
@@ -15,7 +14,6 @@ import 'package:Okuna/widgets/fields/text_form_field.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/nav_bars/themed_nav_bar.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBEditProfileModal extends StatefulWidget {
@@ -101,7 +99,7 @@ class OBEditProfileModalState extends State<OBEditProfileModal> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Stack(
-                      overflow: Overflow.visible,
+                      clipBehavior: Clip.none,
                       children: <Widget>[
                         _buildUserProfileCover(),
                         Positioned(

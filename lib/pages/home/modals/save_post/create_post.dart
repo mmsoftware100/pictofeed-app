@@ -14,7 +14,6 @@ import 'package:Okuna/pages/home/modals/save_post/widgets/post_video_previewer.d
 import 'package:Okuna/pages/home/modals/save_post/widgets/remaining_post_characters.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/draft.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/media/media.dart';
 import 'package:Okuna/services/navigation_service.dart';

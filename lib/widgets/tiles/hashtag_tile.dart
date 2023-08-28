@@ -1,5 +1,4 @@
 import 'package:Okuna/models/hashtag.dart';
-import 'package:Okuna/provider.dart';
 import 'package:Okuna/widgets/avatars/hashtag_avatar.dart';
 import 'package:Okuna/widgets/hashtag.dart';
 import 'package:Okuna/widgets/posts_count.dart';

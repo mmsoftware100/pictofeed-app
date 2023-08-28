@@ -93,8 +93,7 @@ class _MyAppState extends State<MyApp> {
                 return this.locale;
               }
               // initialise locale from device
-              if (deviceLocale != null &&
-                  supportedLanguages.contains(deviceLocale.languageCode) &&
+              if (supportedLanguages.contains(deviceLocale.languageCode) &&
                   this.locale == null) {
                 Locale supportedMatchedLocale = supportedLocales.firstWhere(
                     (Locale locale) =>
@@ -136,8 +135,7 @@ class _MyAppState extends State<MyApp> {
                 primarySwatch: Colors.grey,
                 fontFamily: 'NunitoSans',
                 textTheme: textTheme,
-                primaryTextTheme: textTheme,
-                accentTextTheme: textTheme),
+                primaryTextTheme: textTheme),
             routes: {
               /// The openbookProvider uses services available in the context
               /// Their connection must be bootstrapped but no other way to execute
@@ -295,18 +293,18 @@ TextTheme _defaultTextTheme() {
     style = new TextStyle(fontFamilyFallback: ['Emoji']);
   }
   return new TextTheme(
-    bodyText2: style,
-    bodyText1: style,
-    button: style,
-    caption: style,
-    headline4: style,
-    headline3: style,
-    headline2: style,
-    headline1: style,
-    headline5: style,
-    overline: style,
-    subtitle1: style,
-    subtitle2: style,
-    headline6: style,
+    bodyMedium: style,
+    bodyLarge: style,
+    labelLarge: style,
+    bodySmall: style,
+    headlineMedium: style,
+    displaySmall: style,
+    displayMedium: style,
+    displayLarge: style,
+    headlineSmall: style,
+    labelSmall: style,
+    titleMedium: style,
+    titleSmall: style,
+    titleLarge: style,
   );
 }

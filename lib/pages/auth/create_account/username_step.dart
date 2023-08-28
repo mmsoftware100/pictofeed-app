@@ -199,6 +199,7 @@ class OBAuthUsernameStepPageState extends State<OBAuthUsernameStepPage> {
                   if (_usernameTaken != null && _usernameTaken!) {
                     return errorUsernameTaken.replaceFirst('%s', username ?? '<unknown>');
                   }
+                  return null;
                 },
                 controller: _usernameController,
                 onFieldSubmitted: (v) => onPressedNextStep(context),

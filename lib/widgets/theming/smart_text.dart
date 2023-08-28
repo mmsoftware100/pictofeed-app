@@ -261,7 +261,6 @@ class OBSmartText extends StatelessWidget {
     TextStyle? usernameStyle,
     TextStyle? communityNameStyle,
     StringCallback? onLinkTapped,
-    StringCallback? onTagTapped,
     StringCallback? onUsernameTapped,
     StringCallback? onCommunityNameTapped,
   }) {

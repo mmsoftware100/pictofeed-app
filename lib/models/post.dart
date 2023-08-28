@@ -559,12 +559,14 @@ class PostFactory extends UpdatableModelFactory<Post> {
     if (mediaWidth == null) return null;
     if (mediaWidth is int) return mediaWidth.toDouble();
     if (mediaWidth is double) return mediaWidth;
+    return null;
   }
 
   double? parseMediaHeight(dynamic mediaHeight) {
     if (mediaHeight == null) return null;
     if (mediaHeight is int) return mediaHeight.toDouble();
     if (mediaHeight is double) return mediaHeight;
+    return null;
   }
 }
 

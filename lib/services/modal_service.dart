@@ -177,7 +177,7 @@ class ModalService {
                 child: OBSaveConnectionsCircleModal(
                   autofocusNameTextField: true,
                 )
-              )
+              );
             }));
 
     return createdConnectionsCircle;

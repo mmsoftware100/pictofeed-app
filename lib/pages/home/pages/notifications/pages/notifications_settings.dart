@@ -3,7 +3,6 @@ import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/push_notifications/push_notifications.dart';
 import 'package:Okuna/widgets/fields/toggle_field.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/nav_bars/themed_nav_bar.dart';
@@ -12,7 +11,6 @@ import 'package:Okuna/widgets/theming/divider.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBNotificationsSettingsPage extends StatefulWidget {
   @override

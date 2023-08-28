@@ -16,7 +16,7 @@ class LocalizationServiceDelegate
 
   @override
   Future<LocalizationService> load(Locale locale) async {
-    if (locale == null || isSupported(locale) == false) {
+    if (isSupported(locale) == false) {
       print('*app_locale_delegate* fallback to locale ');
 
       locale = Locale('en', 'US'); // fallback to default language

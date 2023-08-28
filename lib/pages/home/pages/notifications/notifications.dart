@@ -87,7 +87,7 @@ class OBNotificationsPageState extends State<OBNotificationsPage>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     _generalNotificationsListController = OBHttpListController();
     _requestsNotificationsListController = OBHttpListController();
     _controller = widget.controller ?? OBNotificationsPageController();
@@ -155,7 +155,7 @@ class OBNotificationsPageState extends State<OBNotificationsPage>
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: Tab(
                       child: Stack(
-                        overflow: Overflow.visible,
+                        clipBehavior: Clip.none,
                         children: <Widget>[
                           OBText(_localizationService
                               .notifications__tab_general()),
@@ -175,7 +175,7 @@ class OBNotificationsPageState extends State<OBNotificationsPage>
                   padding: EdgeInsets.symmetric(vertical: 5),
                   child: Tab(
                     child: Stack(
-                      overflow: Overflow.visible,
+                      clipBehavior: Clip.none,
                       children: <Widget>[
                         OBText(
                             _localizationService.notifications__tab_requests()),
@@ -240,7 +240,7 @@ class OBNotificationsPageState extends State<OBNotificationsPage>
     if (_getUnreadRequestNotificationsCountOperation != null)
       _getUnreadRequestNotificationsCountOperation!.cancel();
 
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _pushNotificationSubscription.cancel();
   }
 

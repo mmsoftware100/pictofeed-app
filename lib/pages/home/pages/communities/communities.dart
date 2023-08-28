@@ -10,7 +10,6 @@ import 'package:Okuna/pages/home/pages/communities/widgets/my_communities/my_com
 import 'package:Okuna/pages/home/pages/communities/widgets/trending_communities.dart';
 import 'package:Okuna/pages/home/pages/communities/widgets/user_avatar_tab.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/modal_service.dart';
 import 'package:Okuna/services/navigation_service.dart';

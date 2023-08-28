@@ -16,7 +16,6 @@ import 'package:Okuna/widgets/tile_group_title.dart';
 import 'package:Okuna/widgets/tiles/circle_selectable_tile.dart';
 import 'package:Okuna/widgets/tiles/follows_list_selectable_tile.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBTimelineFiltersModal extends StatefulWidget {
   final OBTimelinePageController timelinePageController;

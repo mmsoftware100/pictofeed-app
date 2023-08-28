@@ -1,5 +1,4 @@
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/services/validation.dart';

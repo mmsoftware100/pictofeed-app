@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:Okuna/models/categories_list.dart';
 import 'package:Okuna/models/category.dart';
@@ -75,7 +74,6 @@ import 'package:crypto/crypto.dart';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
-import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 export 'package:Okuna/services/httpie.dart';
 import 'package:path_provider/path_provider.dart';

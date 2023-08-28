@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:Okuna/models/community.dart';
 import 'package:Okuna/models/user.dart';
 import 'package:Okuna/models/users_list.dart';
 import 'package:Okuna/services/navigation_service.dart';

@@ -1,10 +1,8 @@
 import 'package:Okuna/models/moderation/moderated_object_log.dart';
-import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/tiles/moderation_category_tile.dart';
 import 'package:flutter/material.dart';
 
-import 'moderated_object_log_actor.dart';
 
 class OBModeratedObjectCategoryChangedLogTile extends StatelessWidget {
   final ModeratedObjectLog log;

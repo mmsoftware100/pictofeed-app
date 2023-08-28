@@ -2,7 +2,6 @@ import 'package:Okuna/models/user.dart';
 import 'package:Okuna/widgets/alerts/alert.dart';
 import 'package:Okuna/widgets/buttons/actions/approve_follow_request_button.dart';
 import 'package:Okuna/widgets/buttons/actions/reject_follow_request_button.dart';
-import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/material.dart';
 

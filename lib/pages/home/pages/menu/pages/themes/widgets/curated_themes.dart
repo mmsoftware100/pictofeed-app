@@ -1,7 +1,6 @@
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/pages/home/pages/menu/pages/themes/widgets/theme_preview.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/services/theme.dart';
 import 'package:flutter/material.dart';
 

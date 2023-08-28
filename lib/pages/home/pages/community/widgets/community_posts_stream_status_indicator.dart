@@ -1,7 +1,5 @@
-import 'package:Okuna/models/user.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';
-import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/alerts/button_alert.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/posts_stream/posts_stream.dart';

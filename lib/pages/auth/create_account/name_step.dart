@@ -165,6 +165,7 @@ class OBAuthNameStepPageState extends State<OBAuthNameStepPage> {
                   String? validateName = _validationService
                       .validateUserProfileName(name);
                   if (validateName != null) return validateName;
+                  return null;
                 },
                 controller: _nameController,
                 onFieldSubmitted: (v) => onPressedNextStep(),

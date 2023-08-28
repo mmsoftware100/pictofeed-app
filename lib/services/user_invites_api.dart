@@ -1,6 +1,5 @@
 import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/string_template.dart';
-import 'package:meta/meta.dart';
 
 class UserInvitesApiService {
   late HttpieService _httpService;
@@ -32,10 +31,8 @@ class UserInvitesApiService {
       {required String nickname}) {
     Map<String, dynamic> body = {};
 
-    if (nickname != null) {
-      body['nickname'] = nickname;
-    }
-
+    body['nickname'] = nickname;
+  
     return _httpService.putMultiform(_makeApiUrl(CREATE_USER_INVITE_PATH),
         body: body, appendAuthorizationToken: true);
   }
@@ -93,10 +90,8 @@ class UserInvitesApiService {
     String path = _stringTemplateService.parse(EMAIL_INVITE_PATH, {'userInviteId': userInviteId});
     Map<String, dynamic> body = {};
 
-    if (email != null) {
-      body['email'] = email;
-    }
-
+    body['email'] = email;
+  
     return _httpService.post(_makeApiUrl(path),
         body: body,
         appendAuthorizationToken: true);

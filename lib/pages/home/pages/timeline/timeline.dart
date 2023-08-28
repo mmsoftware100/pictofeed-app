@@ -21,7 +21,6 @@ import 'package:Okuna/widgets/nav_bars/themed_nav_bar.dart';
 import 'package:Okuna/widgets/page_scaffold.dart';
 import 'package:Okuna/widgets/new_post_data_uploader.dart';
 import 'package:Okuna/widgets/posts_stream/posts_stream.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

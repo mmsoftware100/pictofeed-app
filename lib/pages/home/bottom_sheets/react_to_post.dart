@@ -4,7 +4,6 @@ import 'package:Okuna/models/post.dart';
 import 'package:Okuna/models/post_reaction.dart';
 import 'package:Okuna/pages/home/bottom_sheets/rounded_bottom_sheet.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/emoji_picker/emoji_picker.dart';

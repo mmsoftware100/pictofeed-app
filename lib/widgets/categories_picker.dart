@@ -116,7 +116,7 @@ class OBCategoriesPickerState extends State<OBCategoriesPicker> {
       _addSelectedCategory(pressedCategory);
     }
 
-    if (widget.onChanged != null) widget.onChanged(_pickedCategories.toList());
+    widget.onChanged(_pickedCategories.toList());
   }
 
   void _addSelectedCategory(Category category) {

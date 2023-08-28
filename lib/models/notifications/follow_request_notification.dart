@@ -1,4 +1,3 @@
-import 'package:Okuna/models/user.dart';
 
 import '../follow_request.dart';
 

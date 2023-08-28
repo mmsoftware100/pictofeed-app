@@ -3,7 +3,6 @@ import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/theme.dart';
 import 'package:Okuna/services/theme_value_parser.dart';
-import 'package:Okuna/widgets/avatars/avatar.dart';
 export 'package:Okuna/widgets/avatars/avatar.dart';
 import 'package:Okuna/widgets/avatars/letter_avatar.dart';
 import 'package:flutter/material.dart';

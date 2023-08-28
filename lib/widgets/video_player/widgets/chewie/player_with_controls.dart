@@ -1,9 +1,7 @@
-import 'dart:ui';
 
 import 'package:Okuna/widgets/video_player/widgets/chewie/chewie_player.dart';
 import 'package:Okuna/widgets/video_player/widgets/chewie/cupertino_controls.dart';
 import 'package:Okuna/widgets/video_player/widgets/chewie/material_controls.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

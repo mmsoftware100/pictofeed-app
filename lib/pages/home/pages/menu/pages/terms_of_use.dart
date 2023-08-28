@@ -1,4 +1,3 @@
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/widgets/markdown.dart';
 import 'package:Okuna/widgets/nav_bars/themed_nav_bar.dart';
 import 'package:Okuna/provider.dart';
@@ -6,7 +5,6 @@ import 'package:Okuna/widgets/progress_indicator.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBTermsOfUsePage extends StatefulWidget {
   @override

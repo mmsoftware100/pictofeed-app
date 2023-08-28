@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/string_template.dart';
-import 'package:meta/meta.dart';
 
 class PostsApiService {
   late HttpieService _httpService;
@@ -165,10 +164,8 @@ class PostsApiService {
       body['text'] = text;
     }
 
-    if (isDraft != null) {
-      body['is_draft'] = isDraft;
-    }
-
+    body['is_draft'] = isDraft;
+  
     if (circleIds != null && circleIds.length > 0) {
       body['circle_id'] = circleIds.join(',');
     }

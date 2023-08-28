@@ -2,7 +2,6 @@ import 'package:Okuna/models/moderation/moderated_object.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/widgets/icon.dart';
-import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/tile_group_title.dart';
 import 'package:Okuna/widgets/tiles/moderated_object_status_tile.dart';
 import 'package:flutter/material.dart';

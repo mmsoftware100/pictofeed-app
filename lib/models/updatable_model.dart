@@ -2,7 +2,6 @@ import 'dart:collection';
 import 'dart:math';
 
 import 'package:dcache/dcache.dart';
-import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 
 abstract class UpdatableModel<T> {

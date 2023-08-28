@@ -11,10 +11,7 @@ class OBSlideRightRoute<T> extends PageRoute<T> {
     RouteSettings? settings,
     this.maintainState = true,
     bool fullscreenDialog = false,
-  })  : assert(builder != null),
-        assert(maintainState != null),
-        assert(fullscreenDialog != null),
-        super(settings: settings);
+  })  : super(settings: settings);
 
   @override
   Duration get transitionDuration => const Duration(milliseconds: 200);

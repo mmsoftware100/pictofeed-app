@@ -2,7 +2,6 @@ import 'package:Okuna/models/circle.dart';
 import 'package:Okuna/models/user.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/bottom_sheet.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';

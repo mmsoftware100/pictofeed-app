@@ -1,10 +1,8 @@
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/page_scaffold.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:pigment/pigment.dart';
 import "dart:math" show pi;
 
 class OBZoomablePhotoModal extends StatefulWidget {
@@ -66,11 +64,11 @@ class OBZoomablePhotoModalState extends State<OBZoomablePhotoModal>
       child: OBCupertinoPageScaffold(
           backgroundColor: Colors.black26,
           child: Stack(
-            overflow: Overflow.visible,
+            clipBehavior: Clip.none,
             children: <Widget>[
               Listener(
                 child: Stack(
-                  overflow: Overflow.visible,
+                  clipBehavior: Clip.none,
                   children: <Widget>[_getPositionedZoomableImage()],
                 ),
                 onPointerDown: (PointerDownEvent details) {

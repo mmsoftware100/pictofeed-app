@@ -1,5 +1,3 @@
-import 'package:Okuna/models/community.dart';
-import 'package:Okuna/models/moderation/moderated_object.dart';
 import 'package:Okuna/models/moderation/moderation_penalty.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';

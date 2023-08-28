@@ -13,7 +13,6 @@ import 'package:Okuna/widgets/tile_group_title.dart';
 import 'package:Okuna/widgets/tiles/actions/display_profile_community_posts_toggle_tile.dart';
 import 'package:Okuna/widgets/tiles/actions/display_profile_followers_count_toggle_tile.dart';
 import 'package:Okuna/widgets/tiles/actions/user_visibility_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBManageProfilePage extends StatefulWidget {
@@ -54,7 +53,7 @@ class OBManageProfilePageState extends State<OBManageProfilePage> {
 
     _communityPostsVisible = widget.user.getProfileCommunityPostsVisible();
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) => _isFirstBuild = false);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _isFirstBuild = false);
   }
 
   @override

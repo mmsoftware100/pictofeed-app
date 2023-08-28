@@ -185,6 +185,7 @@ class OBAuthVerifyPasswordPageState extends State<OBAuthVerifyPasswordPage> {
                   if (validateLink != null) {
                     return validateLink;
                   }
+                  return null;
                 },
                 controller: _linkController,
                 onFieldSubmitted: (v) => onPressedNextStep(context),

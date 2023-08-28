@@ -33,7 +33,6 @@ import 'package:Okuna/services/media/models/media_file.dart';
 import 'package:Okuna/services/user_preferences.dart';
 import 'package:Okuna/widgets/post/post.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 class BottomSheetService {
   bool hasActiveBottomSheet = false;
@@ -466,11 +465,9 @@ class _ModalBottomSheetRoute<T> extends PopupRoute<T> {
 Future<T?> showModalBottomSheetApp<T>({
   required BuildContext context,
   required WidgetBuilder builder,
-  bool dismissOnTap: false,
-  bool resizeToAvoidBottomPadding: true,
+  bool dismissOnTap = false,
+  bool resizeToAvoidBottomPadding = true,
 }) {
-  assert(context != null);
-  assert(builder != null);
   return Navigator.of(context, rootNavigator: true)
       .push(new _ModalBottomSheetRoute<T>(
     builder: builder,

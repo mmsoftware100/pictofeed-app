@@ -7,7 +7,6 @@ import 'package:Okuna/models/post_comment.dart';
 import 'package:Okuna/models/updatable_model.dart';
 import 'package:Okuna/models/user.dart';
 import 'package:dcache/dcache.dart';
-import 'package:meta/meta.dart';
 
 class ModeratedObject extends UpdatableModel<ModeratedObject> {
   static final factory = ModeratedObjectFactory();

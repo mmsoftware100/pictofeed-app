@@ -1,4 +1,3 @@
-import 'package:Okuna/widgets/theming/highlighted_box.dart';
 import 'package:Okuna/widgets/theming/highlighted_color_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

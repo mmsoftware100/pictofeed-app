@@ -65,22 +65,22 @@ class OBMarkdown extends StatelessWidget {
             code: new TextStyle(
                 color: primaryTextColor,
                 fontFamily: "monospace",
-                fontSize: flutterTheme.textTheme.bodyText2!.fontSize! * 0.85),
-            h1: flutterTheme.textTheme.headline5!
+                fontSize: flutterTheme.textTheme.bodyMedium!.fontSize! * 0.85),
+            h1: flutterTheme.textTheme.headlineSmall!
                 .copyWith(color: primaryTextColor, fontWeight: FontWeight.bold),
-            h2: flutterTheme.textTheme.headline6!
+            h2: flutterTheme.textTheme.titleLarge!
                 .copyWith(color: primaryTextColor, fontWeight: FontWeight.bold),
-            h3: flutterTheme.textTheme.subtitle1!
+            h3: flutterTheme.textTheme.titleMedium!
                 .copyWith(color: primaryTextColor, fontWeight: FontWeight.bold),
-            h4: flutterTheme.textTheme.bodyText1!
+            h4: flutterTheme.textTheme.bodyLarge!
                 .copyWith(color: primaryTextColor, fontWeight: FontWeight.bold),
-            h5: flutterTheme.textTheme.bodyText1!
+            h5: flutterTheme.textTheme.bodyLarge!
                 .copyWith(color: primaryTextColor, fontWeight: FontWeight.bold),
-            h6: flutterTheme.textTheme.bodyText1!
+            h6: flutterTheme.textTheme.bodyLarge!
                 .copyWith(color: primaryTextColor, fontWeight: FontWeight.bold),
             em: const TextStyle(fontStyle: FontStyle.italic),
             strong: const TextStyle(fontWeight: FontWeight.bold),
-            img: flutterTheme.textTheme.bodyText2!.copyWith(color: primaryTextColor),
+            img: flutterTheme.textTheme.bodyMedium!.copyWith(color: primaryTextColor),
             codeblockDecoration: new BoxDecoration(
                 color: Colors.grey.shade100,
                 borderRadius: new BorderRadius.circular(2.0)),
@@ -91,7 +91,7 @@ class OBMarkdown extends StatelessWidget {
             blockSpacing: 10.0,
             listIndent: 32.0,
             blockquotePadding: EdgeInsets.all(10.0),
-            p: flutterTheme.textTheme.bodyText2!
+            p: flutterTheme.textTheme.bodyMedium!
                 .copyWith(color: primaryTextColor, fontSize: pFontSize),
             a: TextStyle(color: actionsForegroundColor, fontSize: pFontSize),
             blockquoteDecoration: BoxDecoration(

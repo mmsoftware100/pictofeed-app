@@ -6,7 +6,6 @@ import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/media/media.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 class OBImagePickerBottomSheet extends StatelessWidget {

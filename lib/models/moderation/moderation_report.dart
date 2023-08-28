@@ -1,4 +1,3 @@
-import 'package:Okuna/models/moderation/moderated_object.dart';
 import 'package:Okuna/models/moderation/moderation_category.dart';
 import 'package:Okuna/models/user.dart';
 

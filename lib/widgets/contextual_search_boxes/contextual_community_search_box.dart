@@ -212,7 +212,7 @@ class OBContextualCommunitySearchBoxState
 
     debugLog('Searching post participants with query:$searchQuery');
 
-    if (searchQuery == null || searchQuery.isEmpty) {
+    if (searchQuery.isEmpty) {
       clearSearch();
       return null;
     }

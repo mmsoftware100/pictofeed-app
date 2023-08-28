@@ -2,7 +2,6 @@ import 'package:Okuna/models/user_invite.dart';
 import 'package:Okuna/pages/home/pages/menu/pages/user_invites/widgets/user_invite_nickname.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/widgets/theming/actionable_smart_text.dart';
-import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../provider.dart';

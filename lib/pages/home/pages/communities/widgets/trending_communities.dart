@@ -10,7 +10,6 @@ import 'package:Okuna/widgets/alerts/button_alert.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/tiles/community_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBTrendingCommunities extends StatefulWidget {

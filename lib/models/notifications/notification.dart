@@ -15,7 +15,6 @@ import 'package:Okuna/models/notifications/user_new_post_notification.dart';
 import 'package:Okuna/models/updatable_model.dart';
 import 'package:Okuna/models/user.dart';
 import 'package:dcache/dcache.dart';
-import 'package:meta/meta.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class OBNotification extends UpdatableModel<OBNotification> {

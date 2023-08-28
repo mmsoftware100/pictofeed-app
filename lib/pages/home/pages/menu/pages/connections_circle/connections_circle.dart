@@ -10,9 +10,7 @@ import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/theming/primary_accent_text.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Okuna/services/httpie.dart';
 
 class OBConnectionsCirclePage extends StatefulWidget {
   final Circle connectionsCircle;

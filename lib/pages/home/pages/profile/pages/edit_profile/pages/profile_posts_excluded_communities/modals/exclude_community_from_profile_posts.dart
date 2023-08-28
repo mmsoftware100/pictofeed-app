@@ -10,7 +10,6 @@ import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:Okuna/widgets/tiles/community_tile.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBExcludeCommunitiesFromProfilePostsModal extends StatefulWidget {
   @override

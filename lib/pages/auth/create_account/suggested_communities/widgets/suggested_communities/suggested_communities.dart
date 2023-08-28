@@ -6,7 +6,6 @@ import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/buttons/actions/join_community_button.dart';
 import 'package:Okuna/widgets/tiles/community_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBSuggestedCommunities extends StatefulWidget {

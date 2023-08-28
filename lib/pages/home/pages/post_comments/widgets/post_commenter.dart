@@ -14,7 +14,6 @@ import 'package:Okuna/widgets/buttons/button.dart';
 import 'package:Okuna/widgets/fields/text_form_field.dart';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
-import 'package:Okuna/services/httpie.dart';
 
 class OBPostCommenter extends StatefulWidget {
   final Post post;

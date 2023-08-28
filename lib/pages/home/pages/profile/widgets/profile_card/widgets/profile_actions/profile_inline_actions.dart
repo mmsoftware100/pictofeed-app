@@ -5,7 +5,6 @@ import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/navigation_service.dart';
 import 'package:Okuna/widgets/buttons/actions/block_button.dart';
-import 'package:Okuna/widgets/buttons/button.dart';
 import 'package:Okuna/widgets/buttons/actions/follow_button.dart';
 import 'package:flutter/material.dart';
 

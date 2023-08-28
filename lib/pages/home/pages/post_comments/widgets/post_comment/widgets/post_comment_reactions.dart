@@ -4,7 +4,6 @@ import 'package:Okuna/models/post_comment.dart';
 import 'package:Okuna/models/post_comment_reaction.dart';
 import 'package:Okuna/models/reactions_emoji_count.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/navigation_service.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';

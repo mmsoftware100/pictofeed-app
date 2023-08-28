@@ -79,7 +79,6 @@ import 'package:Okuna/widgets/new_post_data_uploader.dart';
 import 'package:Okuna/widgets/routes/slide_right_route.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class NavigationService {
   var rng = new Random();

@@ -3,7 +3,6 @@ import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/widgets/categories_picker.dart';
 import 'package:Okuna/widgets/theming/divider.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../provider.dart';

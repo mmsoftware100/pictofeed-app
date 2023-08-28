@@ -18,7 +18,7 @@ class OBNewCircleHorizontalListItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Stack(
-              overflow: Overflow.visible,
+              clipBehavior: Clip.none,
               children: <Widget>[
                 Container(
                   height: OBCircleColorPreview.circleSizeLarge,

@@ -17,7 +17,6 @@ import 'package:Okuna/pages/home/widgets/bottom-tab-bar.dart';
 import 'package:Okuna/pages/home/widgets/own_profile_active_icon.dart';
 import 'package:Okuna/pages/home/widgets/tab-scaffold.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/modal_service.dart';
 import 'package:Okuna/services/share.dart';
 import 'package:Okuna/services/toast.dart';
@@ -73,7 +72,7 @@ class OBHomePageState extends State<OBHomePage>
   void initState() {
     super.initState();
     BackButtonInterceptor.add(_backButtonInterceptor);
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     _needsBootstrap = true;
     _loggedInUserUnreadNotifications = 0;
     _lastIndex = 0;
@@ -90,7 +89,7 @@ class OBHomePageState extends State<OBHomePage>
   void dispose() {
     super.dispose();
     BackButtonInterceptor.remove(_backButtonInterceptor);
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _loggedInUserChangeSubscription.cancel();
     if (_loggedInUserUpdateSubscription != null)
       _loggedInUserUpdateSubscription!.cancel();
@@ -242,7 +241,7 @@ class OBHomePageState extends State<OBHomePage>
       },
       items: [
         BottomNavigationBarItem(
-          title: const SizedBox(),
+          label: '',
           icon: const OBIcon(OBIcons.home),
           activeIcon: const OBIcon(
             OBIcons.home,
@@ -250,7 +249,7 @@ class OBHomePageState extends State<OBHomePage>
           ),
         ),
         BottomNavigationBarItem(
-          title: const SizedBox(),
+          label: '',
           icon: const OBIcon(OBIcons.search),
           activeIcon: const OBIcon(
             OBIcons.search,
@@ -258,7 +257,7 @@ class OBHomePageState extends State<OBHomePage>
           ),
         ),
         BottomNavigationBarItem(
-          title: const SizedBox(),
+          label: '',
           icon: const OBIcon(OBIcons.communities),
           activeIcon: const OBIcon(
             OBIcons.communities,
@@ -266,13 +265,12 @@ class OBHomePageState extends State<OBHomePage>
           ),
         ),
         BottomNavigationBarItem(
-          title: const SizedBox(),
+          label: '',
           icon: Stack(
-            overflow: Overflow.visible,
+            clipBehavior: Clip.none,
             children: <Widget>[
               const OBIcon(OBIcons.notifications),
-              _loggedInUserUnreadNotifications != null
-                  && _loggedInUserUnreadNotifications > 0 ? Positioned(
+              _loggedInUserUnreadNotifications > 0 ? Positioned(
                       right: -8,
                       child: OBBadge(
                         size: 10,
@@ -287,7 +285,7 @@ class OBHomePageState extends State<OBHomePage>
           ),
         ),
         BottomNavigationBarItem(
-            title: const SizedBox(),
+            label: '',
             icon: OBAvatar(
               avatarUrl: _loggedInUserAvatarUrl,
               size: OBAvatarSize.extraSmall,
@@ -297,7 +295,7 @@ class OBHomePageState extends State<OBHomePage>
               size: OBAvatarSize.extraSmall,
             )),
         BottomNavigationBarItem(
-          title: const SizedBox(),
+          label: '',
           icon: const OBIcon(OBIcons.menu),
           activeIcon: const OBIcon(
             OBIcons.menu,

@@ -10,9 +10,7 @@ import 'package:Okuna/widgets/load_more.dart';
 import 'package:Okuna/widgets/progress_indicator.dart';
 import 'package:Okuna/widgets/search_bar.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:Okuna/widgets/tile_group_title.dart';
 import 'package:async/async.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'buttons/button.dart';

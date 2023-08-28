@@ -6,7 +6,6 @@ import 'package:Okuna/widgets/emoji_picker/widgets/emoji_groups/widgets/emoji_gr
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:flutter/material.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class OBFollowsListTile extends StatefulWidget {

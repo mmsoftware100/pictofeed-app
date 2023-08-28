@@ -11,9 +11,7 @@ import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/search_bar.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Okuna/services/httpie.dart';
 
 class OBConnectionsCirclesPage extends StatefulWidget {
   OBConnectionsCirclesPage();

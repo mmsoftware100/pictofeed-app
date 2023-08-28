@@ -40,7 +40,7 @@ class OBProfileCard extends StatelessWidget {
     var toastService = openbookProvider.toastService;
 
     return Stack(
-      overflow: Overflow.visible,
+      clipBehavior: Clip.none,
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(left: 18.0, right: 18),

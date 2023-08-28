@@ -1,13 +1,7 @@
 import 'package:Okuna/models/user.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/bottom_sheet.dart';
-import 'package:Okuna/services/httpie.dart';
-import 'package:Okuna/services/localization.dart';
-import 'package:Okuna/services/toast.dart';
-import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:Okuna/widgets/tiles/loading_tile.dart';
 import 'package:flutter/material.dart';
 
 class OBBlockUserTile extends StatelessWidget {

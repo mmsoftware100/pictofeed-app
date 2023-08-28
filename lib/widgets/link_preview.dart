@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:Okuna/models/link_preview/link_preview.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/url_launcher.dart';
 import 'package:Okuna/services/user.dart';

@@ -5,14 +5,12 @@ import 'package:Okuna/pages/home/pages/menu/pages/settings/pages/account_setting
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/translation/constants.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/nav_bars/themed_nav_bar.dart';
 import 'package:Okuna/widgets/progress_indicator.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBUserLanguageSettingsPage extends StatefulWidget {
   @override

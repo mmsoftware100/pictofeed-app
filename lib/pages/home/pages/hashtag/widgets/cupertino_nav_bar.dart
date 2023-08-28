@@ -8,7 +8,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 /// Standard iOS navigation bar height without the status bar.
 ///
@@ -196,14 +195,7 @@ class OBCupertinoNavigationBar extends StatefulWidget
     this.actionsForegroundColor,
     this.transitionBetweenRoutes = true,
     this.heroTag = _defaultHeroTag,
-  })  : assert(automaticallyImplyLeading != null),
-        assert(automaticallyImplyMiddle != null),
-        assert(transitionBetweenRoutes != null),
-        assert(
-            heroTag != null,
-            'heroTag cannot be null. Use transitionBetweenRoutes = false to '
-            'disable Hero transition on this navigation bar.'),
-        assert(
+  })  : assert(
             !transitionBetweenRoutes || identical(heroTag, _defaultHeroTag),
             'Cannot specify a heroTag override if this navigation bar does not '
             'transition due to transitionBetweenRoutes = false.'),
@@ -538,9 +530,7 @@ class CupertinoSliverNavigationBar extends StatefulWidget {
     this.actionsForegroundColor,
     this.transitionBetweenRoutes = true,
     this.heroTag = _defaultHeroTag,
-  })  : assert(automaticallyImplyLeading != null),
-        assert(automaticallyImplyTitle != null),
-        assert(
+  })  : assert(
             automaticallyImplyTitle == true || largeTitle != null,
             'No largeTitle has been provided but automaticallyImplyTitle is also '
             'false. Either provide a largeTitle or set automaticallyImplyTitle to '
@@ -714,9 +704,7 @@ class _LargeTitleNavigationBarSliverDelegate
     required this.heroTag,
     required this.persistentHeight,
     required this.alwaysShowMiddle,
-  })  : assert(persistentHeight != null),
-        assert(alwaysShowMiddle != null),
-        assert(transitionBetweenRoutes != null);
+  });
 
   final _NavigationBarStaticComponentsKeys keys;
   final _NavigationBarStaticComponents components;
@@ -1450,9 +1438,7 @@ class _TransitionableNavigationBar extends StatelessWidget {
     required this.hasUserMiddle,
     required this.largeExpanded,
     required this.child,
-  })  : assert(componentsKeys != null),
-        assert(largeExpanded != null),
-        assert(!largeExpanded || largeTitleTextStyle != null),
+  })  : assert(!largeExpanded || largeTitleTextStyle != null),
         super(key: componentsKeys.navBarBoxKey);
 
   final _NavigationBarStaticComponentsKeys componentsKeys;
@@ -1916,7 +1902,7 @@ class _NavigationBarComponentsTransition {
       return null;
     }
 
-    if (bottomLargeTitle != null && topBackLabel != null) {
+    if (topBackLabel != null) {
       // Move from current position to the top page's back label position.
       return PositionedTransition(
         rect: animation.drive(slideFromLeadingEdge(
@@ -1945,7 +1931,7 @@ class _NavigationBarComponentsTransition {
       );
     }
 
-    if (bottomLargeTitle != null && topLeading != null) {
+    if (topLeading != null) {
       // Unlike bottom middle, the bottom large title moves when it can't
       // transition to the top back label position.
       final RelativeRect from = positionInTransitionBox(
@@ -2089,7 +2075,6 @@ class _NavigationBarComponentsTransition {
     // text is too long, the topBackLabel will say 'Back' instead of the original
     // text.
     if (bottomLargeTitle != null &&
-        topBackLabel != null &&
         bottomLargeExpanded) {
       return PositionedTransition(
         rect: animation.drive(slideFromLeadingEdge(
@@ -2115,7 +2100,7 @@ class _NavigationBarComponentsTransition {
 
     // The topBackLabel always comes from the large title first if available
     // and expanded instead of middle.
-    if (bottomMiddle != null && topBackLabel != null) {
+    if (bottomMiddle != null) {
       return PositionedTransition(
         rect: animation.drive(slideFromLeadingEdge(
           fromKey: bottomComponents.middleKey,
@@ -2296,8 +2281,6 @@ final HeroFlightShuttleBuilder _navBarHeroFlightShuttleBuilder = (
   final _TransitionableNavigationBar fromNavBar = fromHeroWidget.child as _TransitionableNavigationBar;
   final _TransitionableNavigationBar toNavBar = toHeroWidget.child as _TransitionableNavigationBar;
 
-  assert(fromNavBar.componentsKeys != null);
-  assert(toNavBar.componentsKeys != null);
 
   assert(
     fromNavBar.componentsKeys.navBarBoxKey.currentContext?.owner != null,

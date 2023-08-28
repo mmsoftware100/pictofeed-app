@@ -72,9 +72,9 @@ class DialogService {
       File? video,
       VideoPlayerController? videoPlayerController,
       ChewieController? chewieController,
-      bool autoPlay: true,
+      bool autoPlay = true,
       required BuildContext context}) async {
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     Wakelock.enable();
     await showGeneralDialog(
       context: context,
@@ -103,8 +103,8 @@ class DialogService {
       transitionBuilder: _buildMaterialDialogTransitions,
     );
     Wakelock.disable();
-    SystemChrome.setEnabledSystemUIOverlays(
-        [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+    SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.manual, overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
   }
 
   Widget _buildMaterialDialogTransitions(

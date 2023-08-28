@@ -6,7 +6,6 @@ import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/user_preferences.dart';
 import 'package:Okuna/widgets/video_player/widgets/chewie/chewie_player.dart';
 import 'package:Okuna/widgets/video_player/widgets/video_player_controls.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 import 'package:video_player/video_player.dart';
@@ -377,7 +376,7 @@ class OBVideoPlayerController {
   }
 
   bool isReady() {
-    return _state != null && _state.mounted && _state._videoInitialized;
+    return _state.mounted && _state._videoInitialized;
   }
 
   bool hasVideoOpenedInDialog() {

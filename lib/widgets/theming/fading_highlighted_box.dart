@@ -1,6 +1,5 @@
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/material.dart';
 
 class OBFadingHighlightedBox extends StatefulWidget {

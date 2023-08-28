@@ -1,6 +1,5 @@
 import 'package:Okuna/models/hashtag.dart';
 import 'package:Okuna/widgets/cover.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBHashtagCover extends StatelessWidget {

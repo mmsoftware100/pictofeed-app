@@ -6,7 +6,6 @@ import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/theming/divider.dart';
 import 'package:Okuna/widgets/theming/primary_accent_text.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBCommunityTypeField extends StatelessWidget {

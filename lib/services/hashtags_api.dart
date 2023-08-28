@@ -1,6 +1,5 @@
 import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/string_template.dart';
-import 'package:meta/meta.dart';
 
 class HashtagsApiService {
   late HttpieService _httpService;

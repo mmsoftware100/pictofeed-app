@@ -252,11 +252,11 @@ class OBAuthCreateAccountPageState extends State<OBAuthCreateAccountPage> {
   _validateToken() async {
     _setTokenValidationInProgress(true);
     String token = _getTokenFromLink(_linkController.text.trim());
-    debugPrint('Validating token ${token}');
+    debugPrint('Validating token $token');
 
     try {
       final isTokenValid = await _validationService.isInviteTokenValid(token);
-      debugPrint('Token was valid:  ${isTokenValid}');
+      debugPrint('Token was valid:  $isTokenValid');
       return isTokenValid;
     } catch (error) {
       _onError(error);

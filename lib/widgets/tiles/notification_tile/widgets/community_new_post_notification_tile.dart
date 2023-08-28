@@ -3,7 +3,6 @@ import 'package:Okuna/models/notifications/notification.dart';
 import 'package:Okuna/models/post.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';
-import 'package:Okuna/widgets/avatars/avatar.dart';
 import 'package:Okuna/widgets/avatars/community_avatar.dart';
 import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:Okuna/widgets/tiles/notification_tile/notification_tile_post_media_preview.dart';

@@ -22,10 +22,8 @@ import 'package:Okuna/services/user.dart';
 import 'package:Okuna/widgets/theming/post_divider.dart';
 import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:async/async.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:Okuna/widgets/load_more.dart';
-import 'package:Okuna/services/httpie.dart';
 
 class OBPostCommentsPage extends StatefulWidget {
   final PostComment? linkedPostComment;
@@ -45,7 +43,7 @@ class OBPostCommentsPage extends StatefulWidget {
     this.onCommentDeleted,
     this.onCommentAdded,
     this.showPostPreview,
-    this.autofocusCommentInput: false,
+    this.autofocusCommentInput = false,
   });
 
   @override

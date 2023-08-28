@@ -5,7 +5,6 @@ import 'package:Okuna/models/community.dart';
 import 'package:Okuna/services/media/media.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/theme_value_parser.dart';
-import 'package:Okuna/widgets/avatars/avatar.dart';
 import 'package:Okuna/widgets/avatars/letter_avatar.dart';
 import 'package:Okuna/widgets/cover.dart';
 import 'package:Okuna/widgets/fields/categories_field.dart';
@@ -15,7 +14,6 @@ import 'package:Okuna/widgets/fields/toggle_field.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/nav_bars/colored_nav_bar.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';
 import 'package:Okuna/services/validation.dart';
@@ -139,7 +137,7 @@ class OBSaveCommunityModalState extends State<OBSaveCommunityModal> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Stack(
-                      overflow: Overflow.visible,
+                      clipBehavior: Clip.none,
                       children: <Widget>[
                         _buildCover(),
                         Positioned(

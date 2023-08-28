@@ -189,6 +189,7 @@ class OBWaitlistSubscribePageState extends State<OBWaitlistSubscribePage> {
                   String? validateEMail =
                       _validationService.validateUserEmail(email?.trim());
                   if (validateEMail != null) return validateEMail;
+                  return null;
                 },
                 controller: _emailController,
                 onFieldSubmitted: (v) => onPressedNextStep(context),

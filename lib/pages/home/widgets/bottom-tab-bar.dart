@@ -7,7 +7,6 @@ import 'dart:ui' show ImageFilter;
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/provider.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 
 // Standard iOS 10 tab bar height.
 const double _kTabBarHeight = 50.0;
@@ -44,11 +43,8 @@ class OBCupertinoTabBar extends StatelessWidget implements PreferredSizeWidget {
     this.activeColor = CupertinoColors.activeBlue,
     this.inactiveColor = CupertinoColors.inactiveGray,
     this.iconSize = 30.0,
-  })  : assert(items != null),
-        assert(items.length >= 2),
-        assert(currentIndex != null),
+  })  : assert(items.length >= 2),
         assert(0 <= currentIndex && currentIndex < items.length),
-        assert(iconSize != null),
         super(key: key);
 
   /// The interactive items laid out within the bottom navigation bar.

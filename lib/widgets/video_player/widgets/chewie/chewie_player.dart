@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:Okuna/widgets/video_player/widgets/chewie/player_with_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wakelock/wakelock.dart';
 
@@ -137,7 +136,7 @@ class ChewieState extends State<Chewie> {
       pageBuilder: _fullScreenRoutePageBuilder,
     );
 
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     if (isAndroid) {
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.landscapeLeft,
@@ -157,8 +156,8 @@ class ChewieState extends State<Chewie> {
     // so we do not need to check Wakelock.isEnabled.
     Wakelock.disable();
 
-    SystemChrome.setEnabledSystemUIOverlays(
-        widget.controller!.systemOverlaysAfterFullScreen);
+    SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.manual, overlays: widget.controller!.systemOverlaysAfterFullScreen);
     SystemChrome.setPreferredOrientations(
         widget.controller!.deviceOrientationsAfterFullScreen);
   }
@@ -202,9 +201,8 @@ class ChewieController extends ChangeNotifier {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ],
-    this.routePageBuilder = null,
-  }) : assert(videoPlayerController != null,
-            'You must provide a controller to play a video') {
+    this.routePageBuilder,
+  }) {
     _initialize();
   }
 
@@ -373,9 +371,7 @@ class _ChewieControllerProvider extends InheritedWidget {
     Key? key,
     required this.controller,
     required Widget child,
-  })  : assert(controller != null),
-        assert(child != null),
-        super(key: key, child: child);
+  })  : super(key: key, child: child);
 
   final ChewieController controller;
 

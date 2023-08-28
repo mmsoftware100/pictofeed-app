@@ -1,7 +1,6 @@
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:tinycolor/tinycolor.dart';
 
 class OBDivider extends StatelessWidget {
 

@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:Okuna/models/language.dart';
 import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/string_template.dart';
-import 'package:meta/meta.dart';
 
 class AuthApiService {
   late HttpieService _httpService;
@@ -336,7 +335,7 @@ class AuthApiService {
 
   Future<HttpieResponse> requestPasswordReset({required String email}) {
     var body = {};
-    if (email != null && email != '') {
+    if (email != '') {
       body['email'] = email;
     }
     return this

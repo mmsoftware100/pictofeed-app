@@ -8,7 +8,6 @@ import 'package:Okuna/widgets/post/post.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:Okuna/widgets/user_badge.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBUserPostHeader extends StatelessWidget {

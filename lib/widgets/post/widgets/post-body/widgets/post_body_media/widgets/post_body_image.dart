@@ -1,11 +1,8 @@
 import 'package:Okuna/models/post_image.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/widgets/icon.dart';
-import 'package:Okuna/widgets/progress_indicator.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
-import 'package:flutter_advanced_networkimage/transition.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class OBPostBodyImage extends StatelessWidget {
   final PostImage? postImage;

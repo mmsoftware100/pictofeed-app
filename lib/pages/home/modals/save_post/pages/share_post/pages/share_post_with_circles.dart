@@ -13,7 +13,6 @@ import 'package:Okuna/widgets/theming/primary_color_container.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:Okuna/widgets/tiles/circle_selectable_tile.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class OBSharePostWithCirclesPage extends StatefulWidget {
   final OBNewPostData createPostData;

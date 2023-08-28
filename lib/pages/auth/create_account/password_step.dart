@@ -176,6 +176,7 @@ class OBAuthPasswordStepPageState extends State<OBAuthPasswordStepPage> {
                   String? validatePassword =
                       validationService.validateUserPassword(password);
                   if (validatePassword != null) return validatePassword;
+                  return null;
                 },
                 suffixIcon: GestureDetector(
                   child: Icon(passwordIsVisible

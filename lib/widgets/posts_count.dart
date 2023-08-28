@@ -1,6 +1,5 @@
 import 'package:Okuna/libs/pretty_count.dart';
 import 'package:Okuna/models/theme.dart';
-import 'package:Okuna/models/user.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:flutter/material.dart';

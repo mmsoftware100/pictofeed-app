@@ -1,4 +1,3 @@
-import 'package:Okuna/pages/auth/create_account/blocs/create_account.dart';
 import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/navigation_service.dart';

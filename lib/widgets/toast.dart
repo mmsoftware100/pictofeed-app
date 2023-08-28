@@ -61,7 +61,7 @@ class OBToastState extends State<OBToast> with SingleTickerProviderStateMixin {
         color: color, message: message, onDismissed: onDismissed, child: child);
     final overlay = Overlay.of(_currentContext!);
     WidgetsBinding.instance
-        ?.addPostFrameCallback((_) => overlay?.insert(_overlayEntry!));
+        .addPostFrameCallback((_) => overlay.insert(_overlayEntry!));
     controller.forward();
 
     duration = duration ?? const Duration(seconds: 3);

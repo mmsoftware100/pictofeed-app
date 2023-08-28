@@ -6,14 +6,12 @@ import 'package:Okuna/services/bottom_sheet.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/navigation_service.dart';
 import 'package:Okuna/services/utils_service.dart';
-import 'package:Okuna/widgets/avatars/avatar.dart';
 import 'package:Okuna/widgets/avatars/community_avatar.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/post/post.dart';
 import 'package:Okuna/widgets/post/widgets/post_header/widgets/community_post_header/widgets/community_post_creator_identifier.dart';
 import 'package:Okuna/widgets/theming/secondary_text.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBCommunityPostHeader extends StatelessWidget {

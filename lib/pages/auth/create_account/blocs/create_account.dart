@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:Okuna/services/auth_api.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/user.dart';
-import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:io';
 

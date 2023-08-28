@@ -1,6 +1,5 @@
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OBUserInviteCount extends StatelessWidget {

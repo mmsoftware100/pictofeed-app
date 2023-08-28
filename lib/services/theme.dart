@@ -1,12 +1,7 @@
-import 'dart:io';
-import 'dart:ui';
 
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/services/storage.dart';
 import 'package:Okuna/services/utils_service.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:pigment/pigment.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:math';
 

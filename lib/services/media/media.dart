@@ -17,7 +17,6 @@ import 'package:flutter_ffmpeg/flutter_ffmpeg.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:meta/meta.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
@@ -235,7 +234,7 @@ class MediaService {
     return media;
   }
 
-  Future<File> fixExifRotation(File image, {deleteOriginal: false}) async {
+  Future<File> fixExifRotation(File image, {deleteOriginal = false}) async {
     List<int> imageBytes = await image.readAsBytes();
 
     List<int> result = await FlutterImageCompress.compressWithList(Uint8List.fromList(imageBytes),
@@ -255,7 +254,7 @@ class MediaService {
     return fixedImage;
   }
 
-  Future<File> copyMediaFile(File mediaFile, {deleteOriginal: true}) async {
+  Future<File> copyMediaFile(File mediaFile, {deleteOriginal = true}) async {
     final String processedImageUuid = _uuid.v4();
     String imageExtension = basename(mediaFile.path);
 
@@ -311,7 +310,7 @@ class MediaService {
     final String resultFilePath = '$path/$resultFileName';
 
     int exitCode = await _flutterFFmpeg.execute(
-        '-i ${video.path} -filter:v scale=720:-2 -vcodec libx264 -crf 23 -preset veryfast ${resultFilePath}');
+        '-i ${video.path} -filter:v scale=720:-2 -vcodec libx264 -crf 23 -preset veryfast $resultFilePath');
 
     if (exitCode == 0) {
       resultFile = File(resultFilePath);

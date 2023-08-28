@@ -1,7 +1,6 @@
 import 'package:Okuna/models/post.dart';
 import 'package:Okuna/models/post_comment.dart';
 import 'package:Okuna/provider.dart';
-import 'package:Okuna/services/httpie.dart';
 import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/toast.dart';
 import 'package:Okuna/services/user.dart';

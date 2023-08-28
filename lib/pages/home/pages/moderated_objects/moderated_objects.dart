@@ -182,6 +182,7 @@ class OBModeratedObjectsPageState extends State<OBModeratedObjectsPage> {
   Future<void>? setFilters(OBModeratedObjectsFilters filters) {
     _filters = filters;
     _refresh();
+    return null;
   }
 
   void scrollToTop() {
