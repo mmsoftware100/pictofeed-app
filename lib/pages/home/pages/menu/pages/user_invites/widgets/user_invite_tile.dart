@@ -67,8 +67,20 @@ class OBUserInviteTileState extends State<OBUserInviteTile> {
           subtitle: _buildActionableSecondaryText());
     } else {
       tile = Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.25,
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          extentRatio: 0.25,
+          children: [
+            SlidableAction(
+              label: _localizationService.user__invites_delete,
+              backgroundColor: Colors.red,
+              icon: Icons.delete,
+              onPressed: (context) {
+                _deleteUserInvite();
+              },
+            ),
+          ],
+        ),
         child: ListTile(
             onTap: () {
               navigationService.navigateToInviteDetailPage(
@@ -80,13 +92,6 @@ class OBUserInviteTileState extends State<OBUserInviteTile> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             subtitle: _buildActionableSecondaryText()),
-        secondaryActions: <Widget>[
-          new IconSlideAction(
-              caption: _localizationService.user__invites_delete,
-              color: Colors.red,
-              icon: Icons.delete,
-              onTap: _deleteUserInvite),
-        ],
       );
     }
 

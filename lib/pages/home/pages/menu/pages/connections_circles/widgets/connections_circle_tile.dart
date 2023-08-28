@@ -52,19 +52,26 @@ class OBConnectionsCircleTileState extends State<OBConnectionsCircleTile> {
 
     Widget tile = _buildTile();
 
-    if (widget.isReadOnly) return tile;
+    if (widget.isReadOnly) {
+      return tile;
+    }
 
     tile = Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      actionExtentRatio: 0.25,
-      child: tile,
-      secondaryActions: <Widget>[
-        IconSlideAction(
-            caption: _localizationService.user__connections_circle_delete,
-            color: Colors.red,
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        extentRatio: 0.25,
+        children: [
+          SlidableAction(
+            label: _localizationService.user__connections_circle_delete,
+            backgroundColor: Colors.red,
             icon: Icons.delete,
-            onTap: _deleteConnectionsCircle),
-      ],
+            onPressed: (context) {
+              _deleteConnectionsCircle();
+            },
+          ),
+        ],
+      ),
+      child: tile,
     );
 
     if (_requestInProgress) {

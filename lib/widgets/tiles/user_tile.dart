@@ -59,19 +59,21 @@ class OBUserTile extends StatelessWidget {
 
     if (onUserTileDeleted != null) {
       tile = Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.25,
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          extentRatio: 0.25,
+          children: [
+            SlidableAction(
+              label: _localizationService.trans('user__tile_delete'),
+              backgroundColor: Colors.red,
+              icon: Icons.delete,
+              onPressed: (context) {
+                onUserTileDeleted!(user);
+              },
+            ),
+          ],
+        ),
         child: tile,
-        secondaryActions: <Widget>[
-          new IconSlideAction(
-            caption: _localizationService.trans('user__tile_delete'),
-            color: Colors.red,
-            icon: Icons.delete,
-            onTap: () {
-              onUserTileDeleted!(user);
-            },
-          ),
-        ],
       );
     }
     return tile;
@@ -79,7 +81,7 @@ class OBUserTile extends StatelessWidget {
 
   Widget _getUserBadge(User creator) {
     if (creator.hasProfileBadges()) {
-      Badge badge = creator.getProfileBadges()![0];
+      PictofeedBadge badge = creator.getProfileBadges()![0];
       return OBUserBadge(badge: badge, size: OBUserBadgeSize.small);
     }
     return const SizedBox();

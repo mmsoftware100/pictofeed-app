@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:Okuna/libs/pretty_count.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:tinycolor/tinycolor.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 
 class OBCommunityTile extends StatelessWidget {
   static const COVER_PLACEHOLDER = 'assets/images/fallbacks/cover-fallback.jpg';
@@ -159,25 +159,27 @@ class OBCommunityTile extends StatelessWidget {
 
     if (onCommunityTileDeleted != null && onCommunityTilePressed != null) {
       communityTile = Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.25,
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          extentRatio: 0.25,
+          children: [
+            SlidableAction(
+              label: localizationService.community__tile_delete,
+              foregroundColor: themeValueParserService.parseColor(theme.primaryTextColor),
+              backgroundColor: Colors.transparent,
+              icon: Icons.delete,
+              onPressed: (context) {
+                onCommunityTileDeleted!(community);
+              },
+            ),
+          ],
+        ),
         child: GestureDetector(
           onTap: () {
             onCommunityTilePressed!(community);
           },
           child: communityTile,
         ),
-        secondaryActions: <Widget>[
-          new IconSlideAction(
-              caption: localizationService.community__tile_delete,
-              foregroundColor:
-                  themeValueParserService.parseColor(theme.primaryTextColor),
-              color: Colors.transparent,
-              icon: Icons.delete,
-              onTap: () {
-                onCommunityTileDeleted!(community);
-              }),
-        ],
       );
     } else if (onCommunityTilePressed != null) {
       communityTile = GestureDetector(

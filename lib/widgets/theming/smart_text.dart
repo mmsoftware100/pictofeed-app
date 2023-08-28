@@ -9,7 +9,7 @@ export 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tinycolor/tinycolor.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 import 'dart:ui' as ui;
 // Based on https://github.com/knoxpo/flutter_smart_text_view
 

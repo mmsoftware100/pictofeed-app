@@ -44,10 +44,10 @@ class OBSecondaryButton extends StatelessWidget {
     return ButtonTheme(
       minWidth: minWidth,
       height: height,
-      child: FlatButton(
-        textColor: Colors.black87,
+      child: TextButton(
         child: this.child,
         onPressed: this.onPressed,
+        style: TextButton.styleFrom(foregroundColor: Colors.black87)
       ),
     );
   }

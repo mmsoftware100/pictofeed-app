@@ -11,7 +11,7 @@ class UserProfile {
   String? location;
   bool? followersCountVisible;
   bool? communityPostsVisible;
-  List<Badge>? badges;
+  List<PictofeedBadge>? badges;
 
   UserProfile({
     this.id,
@@ -50,13 +50,13 @@ class UserProfile {
       'bio': bio,
       'url': url,
       'location': location,
-      'badges': badges?.map((Badge badge) => badge.toJson()).toList(),
+      'badges': badges?.map((PictofeedBadge badge) => badge.toJson()).toList(),
       'followers_count_visible': followersCountVisible,
       'community_posts_visible': communityPostsVisible,
     };
   }
 
-  static List<Badge>? parseBadges(List<dynamic>? badges) {
+  static List<PictofeedBadge>? parseBadges(List<dynamic>? badges) {
     if (badges == null) return null;
     return BadgesList.fromJson(badges).badges;
   }

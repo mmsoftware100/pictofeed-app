@@ -409,7 +409,7 @@ class OBVideoPlayerControlsState extends State<OBVideoPlayerControls> {
   void _play() {
     _cancelAndRestartTimer();
 
-    if (!controller!.value.initialized) {
+    if (!controller!.value.isInitialized) {
       controller!.initialize().then((_) {
         controller!.play();
       });

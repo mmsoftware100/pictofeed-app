@@ -28,9 +28,7 @@ class OBImagePickerBottomSheet extends StatelessWidget {
           bool permissionGranted = await provider.permissionService
               .requestStoragePermissions(context: context);
           if (permissionGranted) {
-            PickedFile? pickedFile =
-                await imagePicker.getImage(source: ImageSource.gallery);
-
+            XFile? pickedFile = await imagePicker.pickImage(source: ImageSource.gallery);
             if (pickedFile != null) {
               File file = File(pickedFile.path);
               Navigator.pop(context, file);
@@ -47,9 +45,7 @@ class OBImagePickerBottomSheet extends StatelessWidget {
           bool permissionGranted = await provider.permissionService
               .requestCameraPermissions(context: context);
           if (permissionGranted) {
-            PickedFile? pickedFile =
-                await imagePicker.getImage(source: ImageSource.camera);
-
+            XFile? pickedFile = await imagePicker.pickImage(source: ImageSource.camera);
             File? pickedImage = pickedFile != null ? File(pickedFile.path) : null;
             Navigator.pop(context, pickedImage);
           }

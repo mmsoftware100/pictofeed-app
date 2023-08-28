@@ -18,12 +18,6 @@ class OBPillButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var button = TextButton(
-        style: TextButton.styleFrom(
-          foregroundColor: textColor ?? Colors.white,
-          backgroundColor: color,
-          shape: new RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(50.0))),
-
         child: Row(
           children: <Widget>[
             icon,
@@ -36,7 +30,13 @@ class OBPillButton extends StatelessWidget {
             ),
           ],
         ),
-        onPressed: onPressed);
+        onPressed: onPressed,
+        style: const ButtonStyle(
+          textColor: textColor ?? Colors.white,
+          color: color,
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(50.0))
+        ));
     return button;
   }
 }

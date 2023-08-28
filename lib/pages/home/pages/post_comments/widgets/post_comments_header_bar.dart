@@ -64,7 +64,7 @@ class OBPostCommentsHeaderBar extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: FlatButton(
+              child: TextButton(
                   child: OBText(
                     this.postComments.length > 0
                         ? this.currentSort == PostCommentsSortType.dec
@@ -91,7 +91,7 @@ class OBPostCommentsHeaderBar extends StatelessWidget {
           children: <Widget>[
             Expanded(
               flex: 4,
-              child: FlatButton(
+              child: TextButton(
                   child: Row(
                     children: <Widget>[
                       OBIcon(OBIcons.arrowUp),
@@ -108,7 +108,7 @@ class OBPostCommentsHeaderBar extends StatelessWidget {
             ),
             Expanded(
               flex: 6,
-              child: FlatButton(
+              child: TextButton(
                   child: OBText(
                     this.currentSort == PostCommentsSortType.dec
                         ? _pageTextMap['VIEW_NEWEST']!

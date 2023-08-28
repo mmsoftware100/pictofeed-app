@@ -41,8 +41,20 @@ class OBFollowsListTileState extends State<OBFollowsListTile> {
     var navigationService = provider.navigationService;
 
     Widget tile = Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      actionExtentRatio: 0.25,
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        extentRatio: 0.25,
+        children: [
+          SlidableAction(
+            label: 'Delete',
+            backgroundColor: Colors.red,
+            icon: Icons.delete,
+            onPressed: (context) {
+              _deleteFollowsList();
+            },
+          ),
+        ],
+      ),
       child: ListTile(
           onTap: () {
             navigationService.navigateToFollowsList(
@@ -54,14 +66,7 @@ class OBFollowsListTileState extends State<OBFollowsListTile> {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           subtitle: OBSecondaryText(
-              widget.followsList.followsCount.toString() + ' users')),
-      secondaryActions: <Widget>[
-        new IconSlideAction(
-            caption: 'Delete',
-            color: Colors.red,
-            icon: Icons.delete,
-            onTap: _deleteFollowsList),
-      ],
+              widget.followsList.followsCount.toString() + ' users'))
     );
 
     if (_requestInProgress) {

@@ -6,7 +6,7 @@ import 'package:Okuna/services/theme_value_parser.dart';
 export 'package:Okuna/widgets/avatars/avatar.dart';
 import 'package:Okuna/widgets/avatars/letter_avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:tinycolor/tinycolor.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 
 class OBCommunityAvatar extends StatelessWidget {
   final Community community;

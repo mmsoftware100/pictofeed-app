@@ -185,7 +185,7 @@ class OBPostCommentState extends State<OBPostComment> {
       return SizedBox();
     }
 
-    return FlatButton(
+    return TextButton(
         child: OBSecondaryText(
           'View all $_repliesCount replies',
           overflow: TextOverflow.ellipsis,

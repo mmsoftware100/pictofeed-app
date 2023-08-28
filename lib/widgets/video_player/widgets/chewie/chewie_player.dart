@@ -298,7 +298,7 @@ class ChewieController extends ChangeNotifier {
     await videoPlayerController.setLooping(looping);
 
     if ((autoInitialize || autoPlay) &&
-        !videoPlayerController.value.initialized) {
+        !videoPlayerController.value.isInitialized) {
       await videoPlayerController.initialize();
     }
 

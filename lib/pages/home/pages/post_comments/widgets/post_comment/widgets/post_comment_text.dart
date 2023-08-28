@@ -60,7 +60,7 @@ class OBPostCommentTextState extends State<OBPostCommentText> {
                   OpenbookProviderState openbookProvider =
                       OpenbookProvider.of(context);
                   Clipboard.setData(
-                      ClipboardData(text: widget.postComment.text));
+                      ClipboardData(text: widget.postComment.text ?? ""));
                   openbookProvider.toastService.toast(
                       message: 'Text copied!',
                       context: context,

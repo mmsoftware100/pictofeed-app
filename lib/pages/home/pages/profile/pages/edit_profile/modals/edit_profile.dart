@@ -315,9 +315,7 @@ class OBEditProfileModalState extends State<OBEditProfileModal> {
                   new Text(_localizationService.user__edit_profile_pick_image),
               onTap: () async {
                 try {
-                  var image = await _imagePickerService.pickImage(
-                      imageType: imageType, context: context);
-
+                  var image = await _imagePickerService.pickImage(imageType: imageType, context: context);
                   _onUserImageSelected(image: image, imageType: imageType);
                 } on FileTooLargeException catch (e) {
                   int limit = e.getLimitInMB();

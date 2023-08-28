@@ -123,6 +123,7 @@ class OBPostCommentActionsState extends State<OBPostCommentActions> {
           onTap: _reactToPostComment,
           child: SizedBox(
               child: StreamBuilder(
+                  stream: null,
                   initialData: widget.postComment,
                   builder: (BuildContext context,
                       AsyncSnapshot<PostComment> snapshot) {

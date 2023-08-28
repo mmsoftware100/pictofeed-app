@@ -5,7 +5,7 @@ import 'package:Okuna/services/theme.dart';
 import 'package:Okuna/services/theme_value_parser.dart';
 import 'package:Okuna/widgets/progress_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:tinycolor/tinycolor.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 
 class OBCommunityButton extends StatelessWidget {
   final Community community;
@@ -52,10 +52,15 @@ class OBCommunityButton extends StatelessWidget {
       communityColor = TinyColor(communityColor).lighten(10).color;
     }
 
+    final ButtonStyle style =
+        ElevatedButton.styleFrom(backgroundColor: communityColor,
+                                 shape: new RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
+                                 elevation: 0);
+
     return ButtonTheme(
       minWidth: 110,
-      child: RaisedButton(
-          elevation: 0,
+      child: ElevatedButton(
+          style: style,
           child: isLoading
               ? _buildLoadingIndicatorWithColor(textColor)
               : Text(
@@ -65,10 +70,7 @@ class OBCommunityButton extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
-          color: communityColor,
-          onPressed: onPressed,
-          shape: new RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius))),
+          onPressed: onPressed),
     );
   }
 

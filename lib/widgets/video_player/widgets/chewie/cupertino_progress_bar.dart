@@ -72,7 +72,7 @@ class _VideoProgressBarState extends State<CupertinoVideoProgressBar> {
         ),
       ),
       onHorizontalDragStart: (DragStartDetails details) {
-        if (!controller.value.initialized) {
+        if (!controller.value.isInitialized) {
           return;
         }
         _controllerWasPlaying = controller.value.isPlaying;
@@ -85,7 +85,7 @@ class _VideoProgressBarState extends State<CupertinoVideoProgressBar> {
         }
       },
       onHorizontalDragUpdate: (DragUpdateDetails details) {
-        if (!controller.value.initialized) {
+        if (!controller.value.isInitialized) {
           return;
         }
         seekToRelativePosition(details.globalPosition);
@@ -104,7 +104,7 @@ class _VideoProgressBarState extends State<CupertinoVideoProgressBar> {
         }
       },
       onTapDown: (TapDownDetails details) {
-        if (!controller.value.initialized) {
+        if (!controller.value.isInitialized) {
           return;
         }
         seekToRelativePosition(details.globalPosition);
@@ -140,7 +140,7 @@ class _ProgressBarPainter extends CustomPainter {
       ),
       colors.backgroundPaint,
     );
-    if (!value.initialized) {
+    if (!value.isInitialized) {
       return;
     }
     final double playedPartPercent =

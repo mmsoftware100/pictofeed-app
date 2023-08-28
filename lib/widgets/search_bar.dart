@@ -102,7 +102,7 @@ class OBSearchBarState extends State<OBSearchBar> {
                   ),
                 ),
                 hasText
-                    ? FlatButton(
+                    ? MaterialButton(
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         child: OBText(localizationService.user_search__cancel),
                         onPressed: _cancelSearch,

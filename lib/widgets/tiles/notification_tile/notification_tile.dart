@@ -188,21 +188,23 @@ class OBNotificationTile extends StatelessWidget {
 
   Widget _buildDismissable(Widget child) {
     return Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      actionExtentRatio: 0.25,
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        extentRatio: 0.25,
+        children: [
+          SlidableAction(
+            label: 'Delete',
+            backgroundColor: Colors.red,
+            icon: Icons.delete,
+            onPressed: (context) {
+              if (onNotificationTileDeleted != null) {
+                onNotificationTileDeleted!(notification);
+              }
+            },
+          ),
+        ],
+      ),
       child: child,
-      secondaryActions: <Widget>[
-        new IconSlideAction(
-          caption: 'Delete',
-          color: Colors.red,
-          icon: Icons.delete,
-          onTap: () {
-            if (onNotificationTileDeleted != null) {
-              onNotificationTileDeleted!(notification);
-            }
-          },
-        ),
-      ],
     );
   }
 }

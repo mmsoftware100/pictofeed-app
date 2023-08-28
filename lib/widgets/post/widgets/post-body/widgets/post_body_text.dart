@@ -91,7 +91,7 @@ class OBPostBodyTextState extends State<OBPostBodyText> {
   Widget _buildActionablePostText() {
     if (widget.post.isEdited != null && widget.post.isEdited!) {
       return OBCollapsibleSmartText(
-        text: _translatedText != null ? _translatedText : widget.post.text,
+        text: _translatedText != null ? _translatedText : widget.post.text ?? "",
         trailingSmartTextElement: SecondaryTextElement(' (edited)'),
         maxlength: MAX_LENGTH_LIMIT,
         getChild: _buildTranslationButton,
@@ -100,7 +100,7 @@ class OBPostBodyTextState extends State<OBPostBodyText> {
       );
     } else {
       return OBCollapsibleSmartText(
-        text: _translatedText != null ? _translatedText : widget.post.text,
+        text: _translatedText != null ? _translatedText : widget.post.text ?? "",
         maxlength: MAX_LENGTH_LIMIT,
         getChild: _buildTranslationButton,
         hashtagsMap: widget.post.hashtagsMap,
@@ -148,7 +148,7 @@ class OBPostBodyTextState extends State<OBPostBodyText> {
   }
 
   void _copyText() {
-    Clipboard.setData(ClipboardData(text: widget.post.text));
+    Clipboard.setData(ClipboardData(text: widget.post.text ?? ""));
     _toastService.toast(
         message: _localizationService.post__text_copied,
         context: context,

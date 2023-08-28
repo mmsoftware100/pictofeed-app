@@ -322,11 +322,11 @@ class User extends UpdatableModel<User> {
     return this.profile?.location;
   }
 
-  List<Badge>? getProfileBadges() {
+  List<PictofeedBadge>? getProfileBadges() {
     return this.profile?.badges;
   }
 
-  Badge? getDisplayedProfileBadge() {
+  PictofeedBadge? getDisplayedProfileBadge() {
     return getProfileBadges()?.first;
   }
 

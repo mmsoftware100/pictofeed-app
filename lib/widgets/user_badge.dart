@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class OBUserBadge extends StatelessWidget {
-  final Badge? badge;
+  final PictofeedBadge? badge;
   final OBUserBadgeSize size;
   static double badgeSizeLarge = 45;
   static double badgeSizeMedium = 25;
@@ -34,17 +34,17 @@ class OBUserBadge extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot<OBTheme> snapshot) {
 
           switch(badge!.getKeyword()) {
-            case BadgeKeyword.verified:
+            case PictofeedBadgeKeyword.verified:
               return _getVerifiedBadge(badge!); break;
-            case BadgeKeyword.founder:
+            case PictofeedBadgeKeyword.founder:
               return _getFounderBadge(badge!); break;
-            case BadgeKeyword.golden_founder:
+            case PictofeedBadgeKeyword.golden_founder:
               return _getGoldenFounderBadge(badge!); break;
-            case BadgeKeyword.diamond_founder:
+            case PictofeedBadgeKeyword.diamond_founder:
               return _getDiamondFounderBadge(badge!); break;
-            case BadgeKeyword.super_founder:
+            case PictofeedBadgeKeyword.super_founder:
               return _getSuperFounderBadge(badge!); break;
-            case BadgeKeyword.angel:
+            case PictofeedBadgeKeyword.angel:
               return _getAngelBadge(badge!); break;
             default:
               return const SizedBox(); break;
@@ -52,7 +52,7 @@ class OBUserBadge extends StatelessWidget {
         });
   }
 
-  Widget _getVerifiedBadge(Badge badge) {
+  Widget _getVerifiedBadge(PictofeedBadge badge) {
     double badgeSize = _getUserBadgeSize(size);
 
     return Container(
@@ -78,7 +78,7 @@ class OBUserBadge extends StatelessWidget {
     );
   }
 
-  Widget _getAngelBadge(Badge badge) {
+  Widget _getAngelBadge(PictofeedBadge badge) {
     double badgeSize = _getUserBadgeSize(size);
     double iconSize = _getUserBadgeIconSize(size);
 
@@ -110,7 +110,7 @@ class OBUserBadge extends StatelessWidget {
         );
   }
 
-  Widget _getFounderBadge(Badge badge) {
+  Widget _getFounderBadge(PictofeedBadge badge) {
     double badgeSize = _getUserBadgeSize(size);
 
     return Container(
@@ -138,7 +138,7 @@ class OBUserBadge extends StatelessWidget {
     );
   }
 
-  Widget _getGoldenFounderBadge(Badge badge) {
+  Widget _getGoldenFounderBadge(PictofeedBadge badge) {
     double badgeSize = _getUserBadgeSize(size);
 
     return Container(
@@ -164,7 +164,7 @@ class OBUserBadge extends StatelessWidget {
     );
   }
 
-  Widget _getDiamondFounderBadge(Badge badge) {
+  Widget _getDiamondFounderBadge(PictofeedBadge badge) {
     double badgeSize = _getUserBadgeSize(size);
 
     return Container(
@@ -190,7 +190,7 @@ class OBUserBadge extends StatelessWidget {
     );
   }
 
-  Widget _getSuperFounderBadge(Badge badge) {
+  Widget _getSuperFounderBadge(PictofeedBadge badge) {
     double badgeSize = _getUserBadgeSize(size);
 
     return Container(

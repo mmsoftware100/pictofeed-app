@@ -141,7 +141,7 @@ class OBProfileCard extends StatelessWidget {
       {required User user,
       required ToastService toastService,
       required BuildContext context}) {
-    Badge badge = user.getProfileBadges()![0];
+    PictofeedBadge badge = user.getProfileBadges()![0];
     return GestureDetector(
       onTap: () {
         toastService.info(
@@ -152,7 +152,7 @@ class OBProfileCard extends StatelessWidget {
   }
 
   String _getUserBadgeDescription(User user) {
-    Badge badge = user.getProfileBadges()![0];
+    PictofeedBadge badge = user.getProfileBadges()![0];
     return badge.getKeywordDescription()!;
   }
 }
