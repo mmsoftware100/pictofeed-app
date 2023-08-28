@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:rxdart/rxdart.dart';
 
+import 'package:onesignal_flutter/src/permission.dart';
+
 class PushNotificationsService {
   static const String oneSignalAppId = '66074bf4-9943-4504-a011-531c2635698b';
 
@@ -77,10 +79,10 @@ class PushNotificationsService {
   }
 
   Future<bool> isSubscribedToPushNotifications() async {
-    OSDeviceState? osDeviceState =
+    OSDeviceState? deviceState =
         await OneSignal.shared.getDeviceState();
 
-    return osDeviceState?.subscribed ?? false;
+    return deviceState?.subscribed ?? false;
   }
 
   Future subscribeToPushNotifications() async {

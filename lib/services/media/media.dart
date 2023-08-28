@@ -215,12 +215,12 @@ class MediaService {
       double ratioX = IMAGE_RATIOS[imageType]['x'];
       double ratioY = IMAGE_RATIOS[imageType]['y'];
 
-      File? croppedFile =
-          await cropImage(processedImage, ratioX: ratioX, ratioY: ratioY);
+      CroppedFile? croppedFile = await cropImage(processedImage, ratioX: ratioX, ratioY: ratioY);
+      if (croppedFile == null) {
+        return null;
+      }
 
-      if (croppedFile == null) return null;
-
-      result = MediaFile(croppedFile, media.type);
+      result = MediaFile(File(croppedFile.path), media.type);
     }
 
     return result;
@@ -406,18 +406,18 @@ class MediaService {
     }
   }
 
-  Future<File?> cropImage(File image, {double? ratioX, double? ratioY}) async {
-    return ImageCropper.cropImage(
+  Future<CroppedFile?> cropImage(File image, {double? ratioX, double? ratioY}) async {
+    return ImageCropper().cropImage(
         sourcePath: image.path,
         aspectRatio: ratioX != null && ratioY != null
             ? CropAspectRatio(ratioX: ratioX, ratioY: ratioY)
             : null,
-        androidUiSettings: AndroidUiSettings(
+        uiSettings: [ AndroidUiSettings(
           toolbarTitle: _localizationService.media_service__crop_image,
           toolbarColor: Colors.black,
           statusBarColor: Colors.black,
           toolbarWidgetColor: Colors.white,
-        ));
+        )]);
   }
 }
 

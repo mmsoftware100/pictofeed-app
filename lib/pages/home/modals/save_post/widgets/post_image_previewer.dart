@@ -4,6 +4,8 @@ import 'package:Okuna/models/post_image.dart';
 import 'package:Okuna/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
 
 class OBPostImagePreviewer extends StatelessWidget {
   final PostImage? postImage;
@@ -119,8 +121,7 @@ class OBPostImagePreviewer extends StatelessWidget {
 
     OpenbookProviderState openbookProvider = OpenbookProvider.of(context);
 
-    File? croppedFile =
-        await openbookProvider.mediaService.cropImage(postImageFile!);
-    if (croppedFile != null) onPostImageEdited!(croppedFile);
+    CroppedFile? cropFile = await openbookProvider.mediaService.cropImage(postImageFile!);
+    if (cropFile != null) onPostImageEdited!(File(cropFile.path));
   }
 }

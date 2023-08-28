@@ -23,12 +23,12 @@ class IntercomService {
     this.iosApiKey = iosApiKey;
     this.androidApiKey = androidApiKey;
     this.appId = appId;
-    await Intercom.initialize(appId,
+    await Intercom.instance.initialize(appId,
         iosApiKey: iosApiKey, androidApiKey: androidApiKey);
   }
 
   Future displayMessenger() {
-    return Intercom.displayMessenger();
+    return Intercom.instance.displayMessenger();
   }
 
   Future enableIntercom() async {
@@ -39,11 +39,11 @@ class IntercomService {
     assert(loggedInUser.uuid != null && loggedInUser.id != null);
 
     String userId = _makeUserId(loggedInUser);
-    return Intercom.registerIdentifiedUser(userId: userId);
+    return Intercom.instance.registerIdentifiedUser(userId: userId);
   }
 
   Future disableIntercom() {
-    return Intercom.logout();
+    return Intercom.instance.logout();
   }
 
   String _makeUserId(User user) {
