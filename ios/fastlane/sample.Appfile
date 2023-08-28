@@ -1,4 +1,4 @@
-app_identifier("social.openbook.app") # The bundle identifier of your app
+app_identifier("app.pictofeed.io") # The bundle identifier of your app
 apple_id("yourappleid@mail.com") # Your Apple email address
 
 itc_team_id("SomeId") # App Store Connect Team ID

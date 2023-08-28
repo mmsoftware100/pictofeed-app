@@ -4,14 +4,14 @@ PODS:
     - Reachability
   - device_info (0.0.1):
     - Flutter
-  - DKImagePickerController/Core (4.3.2):
+  - DKImagePickerController/Core (4.3.4):
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
-  - DKImagePickerController/ImageDataManager (4.3.2)
-  - DKImagePickerController/PhotoGallery (4.3.2):
+  - DKImagePickerController/ImageDataManager (4.3.4)
+  - DKImagePickerController/PhotoGallery (4.3.4):
     - DKImagePickerController/Core
     - DKPhotoGallery
-  - DKImagePickerController/Resource (4.3.2)
+  - DKImagePickerController/Resource (4.3.4)
   - DKPhotoGallery (0.0.17):
     - DKPhotoGallery/Core (= 0.0.17)
     - DKPhotoGallery/Model (= 0.0.17)
@@ -35,109 +35,133 @@ PODS:
   - DKPhotoGallery/Resource (0.0.17):
     - SDWebImage
     - SwiftyGif
+  - ffmpeg-kit-ios-https (6.0)
+  - ffmpeg_kit_flutter (6.0.0):
+    - ffmpeg_kit_flutter/https (= 6.0.0)
+    - Flutter
+  - ffmpeg_kit_flutter/https (6.0.0):
+    - ffmpeg-kit-ios-https (= 6.0)
+    - Flutter
   - file_picker (0.0.1):
     - DKImagePickerController/PhotoGallery
     - Flutter
   - Flutter (1.0.0)
-  - flutter_ffmpeg (0.3.0):
-    - Flutter
-    - flutter_ffmpeg/https (= 0.3.0)
-  - flutter_ffmpeg/https (0.3.0):
-    - Flutter
-    - mobile-ffmpeg-https (= 4.4)
-  - flutter_image_compress (0.0.1):
+  - flutter_image_compress_common (1.0.0):
     - Flutter
     - Mantle
+    - SDWebImage
     - SDWebImageWebPCoder
-  - flutter_secure_storage (3.3.1):
+  - flutter_secure_storage (6.0.0):
     - Flutter
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - image_cropper (0.0.3):
+  - image_cropper (0.0.4):
     - Flutter
-    - TOCropViewController (~> 2.5.4)
-  - image_picker (0.0.1):
+    - TOCropViewController (~> 2.6.1)
+  - image_picker_ios (0.0.1):
     - Flutter
-  - Intercom (7.1.3)
-  - "intercom_flutter (2.2.0+1)":
+  - Intercom (15.1.4)
+  - intercom_flutter (7.5.0):
     - Flutter
-    - Intercom (~> 7.1.0)
-  - libwebp (1.1.0):
-    - libwebp/demux (= 1.1.0)
-    - libwebp/mux (= 1.1.0)
-    - libwebp/webp (= 1.1.0)
-  - libwebp/demux (1.1.0):
+    - Intercom (= 15.1.4)
+  - libwebp (1.3.1):
+    - libwebp/demux (= 1.3.1)
+    - libwebp/mux (= 1.3.1)
+    - libwebp/sharpyuv (= 1.3.1)
+    - libwebp/webp (= 1.3.1)
+  - libwebp/demux (1.3.1):
     - libwebp/webp
-  - libwebp/mux (1.1.0):
+  - libwebp/mux (1.3.1):
     - libwebp/demux
-  - libwebp/webp (1.1.0)
-  - Mantle (2.1.6):
-    - Mantle/extobjc (= 2.1.6)
-  - Mantle/extobjc (2.1.6)
-  - mobile-ffmpeg-https (4.4)
-  - OneSignal (2.15.2)
-  - onesignal_flutter (2.6.1):
+  - libwebp/sharpyuv (1.3.1)
+  - libwebp/webp (1.3.1):
+    - libwebp/sharpyuv
+  - Mantle (2.2.0):
+    - Mantle/extobjc (= 2.2.0)
+  - Mantle/extobjc (2.2.0)
+  - onesignal_flutter (3.5.1):
     - Flutter
-    - OneSignal (= 2.15.2)
+    - OneSignalXCFramework (= 3.12.4)
+  - OneSignalXCFramework (3.12.4):
+    - OneSignalXCFramework/OneSignalCore (= 3.12.4)
+    - OneSignalXCFramework/OneSignalExtension (= 3.12.4)
+    - OneSignalXCFramework/OneSignalOutcomes (= 3.12.4)
+  - OneSignalXCFramework/OneSignalCore (3.12.4)
+  - OneSignalXCFramework/OneSignalExtension (3.12.4):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalOutcomes (3.12.4):
+    - OneSignalXCFramework/OneSignalCore
   - package_info (0.0.1):
     - Flutter
-  - path_provider (0.0.1):
+  - package_info_plus (0.4.5):
     - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - Reachability (3.2)
   - screen (0.0.1):
     - Flutter
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
-  - SDWebImageWebPCoder (0.6.1):
+  - SDWebImage (5.17.0):
+    - SDWebImage/Core (= 5.17.0)
+  - SDWebImage/Core (5.17.0)
+  - SDWebImageWebPCoder (0.13.0):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.7)
-  - share (0.0.1):
+    - SDWebImage/Core (~> 5.17)
+  - Sentry/HybridSDK (8.9.1):
+    - SentryPrivate (= 8.9.1)
+  - sentry_flutter (0.0.1):
     - Flutter
-  - shared_preferences (0.0.1):
+    - FlutterMacOS
+    - Sentry/HybridSDK (= 8.9.1)
+  - SentryPrivate (8.9.1)
+  - share_plus (0.0.1):
     - Flutter
-  - sqflite (0.0.2):
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - sqflite (0.0.3):
     - Flutter
     - FMDB (>= 2.7.5)
-  - SwiftyGif (5.3.0)
-  - TOCropViewController (2.5.5)
+  - SwiftyGif (5.4.4)
+  - TOCropViewController (2.6.1)
   - uni_links (0.0.1):
     - Flutter
-  - url_launcher (0.0.1):
+  - url_launcher_ios (0.0.1):
     - Flutter
-  - video_player (0.0.1):
+  - video_player_avfoundation (0.0.1):
     - Flutter
-    - VIMediaCache
   - video_thumbnail (0.0.1):
     - Flutter
     - libwebp
-  - VIMediaCache (0.4)
   - wakelock (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - device_info (from `.symlinks/plugins/device_info/ios`)
+  - ffmpeg_kit_flutter (from `.symlinks/plugins/ffmpeg_kit_flutter/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
-  - flutter_ffmpeg (from `.symlinks/plugins/flutter_ffmpeg/ios`)
-  - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
+  - flutter_image_compress_common (from `.symlinks/plugins/flutter_image_compress_common/ios`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
-  - image_picker (from `.symlinks/plugins/image_picker/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - intercom_flutter (from `.symlinks/plugins/intercom_flutter/ios`)
-  - OneSignal (< 3.0, >= 2.9.5)
   - onesignal_flutter (from `.symlinks/plugins/onesignal_flutter/ios`)
+  - OneSignalXCFramework (< 4.0, >= 3.4.3)
   - package_info (from `.symlinks/plugins/package_info/ios`)
-  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - screen (from `.symlinks/plugins/screen/ios`)
-  - share (from `.symlinks/plugins/share/ios`)
-  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - sentry_flutter (from `.symlinks/plugins/sentry_flutter/ios`)
+  - share_plus (from `.symlinks/plugins/share_plus/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - uni_links (from `.symlinks/plugins/uni_links/ios`)
-  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
-  - video_player (from `.symlinks/plugins/video_player/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
   - video_thumbnail (from `.symlinks/plugins/video_thumbnail/ios`)
   - wakelock (from `.symlinks/plugins/wakelock/ios`)
 
@@ -145,60 +169,65 @@ SPEC REPOS:
   trunk:
     - DKImagePickerController
     - DKPhotoGallery
+    - ffmpeg-kit-ios-https
     - FMDB
     - Intercom
     - libwebp
     - Mantle
-    - mobile-ffmpeg-https
-    - OneSignal
+    - OneSignalXCFramework
     - Reachability
     - SDWebImage
     - SDWebImageWebPCoder
+    - Sentry
+    - SentryPrivate
     - SwiftyGif
     - TOCropViewController
-    - VIMediaCache
 
 EXTERNAL SOURCES:
   connectivity:
     :path: ".symlinks/plugins/connectivity/ios"
   device_info:
     :path: ".symlinks/plugins/device_info/ios"
+  ffmpeg_kit_flutter:
+    :path: ".symlinks/plugins/ffmpeg_kit_flutter/ios"
   file_picker:
     :path: ".symlinks/plugins/file_picker/ios"
   Flutter:
     :path: Flutter
-  flutter_ffmpeg:
-    :path: ".symlinks/plugins/flutter_ffmpeg/ios"
-  flutter_image_compress:
-    :path: ".symlinks/plugins/flutter_image_compress/ios"
+  flutter_image_compress_common:
+    :path: ".symlinks/plugins/flutter_image_compress_common/ios"
   flutter_secure_storage:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   image_cropper:
     :path: ".symlinks/plugins/image_cropper/ios"
-  image_picker:
-    :path: ".symlinks/plugins/image_picker/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
   intercom_flutter:
     :path: ".symlinks/plugins/intercom_flutter/ios"
   onesignal_flutter:
     :path: ".symlinks/plugins/onesignal_flutter/ios"
   package_info:
     :path: ".symlinks/plugins/package_info/ios"
-  path_provider:
-    :path: ".symlinks/plugins/path_provider/ios"
+  package_info_plus:
+    :path: ".symlinks/plugins/package_info_plus/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   screen:
     :path: ".symlinks/plugins/screen/ios"
-  share:
-    :path: ".symlinks/plugins/share/ios"
-  shared_preferences:
-    :path: ".symlinks/plugins/shared_preferences/ios"
+  sentry_flutter:
+    :path: ".symlinks/plugins/sentry_flutter/ios"
+  share_plus:
+    :path: ".symlinks/plugins/share_plus/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
   uni_links:
     :path: ".symlinks/plugins/uni_links/ios"
-  url_launcher:
-    :path: ".symlinks/plugins/url_launcher/ios"
-  video_player:
-    :path: ".symlinks/plugins/video_player/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+  video_player_avfoundation:
+    :path: ".symlinks/plugins/video_player_avfoundation/ios"
   video_thumbnail:
     :path: ".symlinks/plugins/video_thumbnail/ios"
   wakelock:
@@ -207,41 +236,44 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
-  DKImagePickerController: b5eb7f7a388e4643264105d648d01f727110fc3d
+  DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
-  file_picker: 3e6c3790de664ccf9b882732d9db5eaf6b8d4eb1
-  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  flutter_ffmpeg: 657ce8a1502c3d25bf34efc58b380b248836f772
-  flutter_image_compress: 082f8daaf6c1b0c9fe798251c750ef0ecd98d7ae
-  flutter_secure_storage: 7953c38a04c3fdbb00571bcd87d8e3b5ceb9daec
+  ffmpeg-kit-ios-https: f9c838aa5400a6c5ba12324c6b798f52197ba354
+  ffmpeg_kit_flutter: 7b6a64db3b13e8961abe132f7ff63c9b9240027b
+  file_picker: ce3938a0df3cc1ef404671531facef740d03f920
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_image_compress_common: ec1d45c362c9d30a3f6a0426c297f47c52007e3e
+  flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  image_cropper: c8f9b4157933c7bb965a66d1c5e6c8fd408c6eb4
-  image_picker: 9c3312491f862b28d21ecd8fdf0ee14e601b3f09
-  Intercom: e44b10bbc38ccf6494c76f9bee4e2e3d7d007153
-  intercom_flutter: 8b168f7cad88366708aa1972a395e6195205fc3a
-  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
-  Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
-  mobile-ffmpeg-https: 311fc4a8f671cf36d1d6b8f421e8246b790978d9
-  OneSignal: 9531e385388565f4d31797ddadbe0fcc786430ec
-  onesignal_flutter: b4412973eac419ccce07363e43e0d6057c583a96
+  image_cropper: a3291c624a953049bc6a02e1f8c8ceb162a24b25
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  Intercom: 9e86f25934ada1073d762b9e0b00c7e6b3ccf1f4
+  intercom_flutter: b05745cc1214ab6e3a8d72069607ad451d26149f
+  libwebp: 33dc822fbbf4503668d09f7885bbfedc76c45e96
+  Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
+  onesignal_flutter: b8ac01bc3ebe47e798d7d775455c3a9b5b84f1c5
+  OneSignalXCFramework: 087934ab0d4d7445fcf1c015c7c782359e26c020
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
-  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   screen: abd91ca7bf3426e1cc3646d27e9b2358d6bf07b0
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
-  SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
-  share: 0b2c3e82132f5888bccca3351c504d0003b3b410
-  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
-  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
-  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
-  TOCropViewController: da59f531f8ac8a94ef6d6c0fc34009350f9e8bfe
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  SDWebImageWebPCoder: af09429398d99d524cae2fe00f6f0f6e491ed102
+  Sentry: e3203780941722a1fcfee99e351de14244c7f806
+  sentry_flutter: 8f0ffd53088e6a4d50c095852c5cad9e4405025c
+  SentryPrivate: 5e3683390f66611fc7c6215e27645873adb55d13
+  share_plus: 056a1e8ac890df3e33cb503afffaf1e9b4fbae68
+  shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
+  sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
+  SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
+  TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
   uni_links: d97da20c7701486ba192624d99bffaaffcfc298a
-  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
-  video_player: fd8b6188941ec5a530d6ab0830a34f78faa0452e
+  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
+  video_player_avfoundation: 81e49bb3d9fb63dccf9fa0f6d877dc3ddbeac126
   video_thumbnail: c4e2a3c539e247d4de13cd545344fd2d26ffafd1
-  VIMediaCache: aa650f82cb114c68a343beb4e67416cf5eb2f3a2
-  wakelock: 0d4a70faf8950410735e3f61fb15d517c8a6efc4
+  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
 
-PODFILE CHECKSUM: 7dc5841d149cfe653777ea843ecb3d27ccd3a8f2
+PODFILE CHECKSUM: 6f84bdc111eda8bb5fe45ea3d94ab58e03eaada7
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.12.1

@@ -1,4 +1,4 @@
-package social.openbook.app;
+package app.pictofeed.io;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

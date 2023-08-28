@@ -1,4 +1,4 @@
-package social.openbook.app.plugins;
+package app.pictofeed.io.plugins;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,8 +7,8 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import social.openbook.app.ImageConverter;
-import social.openbook.app.util.InputStreamSupplier;
+import app.pictofeed.io.ImageConverter;
+import app.pictofeed.io.util.InputStreamSupplier;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.EventChannel;
 

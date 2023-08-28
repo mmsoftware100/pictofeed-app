@@ -1,8 +1,8 @@
-package social.openbook.app.plugins;
+package app.pictofeed.io.plugins;
 
 import androidx.annotation.NonNull;
-import social.openbook.app.ImageConverter;
-import social.openbook.app.ImageConverter.TargetFormat;
+import app.pictofeed.io.ImageConverter;
+import app.pictofeed.io.ImageConverter.TargetFormat;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

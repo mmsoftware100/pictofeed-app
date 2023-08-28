@@ -1,9 +1,9 @@
-package social.openbook.app;
+package app.pictofeed.io;
 
 import android.content.Intent;
 import android.os.Bundle;
-import social.openbook.app.plugins.ImageConverterPlugin;
-import social.openbook.app.plugins.SharePlugin;
+import app.pictofeed.io.plugins.ImageConverterPlugin;
+import app.pictofeed.io.plugins.SharePlugin;
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.plugins.PluginRegistry;
 

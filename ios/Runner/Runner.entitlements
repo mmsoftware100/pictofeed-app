@@ -6,13 +6,12 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:www.openbook.social</string>
-		<string>applinks:www.okuna.io</string>
+		<string>applinks:www.pictofeed.io</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.social.openbook.app</string>
-		<string>group.social.openbook.app.onesignal</string>
+		<string>group.app.pictofeed.io</string>
+		<string>group.app.pictofeed.io.onesignal</string>
 	</array>
 </dict>
 </plist>

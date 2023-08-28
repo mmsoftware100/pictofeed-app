@@ -1,4 +1,4 @@
-package social.openbook.app.util;
+package app.pictofeed.io.util;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;

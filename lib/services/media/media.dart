@@ -13,7 +13,7 @@ import 'package:Okuna/services/validation.dart';
 import 'package:async/async.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ffmpeg/flutter_ffmpeg.dart';
+import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -303,16 +303,14 @@ class MediaService {
   Future<File> compressVideo(File video) async {
     File resultFile;
 
-    final FlutterFFmpeg _flutterFFmpeg = new FlutterFFmpeg();
-
     String resultFileName = 'compressed_video_' + _uuid.v4() + '.mp4';
     final path = await _getTempPath();
     final String resultFilePath = '$path/$resultFileName';
 
-    int exitCode = await _flutterFFmpeg.execute(
-        '-i ${video.path} -filter:v scale=720:-2 -vcodec libx264 -crf 23 -preset veryfast $resultFilePath');
+    var session = await FFmpegKit.execute('-i ${video.path} -filter:v scale=720:-2 -vcodec libx264 -crf 23 -preset veryfast $resultFilePath');
+    final returnCode = await session.getReturnCode();
 
-    if (exitCode == 0) {
+    if (returnCode == 0) {
       resultFile = File(resultFilePath);
     } else {
       debugPrint('Failed to compress video, using original file');
@@ -339,22 +337,18 @@ class MediaService {
   }
 
   CancelableOperation<File> convertGifToVideo(File gif) {
-    final FlutterFFmpeg _flutterFFmpeg = new FlutterFFmpeg();
-
     // Set a cancel flag which we can use if we need to cancel before the ffmpeg
     // process is started (can happen for two gif shares with a short time between,
     // since we have to wait for _getTempPath() before we can start ffmpeg.
     var isCancelled = false;
-    var ffmpegFuture =
-        _convertGifToVideo(_flutterFFmpeg, gif, () => isCancelled);
+    var ffmpegFuture = _convertGifToVideo(gif, () => isCancelled);
     return CancelableOperation.fromFuture(ffmpegFuture, onCancel: () {
       isCancelled = true;
-      _flutterFFmpeg.cancel();
+      FFmpegKit.cancel();
     });
   }
 
-  Future<File> _convertGifToVideo(
-      FlutterFFmpeg flutterFFmpeg, File gif, bool Function() doCancel) async {
+  Future<File> _convertGifToVideo(File gif, bool Function() doCancel) async {
     String resultFileName = _uuid.v4() + '.mp4';
     final path = await _getTempPath();
     final String sourceFilePath = gif.path;
@@ -362,8 +356,7 @@ class MediaService {
 
     var exitCode;
     if (!doCancel()) {
-      exitCode = await flutterFFmpeg.execute(
-          ' -loglevel debug -f gif -i $sourceFilePath -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop=\'floor(in_w/2)*2:floor(in_h/2)*2\' $resultFilePath');
+      exitCode = await FFmpegKit.execute(' -loglevel debug -f gif -i $sourceFilePath -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop=\'floor(in_w/2)*2:floor(in_h/2)*2\' $resultFilePath');
     }
 
     if (exitCode == 0) {
