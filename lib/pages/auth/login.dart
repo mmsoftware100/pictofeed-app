@@ -124,7 +124,7 @@ class OBAuthLoginPageState extends State<OBAuthLoginPage> {
       isLoading: _loginInProgress,
       minWidth: double.infinity,
       size: OBButtonSize.large,
-      child: Text(buttonText, style: TextStyle(fontSize: 18.0)),
+      child: Text("Log In", style: TextStyle(fontSize: 18.0)),
       onPressed: _submitForm,
     );
   }
@@ -141,11 +141,9 @@ class OBAuthLoginPageState extends State<OBAuthLoginPage> {
     String username = _usernameController.text.trim();
     String password = _passwordController.text;
     try {
-      await _userService.loginWithCredentials(
-          username: username, password: password);
+      await _userService.loginWithCredentials(username: username, password: password);
       Navigator.pop(context); //pop the login form screen
-      Navigator.pushReplacementNamed(
-          context, '/'); //replace the underlying login splash screen too
+      Navigator.pushNamed(context, '/');
     } on CredentialsMismatchError {
       _setLoginFeedback(
           _localizationService.trans(
@@ -164,22 +162,18 @@ class OBAuthLoginPageState extends State<OBAuthLoginPage> {
     String buttonText = _localizationService.trans('auth__login__previous');
 
     return OBSecondaryButton(
-      isFullWidth: true,
       isLarge: true,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Icon(Icons.arrow_back_ios),
-          const SizedBox(
-            width: 10.0,
-          ),
           Text(
-            buttonText,
+            "Sign Up",
             style: TextStyle(fontSize: 18.0),
           )
         ],
       ),
       onPressed: () {
-        Navigator.pop(context);
+
       },
     );
   }
@@ -212,10 +206,6 @@ class OBAuthLoginPageState extends State<OBAuthLoginPage> {
 
     return Column(
       children: <Widget>[
-        Text(
-          '👋',
-          style: TextStyle(fontSize: 45.0, color: Colors.black),
-        ),
         const SizedBox(
           height: 20.0,
         ),

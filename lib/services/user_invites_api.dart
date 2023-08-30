@@ -5,7 +5,7 @@ class UserInvitesApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const GET_USER_INVITES_PATH = 'api/invites/';
   static const SEARCH_USER_INVITES_PATH = 'api/invites/search/';
@@ -32,7 +32,7 @@ class UserInvitesApiService {
     Map<String, dynamic> body = {};
 
     body['nickname'] = nickname;
-  
+
     return _httpService.putMultiform(_makeApiUrl(CREATE_USER_INVITE_PATH),
         body: body, appendAuthorizationToken: true);
   }
@@ -91,7 +91,7 @@ class UserInvitesApiService {
     Map<String, dynamic> body = {};
 
     body['email'] = email;
-  
+
     return _httpService.post(_makeApiUrl(path),
         body: body,
         appendAuthorizationToken: true);

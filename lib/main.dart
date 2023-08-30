@@ -146,7 +146,7 @@ class _MyAppState extends State<MyApp> {
               },
               '/auth': (BuildContext context) {
                 bootstrapOpenbookProviderInContext(context);
-                return OBAuthSplashPage();
+                return OBAuthLoginPage();
               },
               '/auth/token': (BuildContext context) {
                 bootstrapOpenbookProviderInContext(context);

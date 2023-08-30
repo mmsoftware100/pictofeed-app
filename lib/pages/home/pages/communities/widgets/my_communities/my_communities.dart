@@ -202,7 +202,6 @@ class OBMyCommunitiesState extends State<OBMyCommunities>
       buttonText:_localizationService.community__refresh_text,
       buttonIcon: OBIcons.refresh,
       isLoading: _refreshInProgress,
-      assetImage: 'assets/images/stickers/got-it.png',
       //isLoading: _refreshInProgress,
     );
   }

@@ -3,7 +3,7 @@ import 'package:Okuna/services/httpie.dart';
 class EmojisApiService {
   late HttpieService _httpService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const GET_EMOJI_GROUPS_PATH = 'api/emojis/groups/';
 

@@ -3,7 +3,7 @@ import 'package:Okuna/services/httpie.dart';
 class ConnectionsApiService {
   late HttpieService _httpService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const CONNECT_WITH_USER_PATH = 'api/connections/connect/';
   static const DISCONNECT_FROM_USER_PATH = 'api/connections/disconnect/';

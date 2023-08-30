@@ -112,7 +112,6 @@ class OBMainCommunitiesPageState extends State<OBMainCommunitiesPage>
           onPressed: _refreshCategories,
           buttonText: _localizationService.community__communities_refresh_text,
           buttonIcon: OBIcons.refresh,
-          assetImage: 'assets/images/stickers/perplexed-owl.png',
           isLoading: _refreshInProgress,
         )
       ],

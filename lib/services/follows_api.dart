@@ -3,7 +3,7 @@ import 'package:Okuna/services/httpie.dart';
 class FollowsApiService {
   late HttpieService _httpService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const FOLLOW_USER_PATH = 'api/follows/follow/';
   static const REQUEST_TO_FOLLOW_USER_PATH = 'api/follows/requests/';

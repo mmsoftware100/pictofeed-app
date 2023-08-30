@@ -84,12 +84,12 @@ class OBProfilePageState extends State<OBProfilePage> {
                 User? user = snapshot.data;
                 if (user == null) return const SizedBox();
 
-                if (_postsDisplayContext ==
-                        OBPostDisplayContext.ownProfilePosts ||
-                    user.visibility != UserVisibility.private ||
-                    (user.isFollowing != null && user.isFollowing!)) {
-                  return _buildVisibleProfileContent();
-                }
+                //if (_postsDisplayContext ==
+                //        OBPostDisplayContext.ownProfilePosts ||
+                //    user.visibility != UserVisibility.private ||
+                //    (user.isFollowing != null && user.isFollowing!)) {
+                //  return _buildVisibleProfileContent();
+                //}
 
                 // User is private and its not us
                 return _buildProtectedProfileContent();

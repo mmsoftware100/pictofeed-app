@@ -65,8 +65,7 @@ class OBProfilePostsStreamStatusIndicator extends StatelessWidget {
           : localizationService.post__user_has_not_shared_anything(name ?? ''),
       onPressed: streamRefresher,
       buttonText: localizationService.post__trending_posts_refresh,
-      buttonIcon: OBIcons.refresh,
-      assetImage: 'assets/images/stickers/perplexed-owl.png',
+      buttonIcon: OBIcons.refresh
     );
   }
 }

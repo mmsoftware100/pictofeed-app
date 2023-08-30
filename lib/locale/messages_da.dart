@@ -459,7 +459,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "drawer__help" : MessageLookupByLibrary.simpleMessage("Support & Feedback"),
     "drawer__lists" : MessageLookupByLibrary.simpleMessage("Mine lister"),
     "drawer__logout" : MessageLookupByLibrary.simpleMessage("Log ud"),
-    "drawer__main_title" : MessageLookupByLibrary.simpleMessage("Mit Okuna"),
+    "drawer__main_title" : MessageLookupByLibrary.simpleMessage("Mit Account"),
     "drawer__menu_title" : MessageLookupByLibrary.simpleMessage("Menu"),
     "drawer__my_circles" : MessageLookupByLibrary.simpleMessage("Mine cirkler"),
     "drawer__my_followers" : MessageLookupByLibrary.simpleMessage("Mine følgere"),

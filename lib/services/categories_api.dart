@@ -3,7 +3,7 @@ import 'package:Okuna/services/httpie.dart';
 class CategoriesApiService {
   late HttpieService _httpService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const getCategoriesPath = 'api/categories/';
 

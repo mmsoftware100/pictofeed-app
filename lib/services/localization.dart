@@ -66,7 +66,7 @@ class LocalizationService {
   }
 
   String get auth__headline {
-    return Intl.message("Better social.", name: 'auth__headline');
+    return Intl.message("Pictofeed", name: 'auth__headline');
   }
 
   String get auth__login {
@@ -249,19 +249,19 @@ class LocalizationService {
   }
 
   String get auth__create_acc__name_empty_error {
-    return Intl.message("😱 Your name can't be empty.",
+    return Intl.message("Your name can't be empty.",
         name: 'auth__create_acc__name_empty_error');
   }
 
   String get auth__create_acc__name_length_error {
     return Intl.message(
-        "😱 Your name can't be longer than 50 characters. (If it is, we're very sorry.)",
+        "Your name can't be longer than 50 characters. (If it is, we're very sorry.)",
         name: 'auth__create_acc__name_length_error');
   }
 
   String get auth__create_acc__name_characters_error {
     return Intl.message(
-        "😅 A name can only contain alphanumeric characters (for now).",
+        "A name can only contain alphanumeric characters (for now).",
         name: 'auth__create_acc__name_characters_error');
   }
 
@@ -276,29 +276,29 @@ class LocalizationService {
   }
 
   String get auth__create_acc__username_empty_error {
-    return Intl.message("😱 The username can't be empty.",
+    return Intl.message("The username can't be empty.",
         name: 'auth__create_acc__username_empty_error');
   }
 
   String get auth__create_acc__username_length_error {
-    return Intl.message("😅 A username can't be longer than 30 characters.",
+    return Intl.message("A username can't be longer than 30 characters.",
         name: 'auth__create_acc__username_length_error');
   }
 
   String get auth__create_acc__username_characters_error {
     return Intl.message(
-        "😅 A username can only contain alphanumeric characters and underscores.",
+        "A username can only contain alphanumeric characters and underscores.",
         name: 'auth__create_acc__username_characters_error');
   }
 
   String get auth__create_acc__username_taken_error {
-    return Intl.message("😩 The username @%s is taken.",
+    return Intl.message("The username @%s is taken.",
         name: 'auth__create_acc__username_taken_error');
   }
 
   String get auth__create_acc__username_server_error {
     return Intl.message(
-        "😭 We're experiencing issues with our servers, please try again in a couple of minutes.",
+        "We're experiencing issues with our servers, please try again in a couple of minutes.",
         name: 'auth__create_acc__username_server_error');
   }
 
@@ -313,23 +313,23 @@ class LocalizationService {
   }
 
   String get auth__create_acc__email_empty_error {
-    return Intl.message("😱 Your email can't be empty",
+    return Intl.message("Your email can't be empty",
         name: 'auth__create_acc__email_empty_error');
   }
 
   String get auth__create_acc__email_invalid_error {
-    return Intl.message("😅 Please provide a valid email address.",
+    return Intl.message("Please provide a valid email address.",
         name: 'auth__create_acc__email_invalid_error');
   }
 
   String get auth__create_acc__email_taken_error {
-    return Intl.message("🤔 An account already exists for that email.",
+    return Intl.message("An account already exists for that email.",
         name: 'auth__create_acc__email_taken_error');
   }
 
   String get auth__create_acc__email_server_error {
     return Intl.message(
-        "😭 We're experiencing issues with our servers, please try again in a couple of minutes.",
+        "We're experiencing issues with our servers, please try again in a couple of minutes.",
         name: 'auth__create_acc__email_server_error');
   }
 
@@ -350,12 +350,12 @@ class LocalizationService {
   }
 
   String get auth__create_acc__password_empty_error {
-    return Intl.message("😱 Your password can't be empty",
+    return Intl.message("Your password can't be empty",
         name: 'auth__create_acc__password_empty_error');
   }
 
   String get auth__create_acc__password_length_error {
-    return Intl.message("😅 A password must be between 8 and 64 characters.",
+    return Intl.message("A password must be between 8 and 64 characters.",
         name: 'auth__create_acc__password_length_error');
   }
 
@@ -399,7 +399,7 @@ class LocalizationService {
   }
 
   String get auth__create_acc__suggested_communities {
-    return Intl.message("🥳 Get started by joining the following communities.",
+    return Intl.message("Get started by joining the following communities.",
         name: 'auth__create_acc__suggested_communities');
   }
 
@@ -420,13 +420,13 @@ class LocalizationService {
 
   String get auth__create_acc__submit_error_desc_server {
     return Intl.message(
-        "😭 We're experiencing issues with our servers, please try again in a couple of minutes.",
+        "We're experiencing issues with our servers, please try again in a couple of minutes.",
         name: 'auth__create_acc__submit_error_desc_server');
   }
 
   String get auth__create_acc__submit_error_desc_validation {
     return Intl.message(
-        "😅 It looks like some of the information was not right, please check and try again.",
+        "It looks like some of the information was not right, please check and try again.",
         name: 'auth__create_acc__submit_error_desc_validation');
   }
 
@@ -461,7 +461,7 @@ class LocalizationService {
 
   String get auth__create_acc__legal_confirmation_desc {
     return Intl.message(
-        "By registering in Okuna, I certify that I'm older than 16 years old and have read the Community Guidelines, Privacy Policy and Terms of Use and agree to all of the items included",
+        "By registering in Pictofeed, I certify that I'm older than 16 years old and have read the Community Guidelines, Privacy Policy and Terms of Use and agree to all of the items included",
         name: 'auth__create_acc__legal_confirmation_desc');
   }
 
@@ -477,7 +477,7 @@ class LocalizationService {
 
   String get auth__create_acc__legal_desc_extra {
     return Intl.message(
-        "They contain important information about your experience in Okuna and you will have to accept to them",
+        "They contain important information about your experience in Pictofeed and you will have to accept to them",
         name: 'auth__create_acc__legal_desc_extra');
   }
 
@@ -491,11 +491,11 @@ class LocalizationService {
   }
 
   String get auth__login__login {
-    return Intl.message("Continue", name: 'auth__login__login');
+    return Intl.message("Log In", name: 'auth__login__login');
   }
 
   String get auth__login__previous {
-    return Intl.message("Previous", name: 'auth__login__previous');
+    return Intl.message("Create new account", name: 'auth__login__previous');
   }
 
   String get auth__login__title {
@@ -620,11 +620,11 @@ class LocalizationService {
   }
 
   String get drawer__main_title {
-    return Intl.message("My Okuna", name: 'drawer__main_title');
+    return Intl.message("My Account", name: 'drawer__main_title');
   }
 
   String get drawer__my_circles {
-    return Intl.message("My circles", name: 'drawer__my_circles');
+    return Intl.message("My Circles", name: 'drawer__my_circles');
   }
 
   String get drawer__my_lists {
@@ -632,25 +632,23 @@ class LocalizationService {
   }
 
   String get drawer__my_followers {
-    return Intl.message("My followers", name: 'drawer__my_followers');
+    return Intl.message("My Followers", name: 'drawer__my_followers');
   }
 
   String get drawer__my_following {
-    return Intl.message("My following", name: 'drawer__my_following');
+    return Intl.message("My Following", name: 'drawer__my_following');
   }
 
   String get drawer__my_invites {
-    return Intl.message("My invites", name: 'drawer__my_invites');
+    return Intl.message("My Invites", name: 'drawer__my_invites');
   }
 
   String get drawer__my_pending_mod_tasks {
-    return Intl.message("My pending moderation tasks",
-        name: 'drawer__my_pending_mod_tasks');
+    return Intl.message("My pending moderation tasks", name: 'drawer__my_pending_mod_tasks');
   }
 
   String get drawer__my_mod_penalties {
-    return Intl.message("My moderation penalties",
-        name: 'drawer__my_mod_penalties');
+    return Intl.message("My moderation penalties", name: 'drawer__my_mod_penalties');
   }
 
   String get drawer__app_account_text {
@@ -784,7 +782,7 @@ class LocalizationService {
 
   String get drawer__useful_links_terms_of_use_desc {
     return Intl.message(
-        "The legal agreement between you and Okuna you must abide to in order to have access to the platform",
+        "The legal agreement between you and Pictofeed you must abide to in order to have access to the platform",
         name: 'drawer__useful_links_terms_of_use_desc');
   }
 
@@ -799,7 +797,7 @@ class LocalizationService {
   }
 
   String get drawer__useful_links_guidelines_roadmap {
-    return Intl.message("The Okuna roadmap",
+    return Intl.message("The Pictofeed roadmap",
         name: 'drawer__useful_links_guidelines_roadmap');
   }
 
@@ -830,7 +828,7 @@ class LocalizationService {
   }
 
   String get drawer__useful_links_guidelines_handbook {
-    return Intl.message("Okuna user guide",
+    return Intl.message("Pictofeed user guide",
         name: 'drawer__useful_links_guidelines_handbook');
   }
 
@@ -841,7 +839,7 @@ class LocalizationService {
   }
 
   String get drawer__useful_links_support {
-    return Intl.message("Support Okuna", name: 'drawer__useful_links_support');
+    return Intl.message("Support Pictofeed", name: 'drawer__useful_links_support');
   }
 
   String get drawer__useful_links_support_desc {
@@ -860,7 +858,7 @@ class LocalizationService {
   }
 
   String get drawer__useful_links_slack_channel_desc {
-    return Intl.message("A place to discuss everything about Okuna",
+    return Intl.message("A place to discuss everything about Pictofeed",
         name: 'drawer__useful_links_slack_channel_desc');
   }
 
@@ -1798,7 +1796,7 @@ class LocalizationService {
   }
 
   String get post__timeline_posts_all_loaded {
-    return Intl.message("🎉  All posts loaded",
+    return Intl.message("All posts loaded",
         name: 'post__timeline_posts_all_loaded');
   }
 
@@ -2513,7 +2511,7 @@ class LocalizationService {
   }
 
   String user__profile_okuna_age_toast(String age) {
-    return Intl.message("On Okuna since $age",
+    return Intl.message("On Pictofeed since $age",
         args: [age], name: 'user__profile_okuna_age_toast');
   }
 
@@ -2748,7 +2746,7 @@ class LocalizationService {
 
   String get user__manage_profile_visibility_title_desc {
     return Intl.message(
-        "Change whether your profile content is public, private or restricted to Okuna members.",
+        "Change whether your profile content is public, private or restricted to Pictofeed members.",
         name: 'user__manage_profile_visibility_title_desc');
   }
 
@@ -2842,10 +2840,10 @@ class LocalizationService {
   String user__invite_someone_message(String iosLink, String testFlightLink,
       String androidLink, String inviteLink) {
     return Intl.message(
-        "Hey, I'd like to invite you to Okuna.\n\n"
-        "For Apple, first, download the TestFlight app on iTunes ($testFlightLink) and then download the Okuna app ($iosLink)\n\n"
+        "Hey, I'd like to invite you to Pictofeed.\n\n"
+        "For Apple, first, download the TestFlight app on iTunes ($testFlightLink) and then download the Pictofeed app ($iosLink)\n\n"
         "For Android, download it from the Play store ($androidLink).\n\n"
-        "Second, paste this personalised invite link in the 'Sign up' form in the Okuna App: $inviteLink",
+        "Second, paste this personalised invite link in the 'Sign up' form in the Pictofeed App: $inviteLink",
         args: [iosLink, testFlightLink, androidLink, inviteLink],
         name: 'user__invite_someone_message');
   }
@@ -3289,7 +3287,7 @@ class LocalizationService {
   }
 
   String get user__confirm_guidelines_reject_info {
-    return Intl.message("You can't use Okuna until you accept the guidelines.",
+    return Intl.message("You can't use Pictofeed until you accept the guidelines.",
         name: 'user__confirm_guidelines_reject_info');
   }
 
@@ -3460,11 +3458,11 @@ class LocalizationService {
   }
 
   String get user__visibility_okuna {
-    return Intl.message("Okuna", name: 'user__visibility_okuna');
+    return Intl.message("Pictofeed", name: 'user__visibility_okuna');
   }
 
   String get user__visibility_okuna_desc {
-    return Intl.message("Only members of Okuna can see your profile.",
+    return Intl.message("Only members of Pictofeed can see your profile.",
         name: 'user__visibility_okuna_desc');
   }
 
@@ -3708,14 +3706,14 @@ class LocalizationService {
     return Intl.message(
         "[name] [username] has invited you to join community c/$communityName.",
         args: [communityName],
-        desc: "Eg.: James @jamest has invited you to join community c/okuna.",
+        desc: "Eg.: James @jamest has invited you to join community c/pictofeed.",
         name: 'notifications__user_community_invite_tile');
   }
 
   String notifications__community_new_post_tile(String communityName) {
     return Intl.message("There was a new post in c/$communityName.",
         args: [communityName],
-        desc: "Eg.: There was a new post in c/okuna.",
+        desc: "Eg.: There was a new post in c/pictofeed.",
         name: 'notifications__community_new_post_tile');
   }
 
@@ -3846,7 +3844,7 @@ class LocalizationService {
   }
 
   String get moderation__moderated_object_verified_by_staff {
-    return Intl.message("Verified by Okuna staff",
+    return Intl.message("Verified by Pictofeed staff",
         name: 'moderation__moderated_object_verified_by_staff');
   }
 
@@ -3934,8 +3932,8 @@ class LocalizationService {
   String get moderation__confirm_report_provide_happen_next_desc {
     return Intl.message(
         "- Your report will be submitted anonymously. \n"
-        "- If you are reporting a post or comment, the report will be sent to the Okuna staff and the community moderators if applicable and the post will be hidden from your feed. \n"
-        "- If you are reporting an account or community, it will be sent to the Okuna staff. \n"
+        "- If you are reporting a post or comment, the report will be sent to the Pictofeed staff and the community moderators if applicable and the post will be hidden from your feed. \n"
+        "- If you are reporting an account or community, it will be sent to the Pictofeed staff. \n"
         "- We'll review it, if approved, content will be deleted and penalties delivered to the people involved ranging from a temporary suspension to deletion of the account depending on the severity of the transgression. \n"
         "- If the report is found to be made in an attempt to damage the reputation of another member or community in the platform with no infringement of the stated reason, penalties will be applied to you. \n",
         name: 'moderation__confirm_report_provide_happen_next_desc');
@@ -4254,7 +4252,7 @@ class LocalizationService {
   }
 
   String get posts_stream__all_loaded {
-    return Intl.message("🎉  All posts loaded",
+    return Intl.message("All posts loaded",
         name: 'posts_stream__all_loaded');
   }
 
@@ -4294,7 +4292,7 @@ class LocalizationService {
   }
 
   String get posts_stream__status_tile_no_more_to_load {
-    return Intl.message("🎉  All posts loaded",
+    return Intl.message("All posts loaded",
         name: 'posts_stream__status_tile_no_more_to_load');
   }
 

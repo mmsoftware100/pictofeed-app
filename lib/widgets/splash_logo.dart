@@ -11,25 +11,8 @@ class OBSplashLogo extends StatelessWidget {
       children: <Widget>[
         Image.asset(
           'assets/images/openbook-o-logo.png',
-          height: 50.0,
-          width: 35.0,
-        ),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 10.0),
-          width: 2.0,
-          height: 20.0,
-          decoration: BoxDecoration(
-              color: Colors.black12,
-              borderRadius: BorderRadius.circular(100.0)),
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 10),
-          child: Text('Okuna',
-              style: TextStyle(
-                  fontSize: 38.0,
-                  fontFamily: 'CogogooseProSemilight'
-                //color: Colors.white
-              )),
+          height: 400.0,
+          width: 280.0,
         ),
       ],
     );

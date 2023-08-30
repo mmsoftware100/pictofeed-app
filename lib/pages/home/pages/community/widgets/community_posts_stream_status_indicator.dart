@@ -56,8 +56,7 @@ class OBCommunityPostsStreamStatusIndicator extends StatelessWidget {
       text: localizationService.posts_stream__status_tile_empty,
       onPressed: streamRefresher,
       buttonText: localizationService.post__trending_posts_refresh,
-      buttonIcon: OBIcons.refresh,
-      assetImage: 'assets/images/stickers/perplexed-owl.png',
+      buttonIcon: OBIcons.refresh
     );
   }
 }

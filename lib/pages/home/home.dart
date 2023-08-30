@@ -7,7 +7,6 @@ import 'package:Okuna/services/intercom.dart';
 import 'package:Okuna/services/media/media.dart';
 import 'package:Okuna/services/push_notifications/push_notifications.dart';
 import 'package:Okuna/models/user.dart';
-import 'package:Okuna/pages/home/pages/communities/communities.dart';
 import 'package:Okuna/pages/home/pages/notifications/notifications.dart';
 import 'package:Okuna/pages/home/pages/own_profile.dart';
 import 'package:Okuna/pages/home/pages/timeline/timeline.dart';
@@ -62,7 +61,6 @@ class OBHomePageState extends State<OBHomePage>
   late OBOwnProfilePageController _ownProfilePageController;
   late OBMainSearchPageController _searchPageController;
   late OBMainMenuPageController _mainMenuPageController;
-  late OBCommunitiesPageController _communitiesPageController;
   late OBNotificationsPageController _notificationsPageController;
 
   late int _loggedInUserUnreadNotifications;
@@ -81,7 +79,6 @@ class OBHomePageState extends State<OBHomePage>
     _ownProfilePageController = OBOwnProfilePageController();
     _searchPageController = OBMainSearchPageController();
     _mainMenuPageController = OBMainMenuPageController();
-    _communitiesPageController = OBCommunitiesPageController();
     _notificationsPageController = OBNotificationsPageController();
   }
 
@@ -149,11 +146,6 @@ class OBHomePageState extends State<OBHomePage>
           controller: _notificationsPageController,
         );
         break;
-      case OBHomePageTabs.communities:
-        page = OBMainCommunitiesPage(
-          controller: _communitiesPageController,
-        );
-        break;
       case OBHomePageTabs.profile:
         page = OBOwnProfilePage(controller: _ownProfilePageController);
         break;
@@ -192,15 +184,6 @@ class OBHomePageState extends State<OBHomePage>
             _ownProfilePageController.scrollToTop();
           } else {
             _ownProfilePageController.popUntilFirstRoute();
-          }
-        }
-
-        if (tappedTab == OBHomePageTabs.communities &&
-            currentTab == OBHomePageTabs.communities) {
-          if (_communitiesPageController.isFirstRoute()) {
-            _communitiesPageController.scrollToTop();
-          } else {
-            _communitiesPageController.popUntilFirstRoute();
           }
         }
 
@@ -253,14 +236,6 @@ class OBHomePageState extends State<OBHomePage>
           icon: const OBIcon(OBIcons.search),
           activeIcon: const OBIcon(
             OBIcons.search,
-            themeColor: OBIconThemeColor.primaryAccent,
-          ),
-        ),
-        BottomNavigationBarItem(
-          label: '',
-          icon: const OBIcon(OBIcons.communities),
-          activeIcon: const OBIcon(
-            OBIcons.communities,
             themeColor: OBIconThemeColor.primaryAccent,
           ),
         ),
@@ -350,9 +325,6 @@ class OBHomePageState extends State<OBHomePage>
     switch (currentTab) {
       case OBHomePageTabs.notifications:
         currentTabController = _notificationsPageController;
-        break;
-      case OBHomePageTabs.communities:
-        currentTabController = _communitiesPageController;
         break;
       case OBHomePageTabs.timeline:
         currentTabController = _timelinePageController;
@@ -512,7 +484,6 @@ class OBHomePageState extends State<OBHomePage>
 enum OBHomePageTabs {
   timeline,
   search,
-  communities,
   notifications,
   profile,
   menu

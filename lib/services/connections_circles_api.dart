@@ -6,7 +6,7 @@ class ConnectionsCirclesApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const GET_CIRCLES_PATH = 'api/circles/';
   static const CREATE_CIRCLE_PATH = 'api/circles/';

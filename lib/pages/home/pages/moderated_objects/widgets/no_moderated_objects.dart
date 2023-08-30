@@ -13,8 +13,7 @@ class OBNoModeratedObjects extends StatelessWidget {
       text: 'No moderation items',
       onPressed: onWantsToRefreshModeratedObjects,
       buttonText: 'Refresh',
-      buttonIcon: OBIcons.refresh,
-      assetImage: 'assets/images/stickers/perplexed-owl.png',
+      buttonIcon: OBIcons.refresh
     );
   }
 }

@@ -80,7 +80,6 @@ class OBTrendingCommunitiesState extends State<OBTrendingCommunities>
       onPressed: _refreshTrendingCommunities,
       buttonText: _localizationService.community__trending_refresh,
       buttonIcon: OBIcons.refresh,
-      assetImage: 'assets/images/stickers/perplexed-owl.png',
       isLoading: _refreshInProgress,
     );
   }

@@ -7,7 +7,7 @@ class CommunitiesApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const SEARCH_COMMUNITIES_PATH = 'api/communities/search/';
   static const GET_TRENDING_COMMUNITIES_PATH = 'api/communities/trending/';
@@ -141,7 +141,7 @@ class CommunitiesApiService {
     }
 
     body['is_draft'] = isDraft;
-  
+
     if (text != null && text.length > 0) {
       body['text'] = text;
     }

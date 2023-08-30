@@ -171,10 +171,6 @@ class OBUserInvitesPageState extends State<OBUserInvitesPage> {
         ? _localizationService.user__invites_none_used
         : _localizationService.user__invites_none_left;
 
-    String assetImage = hasInvites
-        ? 'assets/images/stickers/perplexed-owl.png'
-        : 'assets/images/stickers/owl-instructor.png';
-
     VoidCallback _onPressed = hasInvites
         ? _onWantsToCreateInvite
         : _refreshInvites;
@@ -188,8 +184,7 @@ class OBUserInvitesPageState extends State<OBUserInvitesPage> {
       onPressed: _onPressed,
       buttonText: buttonText,
       buttonIcon: hasInvites ? OBIcons.add : OBIcons.refresh,
-      isLoading: _refreshInProgress,
-      assetImage: assetImage,
+      isLoading: _refreshInProgress
     );
   }
 

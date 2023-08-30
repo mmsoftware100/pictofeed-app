@@ -5,7 +5,7 @@ class ModerationApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const GET_GLOBAL_MODERATED_OBJECTS_PATH =
       'api/moderation/moderated-objects/global/';

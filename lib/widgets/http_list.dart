@@ -331,8 +331,7 @@ class OBHttpListState<T> extends State<OBHttpList<T>> {
           onPressed: _refreshList,
           buttonText:
               _localizationService.trans('user_search__list_refresh_text'),
-          buttonIcon: OBIcons.refresh,
-          assetImage: 'assets/images/stickers/perplexed-owl.png',
+          buttonIcon: OBIcons.refresh
         )
       ],
     ));

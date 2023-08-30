@@ -53,7 +53,7 @@ class OBMainMenuPage extends StatelessWidget {
                       padding: EdgeInsets.zero,
                       children: <Widget>[
                         OBTileGroupTitle(
-                          title: localizationService.drawer__main_title,
+                          title: "My Account",
                         ),
                         ListTile(
                           leading: const OBIcon(OBIcons.circles),
@@ -95,34 +95,6 @@ class OBMainMenuPage extends StatelessWidget {
                                 context: context);
                           },
                         ),
-                        ListTile(
-                          leading: const OBIcon(OBIcons.communityModerators),
-                          title: OBText(localizationService.drawer__my_pending_mod_tasks),
-                          onTap: () async {
-                            await navigationService
-                                .navigateToMyModerationTasksPage(
-                                    context: context);
-                            userService.refreshUser();
-                          },
-                          trailing: OBBadge(
-                            size: 25,
-                            count: user.pendingCommunitiesModeratedObjectsCount,
-                          ),
-                        ),
-                        ListTile(
-                          leading: const OBIcon(OBIcons.moderationPenalties),
-                          title: OBText(localizationService.drawer__my_mod_penalties),
-                          onTap: () async {
-                            await navigationService
-                                .navigateToMyModerationPenaltiesPage(
-                                    context: context);
-                            userService.refreshUser();
-                          },
-                          trailing: OBBadge(
-                            size: 25,
-                            count: user.activeModerationPenaltiesCount,
-                          ),
-                        ),
                         OBTileGroupTitle(
                           title: localizationService.drawer__app_account_text,
                         ),
@@ -131,14 +103,6 @@ class OBMainMenuPage extends StatelessWidget {
                           title: OBText(localizationService.drawer__settings),
                           onTap: () {
                             navigationService.navigateToSettingsPage(
-                                context: context);
-                          },
-                        ),
-                        ListTile(
-                          leading: const OBIcon(OBIcons.themes),
-                          title: OBText(localizationService.drawer__themes),
-                          onTap: () {
-                            navigationService.navigateToThemesPage(
                                 context: context);
                           },
                         ),
@@ -183,13 +147,18 @@ class OBMainMenuPage extends StatelessWidget {
                             );
                           },
                         ),
-                        ListTile(
-                          leading: const OBIcon(OBIcons.link),
-                          title: OBText(localizationService.drawer__useful_links_title),
-                          onTap: () {
-                            navigationService.navigateToUsefulLinksPage(
-                                context: context);
-                          },
+                        //ListTile(
+                        //  leading: const OBIcon(OBIcons.link),
+                        //  title: OBText(localizationService.drawer__useful_links_title),
+                        //  onTap: () {
+                        //    navigationService.navigateToUsefulLinksPage(
+                        //        context: context);
+                        //  },
+                        //),
+                        Divider(
+                          color: Colors.black,
+                          endIndent: 16,
+                          indent: 16
                         ),
                         ListTile(
                           leading: const OBIcon(OBIcons.logout),

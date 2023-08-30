@@ -5,7 +5,7 @@ class HashtagsApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const SEARCH_HASHTAGS_PATH = 'api/hashtags/search/';
   static const GET_TRENDING_HASHTAGS_PATH = 'api/hashtags/trending/';

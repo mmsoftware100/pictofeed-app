@@ -8,7 +8,7 @@ class AuthApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL = "http://15.204.219.205:80/";
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const CHECK_USERNAME_PATH = 'api/auth/username-check/';
   static const CHECK_EMAIL_PATH = 'api/auth/email-check/';

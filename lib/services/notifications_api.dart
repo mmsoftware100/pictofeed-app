@@ -6,7 +6,7 @@ class NotificationsApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const NOTIFICATIONS_PATH = 'api/notifications/';
   static const NOTIFICATIONS_READ_PATH = 'api/notifications/read/';

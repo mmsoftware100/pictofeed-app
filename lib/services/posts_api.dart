@@ -7,7 +7,7 @@ class PostsApiService {
   late HttpieService _httpService;
   late StringTemplateService _stringTemplateService;
 
-  late String apiURL;
+  late String apiURL = "https://api.pictofeed.io/";
 
   static const GET_POSTS_PATH = 'api/posts/';
   static const GET_TOP_POSTS_PATH = 'api/posts/top/';
@@ -165,7 +165,7 @@ class PostsApiService {
     }
 
     body['is_draft'] = isDraft;
-  
+
     if (circleIds != null && circleIds.length > 0) {
       body['circle_id'] = circleIds.join(',');
     }

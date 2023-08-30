@@ -23,7 +23,6 @@ class OBPostsStreamDrHoo extends StatelessWidget {
   Widget build(BuildContext context) {
     String drHooTitle;
     String drHooSubtitle;
-    String drHooImage = 'assets/images/stickers/owl-instructor.png';
     bool hasRefreshButton = false;
 
     OpenbookProviderState openbookProvider = OpenbookProvider.of(context);
@@ -33,40 +32,29 @@ class OBPostsStreamDrHoo extends StatelessWidget {
     switch (streamStatus) {
       case OBPostsStreamStatus.refreshing:
         drHooTitle = localizationService.posts_stream__refreshing_drhoo_title;
-        drHooSubtitle =
-            localizationService.posts_stream__refreshing_drhoo_subtitle;
+        drHooSubtitle = localizationService.posts_stream__refreshing_drhoo_subtitle;
         break;
       case OBPostsStreamStatus.noMoreToLoad:
         drHooTitle = localizationService.posts_stream__empty_drhoo_title;
         drHooSubtitle = localizationService.posts_stream__empty_drhoo_subtitle;
         break;
       case OBPostsStreamStatus.loadingMoreFailed:
-        drHooImage = 'assets/images/stickers/perplexed-owl.png';
-        drHooTitle =
-            localizationService.post__timeline_posts_failed_drhoo_title;
-        drHooSubtitle =
-            localizationService.post__timeline_posts_failed_drhoo_subtitle;
+        drHooTitle = localizationService.post__timeline_posts_failed_drhoo_title;
+        drHooSubtitle = localizationService.post__timeline_posts_failed_drhoo_subtitle;
         hasRefreshButton = true;
         break;
       case OBPostsStreamStatus.empty:
-        drHooImage = 'assets/images/stickers/perplexed-owl.png';
         drHooTitle = localizationService.posts_stream__empty_drhoo_title;
         drHooSubtitle = localizationService.posts_stream__empty_drhoo_subtitle;
         hasRefreshButton = true;
         break;
       default:
-        drHooTitle =
-            localizationService.post__timeline_posts_default_drhoo_title;
-        drHooSubtitle =
-            localizationService.post__timeline_posts_default_drhoo_subtitle;
+        drHooTitle = localizationService.post__timeline_posts_default_drhoo_title;
+        drHooSubtitle = localizationService.post__timeline_posts_default_drhoo_subtitle;
         hasRefreshButton = true;
     }
 
     List<Widget> drHooColumnItems = [
-      Image.asset(
-        drHooImage,
-        height: 100,
-      ),
       const SizedBox(
         height: 20.0,
       ),

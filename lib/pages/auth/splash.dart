@@ -26,11 +26,7 @@ class OBAuthSplashPageState extends State<OBAuthSplashPage> {
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: new AssetImage('assets/images/splash-background.png'),
-                fit: BoxFit.cover),
-        color: Colors.white),
+        color: Colors.white,
         padding: EdgeInsets.symmetric(horizontal: 40.0),
         child: Center(child: SingleChildScrollView(child: _buildLogo())),
       ),
@@ -61,20 +57,12 @@ class OBAuthSplashPageState extends State<OBAuthSplashPage> {
   }
 
   Widget _buildLogo() {
-    String headlineText = localizationService.trans('auth__headline');
-
     return Column(
       children: <Widget>[
         OBSplashLogo(),
         const SizedBox(
           height: 20.0,
-        ),
-        Text(headlineText,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 22.0,
-              //color: Colors.white
-            ))
+        )
       ],
     );
   }
