@@ -108,11 +108,11 @@ class OBTopPostsState extends State<OBTopPosts>
                 OBPrimaryAccentText(_localizationService.post__top_posts_title,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-                OBIconButton(
-                  OBIcons.settings,
-                  themeColor: OBIconThemeColor.primaryAccent,
-                  onPressed: _onWantsToSeeTopPostSettings,
-                )
+                //OBIconButton(
+                //  OBIcons.settings,
+                //  themeColor: OBIconThemeColor.primaryAccent,
+                //  onPressed: _onWantsToSeeTopPostSettings,
+                //)
               ],
             ),
           )
