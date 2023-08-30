@@ -43,8 +43,6 @@ class OBNotificationsSettingsPageState
   late bool _followRequestNotifications;
   late bool _followRequestApprovedNotifications;
   late bool _connectionRequestNotifications;
-  late bool _communityInviteNotifications;
-  late bool _communityNewPostNotifications;
   late bool _userNewPostNotifications;
 
   @override
@@ -61,8 +59,6 @@ class OBNotificationsSettingsPageState
     _followRequestNotifications = true;
     _followRequestApprovedNotifications = true;
     _connectionRequestNotifications = true;
-    _communityInviteNotifications = true;
-    _communityNewPostNotifications = true;
     _userNewPostNotifications = true;
     _postUserMentionNotifications = true;
     _postCommentUserMentionNotifications = true;
@@ -237,27 +233,6 @@ class OBNotificationsSettingsPageState
           hasDivider: false,
         ),
         OBToggleField(
-          key: Key('Community invite'),
-          value: _communityInviteNotifications,
-          title: _localizationService
-              .trans('notifications__community_invite_title'),
-          subtitle: OBText(_localizationService
-              .trans('notifications__community_invite_desc')),
-          onChanged: _setCommunityInviteNotifications,
-          onTap: _toggleCommunityInviteNotifications,
-          hasDivider: false,
-        ),
-        OBToggleField(
-          key: Key('Community new post'),
-          value: _communityNewPostNotifications,
-          title: _localizationService.notifications__community_new_post_title,
-          subtitle: OBText(_localizationService
-              .notifications__community_new_post_desc),
-          onChanged: _setCommunityNewPostNotifications,
-          onTap: _toggleCommunityNewPostNotifications,
-          hasDivider: false,
-        ),
-        OBToggleField(
           key: Key('User new post'),
           value: _userNewPostNotifications,
           title: _localizationService.notifications__user_new_post_title,
@@ -337,30 +312,6 @@ class OBNotificationsSettingsPageState
   void _setFollowRequestApprovedNotifications(bool newValue) {
     setState(() {
       _followRequestApprovedNotifications = newValue;
-    });
-
-    _submitNotificationsSettings();
-  }
-
-  void _toggleCommunityInviteNotifications() {
-    _setCommunityInviteNotifications(!_communityInviteNotifications);
-  }
-
-  void _setCommunityInviteNotifications(bool newValue) {
-    setState(() {
-      _communityInviteNotifications = newValue;
-    });
-
-    _submitNotificationsSettings();
-  }
-
-  void _toggleCommunityNewPostNotifications() {
-    _setCommunityNewPostNotifications(!_communityNewPostNotifications);
-  }
-
-  void _setCommunityNewPostNotifications(bool newValue) {
-    setState(() {
-      _communityNewPostNotifications = newValue;
     });
 
     _submitNotificationsSettings();
@@ -492,9 +443,7 @@ class OBNotificationsSettingsPageState
           postCommentReactionNotifications: _postCommentReactionNotifications,
           postReactionNotifications: _postReactionNotifications,
           connectionRequestNotifications: _connectionRequestNotifications,
-          communityNewPostNotifications: _communityNewPostNotifications,
-          userNewPostNotifications: _userNewPostNotifications,
-          communityInviteNotifications: _communityInviteNotifications);
+          userNewPostNotifications: _userNewPostNotifications);
     } catch (error) {
       _onError(error);
     }
@@ -518,28 +467,17 @@ class OBNotificationsSettingsPageState
   void _setNotificationsSettings(
       UserNotificationsSettings notificationSettings) {
     setState(() {
-      _connectionRequestNotifications =
-          notificationSettings.connectionRequestNotifications ?? false;
+      _connectionRequestNotifications = notificationSettings.connectionRequestNotifications ?? false;
       _postCommentNotifications = notificationSettings.postCommentNotifications ?? false;
-      _postCommentReactionNotifications =
-          notificationSettings.postCommentReactionNotifications ?? false;
-      _postCommentUserMentionNotifications =
-          notificationSettings.postCommentUserMentionNotifications ?? false;
-      _postUserMentionNotifications =
-          notificationSettings.postUserMentionNotifications ?? false;
-      _postCommentReplyNotifications =
-          notificationSettings.postCommentReplyNotifications ?? false;
-      _postReactionNotifications =
-          notificationSettings.postReactionNotifications ?? false;
+      _postCommentReactionNotifications = notificationSettings.postCommentReactionNotifications ?? false;
+      _postCommentUserMentionNotifications = notificationSettings.postCommentUserMentionNotifications ?? false;
+      _postUserMentionNotifications = notificationSettings.postUserMentionNotifications ?? false;
+      _postCommentReplyNotifications = notificationSettings.postCommentReplyNotifications ?? false;
+      _postReactionNotifications = notificationSettings.postReactionNotifications ?? false;
       _followNotifications = notificationSettings.followNotifications ?? false;
       _followRequestNotifications = notificationSettings.followRequestNotifications ?? false;
       _followRequestApprovedNotifications = notificationSettings.followRequestApprovedNotifications ?? false;
-      _communityInviteNotifications =
-          notificationSettings.communityInviteNotifications ?? false;
-      _communityNewPostNotifications =
-          notificationSettings.communityNewPostNotifications ?? false;
-      _userNewPostNotifications =
-          notificationSettings.userNewPostNotifications ?? false;
+      _userNewPostNotifications = notificationSettings.userNewPostNotifications ?? false;
     });
   }
 

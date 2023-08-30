@@ -93,10 +93,6 @@ class OBManageProfilePageState extends State<OBManageProfilePage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  OBDisplayProfileCommunityPostsToggleTile(
-                    user: widget.user,
-                    onChanged: _onCommunityPostsVisibleChanged,
-                  ),
                   _buildExcludedCommunitiesTile(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
