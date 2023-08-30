@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'package:Okuna/models/communities_list.dart';
-import 'package:Okuna/models/community.dart';
 import 'package:Okuna/models/hashtag.dart';
 import 'package:Okuna/models/hashtags_list.dart';
 import 'package:Okuna/models/theme.dart';
@@ -50,11 +48,9 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
 
   late bool _hasSearch;
   late bool _userSearchRequestInProgress;
-  late bool _communitySearchRequestInProgress;
   late bool _hashtagSearchRequestInProgress;
   String? _searchQuery;
   late List<User> _userSearchResults;
-  late List<Community> _communitySearchResults;
   late List<Hashtag> _hashtagSearchResults;
   late OBTopPostsController _topPostsController;
   late OBTrendingPostsController _trendingPostsController;
@@ -68,7 +64,6 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
   late OBUserSearchResultsTab _selectedSearchResultsTab;
 
   StreamSubscription<UsersList>? _getUsersWithQuerySubscription;
-  StreamSubscription<CommunitiesList>? _getCommunitiesWithQuerySubscription;
   StreamSubscription<HashtagsList>? _getHashtagsWithQuerySubscription;
 
   late Throttling _setScrollPositionThrottler;
@@ -86,12 +81,10 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
     _topPostsController = OBTopPostsController();
     _trendingPostsController = OBTrendingPostsController();
     _userSearchRequestInProgress = false;
-    _communitySearchRequestInProgress = false;
     _hashtagSearchRequestInProgress = false;
     _hasSearch = false;
     _heightTabs = HEIGHT_TABS_SECTION;
     _userSearchResults = [];
-    _communitySearchResults = [];
     _hashtagSearchResults = [];
     _selectedSearchResultsTab = OBUserSearchResultsTab.users;
     _tabController = new TabController(length: 2, vsync: this);
@@ -169,12 +162,9 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
             searchQuery: _searchQuery ?? '',
             userResults: _userSearchResults,
             userSearchInProgress: _userSearchRequestInProgress,
-            communityResults: _communitySearchResults,
-            communitySearchInProgress: _communitySearchRequestInProgress,
             hashtagResults: _hashtagSearchResults,
             hashtagSearchInProgress: _hashtagSearchRequestInProgress,
             onUserPressed: _onSearchUserPressed,
-            onCommunityPressed: _onSearchCommunityPressed,
             onHashtagPressed: _onSearchHashtagPressed,
             selectedTab: _selectedSearchResultsTab,
             onScroll: _onScrollSearchResults,
@@ -228,7 +218,7 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
             children: <Widget>[
               OBSearchBar(
                 onSearch: _onSearch,
-                hintText: _localizationService.user_search__search_text,
+                hintText: "Search for usernames, hashtags...",
               ),
               _hasSearch
                   ? const SizedBox(height: 0)
@@ -313,7 +303,6 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
 
     return Future.wait([
       _searchForUsersWithQuery(cleanedUpQuery),
-      _searchForCommunitiesWithQuery(cleanedUpQuery),
       _searchForHashtagsWithQuery(cleanedUpQuery)
     ]);
   }
@@ -345,23 +334,6 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
             onError: _onError,
             onDone: () {
               _setUserSearchRequestInProgress(false);
-            });
-  }
-
-  Future<void> _searchForCommunitiesWithQuery(String query) async {
-    if (_getCommunitiesWithQuerySubscription != null)
-      _getCommunitiesWithQuerySubscription!.cancel();
-
-    _setCommunitySearchRequestInProgress(true);
-
-    _getCommunitiesWithQuerySubscription =
-        _userService.searchCommunitiesWithQuery(query).asStream().listen(
-            (CommunitiesList communitiesList) {
-              _setCommunitySearchResults(communitiesList.communities ?? []);
-            },
-            onError: _onError,
-            onDone: () {
-              _setCommunitySearchRequestInProgress(false);
             });
   }
 
@@ -406,12 +378,6 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
     });
   }
 
-  void _setCommunitySearchRequestInProgress(bool requestInProgress) {
-    setState(() {
-      _communitySearchRequestInProgress = requestInProgress;
-    });
-  }
-
   void _setHashtagSearchRequestInProgress(bool requestInProgress) {
     setState(() {
       _hashtagSearchRequestInProgress = requestInProgress;
@@ -451,12 +417,6 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
     });
   }
 
-  void _setCommunitySearchResults(List<Community> searchResults) {
-    setState(() {
-      _communitySearchResults = searchResults;
-    });
-  }
-
   void _setHashtagSearchResults(List<Hashtag> searchResults) {
     setState(() {
       _hashtagSearchResults = searchResults;
@@ -466,12 +426,6 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
   void _onSearchUserPressed(User user) {
     _hideKeyboard();
     _navigationService.navigateToUserProfile(user: user, context: context);
-  }
-
-  void _onSearchCommunityPressed(Community community) {
-    _hideKeyboard();
-    _navigationService.navigateToCommunity(
-        community: community, context: context);
   }
 
   void _onSearchHashtagPressed(Hashtag hashtag) {

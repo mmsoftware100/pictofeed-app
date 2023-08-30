@@ -1,4 +1,3 @@
-import 'package:Okuna/models/community.dart';
 import 'package:Okuna/models/hashtag.dart';
 import 'package:Okuna/models/theme.dart';
 import 'package:Okuna/models/user.dart';
@@ -9,39 +8,32 @@ import 'package:Okuna/services/theme_value_parser.dart';
 import 'package:Okuna/widgets/icon.dart';
 import 'package:Okuna/widgets/progress_indicator.dart';
 import 'package:Okuna/widgets/theming/text.dart';
-import 'package:Okuna/widgets/tiles/community_tile.dart';
 import 'package:Okuna/widgets/tiles/hashtag_tile.dart';
 import 'package:Okuna/widgets/tiles/user_tile.dart';
 import 'package:flutter/material.dart';
 
 class OBSearchResults extends StatefulWidget {
   final List<User> userResults;
-  final List<Community> communityResults;
   final List<Hashtag> hashtagResults;
   final String searchQuery;
   final ValueChanged<User> onUserPressed;
-  final ValueChanged<Community> onCommunityPressed;
   final ValueChanged<Hashtag> onHashtagPressed;
   final ValueChanged<OBUserSearchResultsTab> onTabSelectionChanged;
   final VoidCallback onScroll;
   final OBUserSearchResultsTab selectedTab;
   final bool userSearchInProgress;
-  final bool communitySearchInProgress;
   final bool hashtagSearchInProgress;
 
   const OBSearchResults(
       {Key? key,
       required this.userResults,
       this.selectedTab = OBUserSearchResultsTab.users,
-      required this.communityResults,
       required this.hashtagResults,
       this.userSearchInProgress = false,
-      this.communitySearchInProgress = false,
       this.hashtagSearchInProgress = false,
       required this.searchQuery,
       required this.onUserPressed,
       required this.onScroll,
-      required this.onCommunityPressed,
       required this.onHashtagPressed,
       required this.onTabSelectionChanged})
       : super(key: key);
@@ -64,9 +56,6 @@ class OBSearchResultsState extends State<OBSearchResults>
     switch (widget.selectedTab) {
       case OBUserSearchResultsTab.users:
         _tabController.index = 0;
-        break;
-      case OBUserSearchResultsTab.communities:
-        _tabController.index = 1;
         break;
       case OBUserSearchResultsTab.hashtags:
         _tabController.index = 2;
@@ -118,11 +107,6 @@ class OBSearchResultsState extends State<OBSearchResults>
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 5),
-              child: Tab(
-                  text: _localizationService.trans('user_search__communities')),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
               child: Tab(text: _localizationService.user_search__hashtags),
             )
           ],
@@ -135,7 +119,6 @@ class OBSearchResultsState extends State<OBSearchResults>
             controller: _tabController,
             children: [
               _buildUserResults(),
-              _buildCommunityResults(),
               _buildHashtagResults()
             ],
           ),
@@ -179,51 +162,6 @@ class OBSearchResultsState extends State<OBSearchResults>
             return OBUserTile(
               user,
               onUserTilePressed: widget.onUserPressed,
-            );
-          }),
-    );
-  }
-
-  Widget _buildCommunityResults() {
-    return NotificationListener(
-      onNotification: (ScrollNotification notification) {
-        widget.onScroll();
-        return true;
-      },
-      child: ListView.separated(
-          separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(
-              height: 10,
-            );
-          },
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          physics: const ClampingScrollPhysics(),
-          itemCount: widget.communityResults.length + 1,
-          itemBuilder: (BuildContext context, int index) {
-            if (index == widget.communityResults.length) {
-              String searchQuery = widget.searchQuery;
-              if (widget.communitySearchInProgress) {
-                // Search in progress
-                return ListTile(
-                    leading: OBProgressIndicator(),
-                    title: OBText(_localizationService
-                        .user_search__searching_for(searchQuery)));
-              } else if (widget.communityResults.isEmpty) {
-                // Results were empty
-                return ListTile(
-                    leading: OBIcon(OBIcons.sad),
-                    title: OBText(_localizationService
-                        .user_search__no_communities_for(searchQuery)));
-              } else {
-                return SizedBox();
-              }
-            }
-
-            Community community = widget.communityResults[index];
-
-            return OBCommunityTile(
-              community,
-              onCommunityTilePressed: widget.onCommunityPressed,
             );
           }),
     );
@@ -286,9 +224,6 @@ class OBSearchResultsState extends State<OBSearchResults>
       } else if (searchQuery.startsWith('@') &&
           currentTab != OBUserSearchResultsTab.users) {
         _setCurrentTab(OBUserSearchResultsTab.users);
-      } else if (searchQuery.startsWith('c/') &&
-          currentTab != OBUserSearchResultsTab.communities) {
-        _setCurrentTab(OBUserSearchResultsTab.communities);
       }
     }
   }
@@ -305,4 +240,4 @@ class OBSearchResultsState extends State<OBSearchResults>
   }
 }
 
-enum OBUserSearchResultsTab { users, communities, hashtags }
+enum OBUserSearchResultsTab { users, hashtags }
