@@ -1936,7 +1936,7 @@ class LocalizationService {
   }
 
   String get post__world_circle_name {
-    return Intl.message("World", name: 'post__world_circle_name');
+    return Intl.message("Public", name: 'post__world_circle_name');
   }
 
   String get post__search_circles {

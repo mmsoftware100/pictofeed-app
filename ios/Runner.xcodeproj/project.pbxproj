@@ -72,13 +72,6 @@
 			remoteGlobalIDString = 308378B6ADC631E53C97B459FBCD7A32;
 			remoteInfo = file_picker;
 		};
-		6B6AEC512A9D02850064C02F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8980538D22047AAE00E47AD9 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6C38C109921DC83F83BCDB4B2CE6FA2B;
-			remoteInfo = flutter_ffmpeg;
-		};
 		6B6AEC532A9D02850064C02F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8980538D22047AAE00E47AD9 /* Pods.xcodeproj */;
@@ -289,6 +282,20 @@
 			remoteGlobalIDString = 315E7D4955EFF42177E9BBC4382B527F;
 			remoteInfo = wakelock;
 		};
+		6BB2DD292A9ED15100461F64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8980538D22047AAE00E47AD9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02AEBCCC3A32744A8780583FEDC52A4C;
+			remoteInfo = ffmpeg_kit_flutter;
+		};
+		6BB2DD2B2A9ED15100461F64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8980538D22047AAE00E47AD9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4AF3B972C94DFF11700E306F18F01DF3;
+			remoteInfo = "Pods-OneSignalNotificationServiceExtension";
+		};
 		898053A922047AAF00E47AD9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8980538D22047AAE00E47AD9 /* Pods.xcodeproj */;
@@ -441,14 +448,14 @@
 		8980538E22047AAE00E47AD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B6AEC442A9D02850064C02F /* connectivity.framework */,
+				6B6AEC442A9D02850064C02F /* connectivity */,
 				6B6AEC462A9D02850064C02F /* device_info */,
 				6B6AEC482A9D02850064C02F /* DKImagePickerController */,
 				6B6AEC4A2A9D02850064C02F /* DKImagePickerController-DKImagePickerController */,
 				6B6AEC4C2A9D02850064C02F /* DKPhotoGallery */,
 				6B6AEC4E2A9D02850064C02F /* DKPhotoGallery-DKPhotoGallery */,
+				6BB2DD2A2A9ED15100461F64 /* ffmpeg_kit_flutter */,
 				6B6AEC502A9D02850064C02F /* file_picker */,
-				6B6AEC522A9D02850064C02F /* flutter_ffmpeg */,
 				6B6AEC542A9D02850064C02F /* flutter_image_compress_common */,
 				6B6AEC562A9D02850064C02F /* flutter_secure_storage */,
 				6B6AEC582A9D02850064C02F /* FMDB */,
@@ -461,6 +468,7 @@
 				6B6AEC662A9D02850064C02F /* package_info */,
 				6B6AEC682A9D02850064C02F /* package_info_plus */,
 				6B6AEC6A2A9D02850064C02F /* path_provider_foundation */,
+				6BB2DD2C2A9ED15100461F64 /* Pods-OneSignalNotificationServiceExtension */,
 				898053AA22047AAF00E47AD9 /* Pods-Runner */,
 				6B6AEC6C2A9D02850064C02F /* Reachability */,
 				6B6AEC6E2A9D02850064C02F /* screen */,
@@ -673,9 +681,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6B6AEC442A9D02850064C02F /* connectivity.framework */ = {
+		6B6AEC442A9D02850064C02F /* connectivity */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
+			name = connectivity;
 			path = connectivity.framework;
 			remoteRef = 6B6AEC432A9D02850064C02F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -726,14 +735,6 @@
 			name = file_picker;
 			path = file_picker.framework;
 			remoteRef = 6B6AEC4F2A9D02850064C02F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6B6AEC522A9D02850064C02F /* flutter_ffmpeg */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			name = flutter_ffmpeg;
-			path = flutter_ffmpeg.framework;
-			remoteRef = 6B6AEC512A9D02850064C02F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6B6AEC542A9D02850064C02F /* flutter_image_compress_common */ = {
@@ -974,6 +975,22 @@
 			name = wakelock;
 			path = wakelock.framework;
 			remoteRef = 6B6AEC8D2A9D02850064C02F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6BB2DD2A2A9ED15100461F64 /* ffmpeg_kit_flutter */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = ffmpeg_kit_flutter;
+			path = ffmpeg_kit_flutter.framework;
+			remoteRef = 6BB2DD292A9ED15100461F64 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6BB2DD2C2A9ED15100461F64 /* Pods-OneSignalNotificationServiceExtension */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-OneSignalNotificationServiceExtension";
+			path = Pods_OneSignalNotificationServiceExtension.framework;
+			remoteRef = 6BB2DD2B2A9ED15100461F64 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		898053AA22047AAF00E47AD9 /* Pods-Runner */ = {

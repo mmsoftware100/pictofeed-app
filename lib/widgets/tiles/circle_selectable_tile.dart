@@ -29,8 +29,7 @@ class OBCircleSelectableTile extends StatelessWidget {
       isDisabled: isDisabled,
       value: isSelected ?? false,
       title: circle.name!,
-      subtitle:
-          usersCount != null ? localizationService.user__circle_peoples_count(prettyCount!) : null,
+      subtitle: circle.name != 'Public' ? usersCount != null ? localizationService.user__circle_peoples_count(prettyCount!) : null : 'This post will share to all of Pictofeed.',
       onTap: () {
         if (onCirclePressed != null) {
           onCirclePressed!(circle);

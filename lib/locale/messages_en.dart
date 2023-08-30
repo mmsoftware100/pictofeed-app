@@ -753,7 +753,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "post__undo_exclude_post_community" : MessageLookupByLibrary.simpleMessage("Show posts from this community"),
     "post__user_has_not_shared_anything" : m34,
     "post__usernames_circles" : m35,
-    "post__world_circle_name" : MessageLookupByLibrary.simpleMessage("World"),
+    "post__world_circle_name" : MessageLookupByLibrary.simpleMessage("Public"),
     "post__you_shared_with" : MessageLookupByLibrary.simpleMessage("You shared with"),
     "post_body_link_preview__empty" : MessageLookupByLibrary.simpleMessage("This link could not be previewed"),
     "post_body_link_preview__error_with_description" : m36,

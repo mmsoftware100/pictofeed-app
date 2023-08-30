@@ -37,16 +37,16 @@ class OBSharePostWithCirclesPageState
   late List<Circle> _circleSearchResults;
   late List<Circle> _selectedCircles;
   late List<Circle> _disabledCircles;
-  late Circle _fakeWorldCircle;
+  late Circle _fakePublicCircle;
   Circle? _connectionsCircle;
-  late bool _fakeWorldCircleSelected;
+  late bool _fakePublicCircleSelected;
 
   late String _circleSearchQuery;
 
   @override
   void initState() {
     super.initState();
-    _fakeWorldCircleSelected = false;
+    _fakePublicCircleSelected = false;
     _circles = [];
     _circleSearchResults = _circles.toList();
     _selectedCircles = [];
@@ -63,8 +63,8 @@ class OBSharePostWithCirclesPageState
 
     if (_needsBootstrap) {
       _bootstrap();
-      _fakeWorldCircle =
-          Circle(id: 1, name: _localizationService.trans('post__world_circle_name'), color: '#023ca7', usersCount: 7700000000);
+      _fakePublicCircle =
+          Circle(id: 1, name: _localizationService.trans('post__world_circle_name'), color: '#49be25', usersCount: 0);
       _needsBootstrap = false;
     }
 
@@ -99,7 +99,7 @@ class OBSharePostWithCirclesPageState
       trailing: OBButton(
         size: OBButtonSize.small,
         type: OBButtonType.primary,
-        isDisabled: _selectedCircles.length == 0 && !_fakeWorldCircleSelected,
+        isDisabled: _selectedCircles.length == 0 && !_fakePublicCircleSelected,
         onPressed: createPost,
         child: Text(_localizationService.trans('post__share')),
       ),
@@ -153,7 +153,7 @@ class OBSharePostWithCirclesPageState
   Future<void> createPost() async {
     List<Circle> selectedCircles;
 
-    if (_fakeWorldCircleSelected) {
+    if (_fakePublicCircleSelected) {
       selectedCircles = [];
     } else if (_selectedCircles.contains(_connectionsCircle)) {
       selectedCircles = [ _connectionsCircle! ];
@@ -169,11 +169,11 @@ class OBSharePostWithCirclesPageState
   void _onCirclePressed(Circle pressedCircle) {
     if (_selectedCircles.contains(pressedCircle)) {
       // Remove
-      if (pressedCircle == _fakeWorldCircle) {
+      if (pressedCircle == _fakePublicCircle) {
         // Enable all other circles
         _setDisabledCircles([]);
         _setSelectedCircles([]);
-        _setFakeWorldCircleSelected(false);
+        _setFakePublicCircleSelected(false);
       } else if (pressedCircle == _connectionsCircle) {
         _setDisabledCircles([]);
         _setSelectedCircles([]);
@@ -182,16 +182,16 @@ class OBSharePostWithCirclesPageState
       }
     } else {
       // Add
-      if (pressedCircle == _fakeWorldCircle) {
+      if (pressedCircle == _fakePublicCircle) {
         // Add all circles
         _setSelectedCircles(_circles.toList());
         var disabledCircles = _circles.toList();
-        disabledCircles.remove(_fakeWorldCircle);
+        disabledCircles.remove(_fakePublicCircle);
         _setDisabledCircles(disabledCircles);
-        _setFakeWorldCircleSelected(true);
+        _setFakePublicCircleSelected(true);
       } else if (pressedCircle == _connectionsCircle) {
         var circles = _circles.toList();
-        circles.remove(_fakeWorldCircle);
+        circles.remove(_fakePublicCircle);
         _setSelectedCircles(circles);
         circles = circles.toList();
         circles.remove(_connectionsCircle);
@@ -239,7 +239,7 @@ class OBSharePostWithCirclesPageState
       _circles.remove(_connectionsCircle);
       _circles.insert(0, _connectionsCircle!);
       // Add fake world circle
-      _circles.insert(0, _fakeWorldCircle);
+      _circles.insert(0, _fakePublicCircle);
       _selectedCircles = [];
       _circleSearchResults = circles.toList();
     });
@@ -281,9 +281,9 @@ class OBSharePostWithCirclesPageState
     });
   }
 
-  void _setFakeWorldCircleSelected(bool fakeWorldCircleSelected) {
+  void _setFakePublicCircleSelected(bool fakePublicCircleSelected) {
     setState(() {
-      _fakeWorldCircleSelected = fakeWorldCircleSelected;
+      _fakePublicCircleSelected = fakePublicCircleSelected;
     });
   }
 }

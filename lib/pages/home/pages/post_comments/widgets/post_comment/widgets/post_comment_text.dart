@@ -66,7 +66,7 @@ class OBPostCommentTextState extends State<OBPostCommentText> {
                       context: context,
                       type: ToastType.info);
                 },
-                child: _getActionableSmartText(widget.postComment.isEdited ?? false),
+                child: _getActionableSmartText(false),
               ),
             ),
           ],
@@ -91,14 +91,9 @@ class OBPostCommentTextState extends State<OBPostCommentText> {
         loggedInUser.canTranslatePostComment(widget.postComment, widget.post)) {
       return GestureDetector(
         onTap: _toggleTranslatePostComment,
-        child: _translatedText != null
-            ? OBSecondaryText(
+        child: OBSecondaryText(
                 _localizationService.user__translate_show_original,
-                size: OBTextSize.large)
-            : OBSecondaryText(
-                _localizationService.user__translate_see_translation,
-                size: OBTextSize.large),
-      );
+                size: OBTextSize.large));
     } else {
       return SizedBox();
     }
