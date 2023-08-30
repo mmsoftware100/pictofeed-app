@@ -123,7 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m49(groupName) => "See all ${groupName}";
 
-  static m50(iosLink, testFlightLink, androidLink, inviteLink) => "Hey, I\'d like to invite you to Okuna.\n\nFor Apple, first, download the TestFlight app on iTunes (${testFlightLink}) and then download the Okuna app (${iosLink})\n\nFor Android, download it from the Play store (${androidLink}).\n\nSecond, paste this personalised invite link in the \'Sign up\' form in the Okuna App: ${inviteLink}";
+  static m50(iosLink, testFlightLink, androidLink, inviteLink) => "Hey, I\'d like to invite you to Pictofeed.\n\nFor Apple, first, download the TestFlight app on iTunes (${testFlightLink}) and then download the Pictofeed app (${iosLink})\n\nFor Android, download it from the Play store (${androidLink}).\n\nSecond, paste this personalised invite link in the \'Sign up\' form in the Pictofeed App: ${inviteLink}";
 
   static m51(username) => "Joined with username @${username}";
 
@@ -135,7 +135,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m55(maxLength) => "Location can\'t be longer than ${maxLength} characters.";
 
-  static m56(age) => "On Okuna since ${age}";
+  static m56(age) => "On Pictofeed since ${age}";
 
   static m57(takenConnectionsCircleName) => "Circle name \'${takenConnectionsCircleName}\' is taken";
 
@@ -480,7 +480,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "drawer__profile" : MessageLookupByLibrary.simpleMessage("Profile"),
     "drawer__settings" : MessageLookupByLibrary.simpleMessage("Settings"),
     "drawer__themes" : MessageLookupByLibrary.simpleMessage("Themes"),
-    "drawer__useful_links_guidelines" : MessageLookupByLibrary.simpleMessage("Okuna guidelines"),
+    "drawer__useful_links_guidelines" : MessageLookupByLibrary.simpleMessage("Pictofeed guidelines"),
     "drawer__useful_links_guidelines_bug_tracker" : MessageLookupByLibrary.simpleMessage("Bug tracker"),
     "drawer__useful_links_guidelines_bug_tracker_desc" : MessageLookupByLibrary.simpleMessage("Report a bug or upvote existing bugs"),
     "drawer__useful_links_guidelines_desc" : MessageLookupByLibrary.simpleMessage("The guidelines we\'re all expected to follow for a healthy and friendly co-existence."),
@@ -488,13 +488,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "drawer__useful_links_guidelines_feature_requests_desc" : MessageLookupByLibrary.simpleMessage("Request a feature or upvote existing requests"),
     "drawer__useful_links_guidelines_github" : MessageLookupByLibrary.simpleMessage("Github project board"),
     "drawer__useful_links_guidelines_github_desc" : MessageLookupByLibrary.simpleMessage("Take a look at what we\'re currently working on"),
-    "drawer__useful_links_guidelines_handbook" : MessageLookupByLibrary.simpleMessage("Okuna user guide"),
+    "drawer__useful_links_guidelines_handbook" : MessageLookupByLibrary.simpleMessage("Pictofeed user guide"),
     "drawer__useful_links_guidelines_handbook_desc" : MessageLookupByLibrary.simpleMessage("A book with everything there is to know about using the platform"),
-    "drawer__useful_links_guidelines_roadmap" : MessageLookupByLibrary.simpleMessage("The Okuna roadmap"),
+    "drawer__useful_links_guidelines_roadmap" : MessageLookupByLibrary.simpleMessage("The Pictofeed roadmap"),
     "drawer__useful_links_guidelines_roadmap_desc" : MessageLookupByLibrary.simpleMessage("Take a look at what we\'re planning to do in the future"),
     "drawer__useful_links_slack_channel" : MessageLookupByLibrary.simpleMessage("Community Slack channel"),
-    "drawer__useful_links_slack_channel_desc" : MessageLookupByLibrary.simpleMessage("A place to discuss everything about Okuna"),
-    "drawer__useful_links_support" : MessageLookupByLibrary.simpleMessage("Support Okuna"),
+    "drawer__useful_links_slack_channel_desc" : MessageLookupByLibrary.simpleMessage("A place to discuss everything about Pictofeed"),
+    "drawer__useful_links_support" : MessageLookupByLibrary.simpleMessage("Support Pictofeed"),
     "drawer__useful_links_support_desc" : MessageLookupByLibrary.simpleMessage("Find a way you can support us on our journey!"),
     "drawer__useful_links_title" : MessageLookupByLibrary.simpleMessage("Useful Links"),
     "error__no_internet_connection" : MessageLookupByLibrary.simpleMessage("No internet connection"),
@@ -523,7 +523,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "moderation__confirm_report_post_reported" : MessageLookupByLibrary.simpleMessage("Post reported"),
     "moderation__confirm_report_provide_details" : MessageLookupByLibrary.simpleMessage("Can you provide extra details that might be relevant to the report?"),
     "moderation__confirm_report_provide_happen_next" : MessageLookupByLibrary.simpleMessage("Here\'s what will happen next:"),
-    "moderation__confirm_report_provide_happen_next_desc" : MessageLookupByLibrary.simpleMessage("- Your report will be submitted anonymously. \n- If you are reporting a post or comment, the report will be sent to the Okuna staff and the community moderators if applicable and the post will be hidden from your feed. \n- If you are reporting an account or community, it will be sent to the Okuna staff. \n- We\'ll review it, if approved, content will be deleted and penalties delivered to the people involved ranging from a temporary suspension to deletion of the account depending on the severity of the transgression. \n- If the report is found to be made in an attempt to damage the reputation of another member or community in the platform with no infringement of the stated reason, penalties will be applied to you. \n"),
+    "moderation__confirm_report_provide_happen_next_desc" : MessageLookupByLibrary.simpleMessage("- Your report will be submitted anonymously. \n- If you are reporting a post or comment, the report will be sent to the Pictofeed staff and the community moderators if applicable and the post will be hidden from your feed. \n- If you are reporting an account or community, it will be sent to the Pictofeed staff. \n- We\'ll review it, if approved, content will be deleted and penalties delivered to the people involved ranging from a temporary suspension to deletion of the account depending on the severity of the transgression. \n- If the report is found to be made in an attempt to damage the reputation of another member or community in the platform with no infringement of the stated reason, penalties will be applied to you. \n"),
     "moderation__confirm_report_provide_optional_hint_text" : MessageLookupByLibrary.simpleMessage("Type here..."),
     "moderation__confirm_report_provide_optional_info" : MessageLookupByLibrary.simpleMessage("(Optional)"),
     "moderation__confirm_report_submit" : MessageLookupByLibrary.simpleMessage("I understand, submit."),
@@ -548,7 +548,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "moderation__moderated_object_title" : MessageLookupByLibrary.simpleMessage("Object"),
     "moderation__moderated_object_true_text" : MessageLookupByLibrary.simpleMessage("True"),
     "moderation__moderated_object_verified" : MessageLookupByLibrary.simpleMessage("Verified"),
-    "moderation__moderated_object_verified_by_staff" : MessageLookupByLibrary.simpleMessage("Verified by Okuna staff"),
+    "moderation__moderated_object_verified_by_staff" : MessageLookupByLibrary.simpleMessage("Verified by Pictofeed staff"),
     "moderation__my_moderation_penalties_resouce_singular" : MessageLookupByLibrary.simpleMessage("moderation penalty"),
     "moderation__my_moderation_penalties_resource_plural" : MessageLookupByLibrary.simpleMessage("moderation penalties"),
     "moderation__my_moderation_penalties_title" : MessageLookupByLibrary.simpleMessage("Moderation penalties"),
@@ -737,7 +737,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "post__time_short_seconds" : MessageLookupByLibrary.simpleMessage("s"),
     "post__time_short_weeks" : MessageLookupByLibrary.simpleMessage("w"),
     "post__time_short_years" : MessageLookupByLibrary.simpleMessage("y"),
-    "post__timeline_posts_all_loaded" : MessageLookupByLibrary.simpleMessage("🎉  All posts loaded"),
+    "post__timeline_posts_all_loaded" : MessageLookupByLibrary.simpleMessage("All posts loaded"),
     "post__timeline_posts_default_drhoo_subtitle" : MessageLookupByLibrary.simpleMessage("Try refreshing the timeline."),
     "post__timeline_posts_default_drhoo_title" : MessageLookupByLibrary.simpleMessage("Something\'s not right."),
     "post__timeline_posts_failed_drhoo_subtitle" : MessageLookupByLibrary.simpleMessage("Try again in a couple seconds"),
@@ -768,7 +768,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "post_uploader__publishing" : MessageLookupByLibrary.simpleMessage("Publishing post..."),
     "post_uploader__success" : MessageLookupByLibrary.simpleMessage("Success!"),
     "post_uploader__uploading_media" : MessageLookupByLibrary.simpleMessage("Uploading media..."),
-    "posts_stream__all_loaded" : MessageLookupByLibrary.simpleMessage("🎉  All posts loaded"),
+    "posts_stream__all_loaded" : MessageLookupByLibrary.simpleMessage("All posts loaded"),
     "posts_stream__empty_drhoo_subtitle" : MessageLookupByLibrary.simpleMessage("Try refreshing in a couple of seconds."),
     "posts_stream__empty_drhoo_title" : MessageLookupByLibrary.simpleMessage("This stream is empty."),
     "posts_stream__failed_drhoo_subtitle" : MessageLookupByLibrary.simpleMessage("Try again in a couple seconds"),
@@ -776,7 +776,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "posts_stream__refreshing_drhoo_subtitle" : MessageLookupByLibrary.simpleMessage("Refreshing the stream."),
     "posts_stream__refreshing_drhoo_title" : MessageLookupByLibrary.simpleMessage("Hang in there!"),
     "posts_stream__status_tile_empty" : MessageLookupByLibrary.simpleMessage("No posts found"),
-    "posts_stream__status_tile_no_more_to_load" : MessageLookupByLibrary.simpleMessage("🎉  All posts loaded"),
+    "posts_stream__status_tile_no_more_to_load" : MessageLookupByLibrary.simpleMessage("All posts loaded"),
     "user__add_account_done" : MessageLookupByLibrary.simpleMessage("Done"),
     "user__add_account_save" : MessageLookupByLibrary.simpleMessage("Save"),
     "user__add_account_success" : MessageLookupByLibrary.simpleMessage("Success"),
@@ -819,7 +819,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "user__confirm_guidelines_reject_chat_with_team" : MessageLookupByLibrary.simpleMessage("Chat with the team."),
     "user__confirm_guidelines_reject_delete_account" : MessageLookupByLibrary.simpleMessage("Delete account"),
     "user__confirm_guidelines_reject_go_back" : MessageLookupByLibrary.simpleMessage("Go back"),
-    "user__confirm_guidelines_reject_info" : MessageLookupByLibrary.simpleMessage("You can\'t use Okuna until you accept the guidelines."),
+    "user__confirm_guidelines_reject_info" : MessageLookupByLibrary.simpleMessage("You can\'t use Pictofeed until you accept the guidelines."),
     "user__confirm_guidelines_reject_join_slack" : MessageLookupByLibrary.simpleMessage("Join the Slack channel."),
     "user__confirm_guidelines_reject_title" : MessageLookupByLibrary.simpleMessage("Guidelines Rejection"),
     "user__connect_to_user_add_connection" : MessageLookupByLibrary.simpleMessage("Add connection to circle"),
@@ -833,7 +833,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "user__connections_header_users" : MessageLookupByLibrary.simpleMessage("Users"),
     "user__delete_account_confirmation_desc" : MessageLookupByLibrary.simpleMessage("Are you sure you want to delete your account?"),
     "user__delete_account_confirmation_desc_info" : MessageLookupByLibrary.simpleMessage("This is a permanent action and can\'t be undone."),
-    "user__delete_account_confirmation_goodbye" : MessageLookupByLibrary.simpleMessage("Goodbye 😢"),
+    "user__delete_account_confirmation_goodbye" : MessageLookupByLibrary.simpleMessage("Goodbye"),
     "user__delete_account_confirmation_no" : MessageLookupByLibrary.simpleMessage("No"),
     "user__delete_account_confirmation_title" : MessageLookupByLibrary.simpleMessage("Confirmation"),
     "user__delete_account_confirmation_yes" : MessageLookupByLibrary.simpleMessage("Yes"),

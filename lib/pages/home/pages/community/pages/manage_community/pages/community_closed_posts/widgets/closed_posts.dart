@@ -132,7 +132,7 @@ class OBCommunityClosedPostsState extends State<OBCommunityClosedPosts> {
                     postWidget,
                     ListTile(
                       title: OBSecondaryText(
-                        '🎉  All posts loaded',
+                        'All posts loaded',
                         textAlign: TextAlign.center,
                       ),
                     ),
