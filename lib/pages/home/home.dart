@@ -38,7 +38,7 @@ class OBHomePage extends StatefulWidget {
 
 class OBHomePageState extends State<OBHomePage>
     with WidgetsBindingObserver {
-  static const String oneSignalAppId = '66074bf4-9943-4504-a011-531c2635698b';
+  static const String oneSignalAppId = 'ff85e11d-c3dc-4f5b-a982-ca23c7228bc7';
   late UserService _userService;
   late ToastService _toastService;
   late PushNotificationsService _pushNotificationsService;

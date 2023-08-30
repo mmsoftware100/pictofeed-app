@@ -14,18 +14,15 @@ import 'package:rxdart/rxdart.dart';
 import 'package:onesignal_flutter/src/permission.dart';
 
 class PushNotificationsService {
-  static const String oneSignalAppId = '66074bf4-9943-4504-a011-531c2635698b';
+  static const String oneSignalAppId = 'ff85e11d-c3dc-4f5b-a982-ca23c7228bc7';
 
   late UserService _userService;
 
-  Stream<PushNotification> get pushNotification =>
-      _pushNotificationSubject.stream;
+  Stream<PushNotification> get pushNotification => _pushNotificationSubject.stream;
   final _pushNotificationSubject = PublishSubject<PushNotification>();
 
-  Stream<PushNotificationOpenedResult> get pushNotificationOpened =>
-      _pushNotificationOpenedSubject.stream;
-  final _pushNotificationOpenedSubject =
-      PublishSubject<PushNotificationOpenedResult>();
+  Stream<PushNotificationOpenedResult> get pushNotificationOpened => _pushNotificationOpenedSubject.stream;
+  final _pushNotificationOpenedSubject = PublishSubject<PushNotificationOpenedResult>();
 
   late OBStorage _pushNotificationsStorage;
   static const String promptedUserForPermissionsStorageKey = 'promptedUser';
