@@ -605,9 +605,9 @@ typedef OBPostsStreamStatusIndicatorBuilder = Widget Function(
     required List<Widget> streamPrependedItems,
     required Function streamRefresher});
 
-typedef Widget OBPostsStreamPostBuilder(
-    {BuildContext context,
-    Post post,
-    OBPostDisplayContext displayContext,
-    String postIdentifier,
-    ValueChanged<Post> onPostDeleted});
+typedef OBPostsStreamPostBuilder = Widget Function(
+    {required BuildContext context,
+    required Post post,
+    required OBPostDisplayContext displayContext,
+    required String postIdentifier,
+    required ValueChanged<Post> onPostDeleted});

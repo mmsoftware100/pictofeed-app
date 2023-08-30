@@ -84,12 +84,12 @@ class OBProfilePageState extends State<OBProfilePage> {
                 User? user = snapshot.data;
                 if (user == null) return const SizedBox();
 
-                //if (_postsDisplayContext ==
-                //        OBPostDisplayContext.ownProfilePosts ||
-                //    user.visibility != UserVisibility.private ||
-                //    (user.isFollowing != null && user.isFollowing!)) {
-                //  return _buildVisibleProfileContent();
-                //}
+                if (_postsDisplayContext ==
+                        OBPostDisplayContext.ownProfilePosts ||
+                    user.visibility != UserVisibility.private ||
+                    (user.isFollowing != null && user.isFollowing!)) {
+                  return _buildVisibleProfileContent();
+                }
 
                 // User is private and its not us
                 return _buildProtectedProfileContent();
@@ -107,7 +107,7 @@ class OBProfilePageState extends State<OBProfilePage> {
               displayContext: _postsDisplayContext,
               prependedItems: _buildProfileContentDetails(),
               controller: _obPostsStreamController,
-              postBuilder: _buildPostsStreamPost as OBPostsStreamPostBuilder, // TODO: I don't understand why I have to do this.
+              postBuilder: _buildPostsStreamPost,
               secondaryRefresher: _refreshUser,
               refresher: _refreshPosts,
               onScrollLoader: _loadMorePosts,
