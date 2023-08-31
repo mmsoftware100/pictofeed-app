@@ -36,15 +36,7 @@ class OBApplicationSettingsPage extends StatelessWidget {
                 title: _localizationService.application_settings__link_previews,
               ),
             ),
-            OBLinkPreviewsSettingTile(),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: OBTileGroupTitle(
-                title:
-                    _localizationService.application_settings__hashtags,
-              ),
-            ),
-            OBHashtagsDisplaySettingTile()
+            OBLinkPreviewsSettingTile()
           ],
         ),
       ),
