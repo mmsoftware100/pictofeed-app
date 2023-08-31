@@ -37,7 +37,7 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
       color: Colors.transparent,
       elevation: 0.0,
       child: Container(
-        padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 30.0),
+        padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -59,7 +59,7 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
   Widget _buildFinished() {
     String title = localizationService.auth__create_acc__done_title;
     String accCreated = localizationService.auth__create_acc__done_created;
-    accCreated = 'Your acount has been created.';
+    accCreated = 'Your account has been created.';
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
