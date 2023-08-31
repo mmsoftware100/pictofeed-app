@@ -46,7 +46,7 @@ class OBAcceptStepPageState extends State<OBAcceptStepPage> {
         color: Colors.transparent,
         elevation: 0.0,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          padding: EdgeInsets.only(bottom: 10),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,19 +65,10 @@ class OBAcceptStepPageState extends State<OBAcceptStepPage> {
   Widget _buildConfirmLegalAgeText() {
     return Column(
       children: <Widget>[
-        SizedBox(width: 10.0),
-        Text(
-          '👩‍⚖️',
-          style: TextStyle(fontSize: 45.0, color: Colors.white),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(
-          height: 20.0,
-        ),
         Text(
           _localizationService.auth__create_acc__legal_confirmation,
           style: TextStyle(
-              fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.grey),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -85,7 +76,7 @@ class OBAcceptStepPageState extends State<OBAcceptStepPage> {
         ),
         Text(
           _localizationService.auth__create_acc__legal_confirmation_desc,
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color: Colors.black, fontSize: 16),
           textAlign: TextAlign.center,
         ),
       ],

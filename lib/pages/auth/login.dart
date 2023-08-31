@@ -85,10 +85,7 @@ class OBAuthLoginPageState extends State<OBAuthLoginPage> {
           color: Colors.transparent,
           elevation: 0.0,
           child: Padding(
-            padding: EdgeInsets.only(bottom: 20.0 + MediaQuery
-                .of(context)
-                .viewInsets
-                .bottom, top: 20.0, left: 20.0, right: 20.0),
+            padding: EdgeInsets.only(bottom: 10),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -173,7 +170,7 @@ class OBAuthLoginPageState extends State<OBAuthLoginPage> {
         ],
       ),
       onPressed: () {
-
+        Navigator.pushNamed(context, '/auth/name_step');
       },
     );
   }

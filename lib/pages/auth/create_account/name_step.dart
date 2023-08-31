@@ -50,12 +50,12 @@ class OBAuthNameStepPageState extends State<OBAuthNameStepPage> {
                   ],
                 ))),
       ),
-      backgroundColor: Color(0xFF9013FE),
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         elevation: 0.0,
         child: Padding(
-          padding: EdgeInsets.only(bottom: 20.0 + MediaQuery.of(context).viewInsets.bottom, top: 20.0, left: 20.0, right: 20.0),
+          padding: EdgeInsets.only(bottom: 10),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,14 +106,14 @@ class OBAuthNameStepPageState extends State<OBAuthNameStepPage> {
         children: <Widget>[
           Icon(
             Icons.arrow_back_ios,
-            color: Colors.white,
+            color: Colors.black,
           ),
           const SizedBox(
             width: 10.0,
           ),
           Text(
             buttonText,
-            style: TextStyle(fontSize: 18.0, color: Colors.white),
+            style: TextStyle(fontSize: 18.0, color: Colors.black),
           )
         ],
       ),
@@ -129,10 +129,6 @@ class OBAuthNameStepPageState extends State<OBAuthNameStepPage> {
 
     return Column(
       children: <Widget>[
-        Text(
-          '📛',
-          style: TextStyle(fontSize: 45.0, color: Colors.white),
-        ),
         const SizedBox(
           height: 20.0,
         ),
@@ -141,13 +137,12 @@ class OBAuthNameStepPageState extends State<OBAuthNameStepPage> {
             style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white)),
+                color: Colors.black)),
       ],
     );
   }
 
   Widget _buildNameForm() {
-
     String nameInputPlaceholder =
         _localizationService.trans('auth__create_acc__name_placeholder');
 
@@ -160,7 +155,7 @@ class OBAuthNameStepPageState extends State<OBAuthNameStepPage> {
               child: OBAuthTextField(
                 textCapitalization: TextCapitalization.words,
                 autocorrect: false,
-                hintText: nameInputPlaceholder,
+                hintText: "Johnny Appleseed",
                 validator: (String? name) {
                   String? validateName = _validationService
                       .validateUserProfileName(name);

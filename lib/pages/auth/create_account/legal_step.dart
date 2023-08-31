@@ -41,11 +41,6 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
                     Column(
                       children: <Widget>[
                         SizedBox(width: 10.0),
-                        Text(
-                          '📖️',
-                          style: TextStyle(fontSize: 45.0, color: Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
                         const SizedBox(
                           height: 20.0,
                         ),
@@ -54,7 +49,7 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
                           style: TextStyle(
                               fontSize: 24.0,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                              color: Colors.grey),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(
@@ -63,7 +58,7 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
                         Text(
                           _localizationService.auth__create_acc__legal_desc,
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
@@ -73,7 +68,7 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
                         Text(
                           _localizationService.auth__create_acc__legal_desc_extra,
                           style: TextStyle(
-                              color: Colors.white,),
+                              color: Colors.black),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(
@@ -88,12 +83,12 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
                   ],
                 ))),
       ),
-      backgroundColor: Pigment.fromString('#009c53'),
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         elevation: 0.0,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          padding: EdgeInsets.only(bottom: 10),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,16 +108,10 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
     return ListView(
       shrinkWrap: true,
       children: [
-        _buildDocument(
-            icon: '🏡',
-            title: _localizationService.drawer__useful_links_community_guidelines,
-            onPressed: () => _navigationService
-                .navigateToCommunityGuidelinesPage(context: context)),
         const SizedBox(
           height: 10,
         ),
         _buildDocument(
-            icon: '⚖️',
             title: _localizationService.drawer__useful_links_terms_of_use,
             onPressed: () => _navigationService
                 .navigateToTermsOfUsePage(context: context)),
@@ -130,7 +119,6 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
           height: 10,
         ),
         _buildDocument(
-            icon: '🔒',
             title: _localizationService.drawer__useful_links_privacy_policy,
             onPressed: () => _navigationService
                 .navigateToPrivacyPolicyPage(context: context))
@@ -139,8 +127,7 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
   }
 
   Widget _buildDocument(
-      {required String icon,
-      required String title,
+      {required String title,
       required VoidCallback onPressed}) {
     return GestureDetector(
       onTap: onPressed,
@@ -153,7 +140,6 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
           padding: const EdgeInsets.all(10),
           child: Row(
             children: [
-              Text(icon, style: TextStyle(fontSize: 18),),
               const SizedBox(
                 width: 20,
               ),
@@ -161,7 +147,7 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
                 child: Text(
                   title,
                   style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(
@@ -169,7 +155,7 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
               ),
               OBIcon(
                 OBIcons.chevronRight,
-                color: Colors.white,
+                color: Colors.black,
               )
             ],
           ),
@@ -201,14 +187,14 @@ class OBLegalStepPageState extends State<OBLegalStepPage> {
         children: <Widget>[
           Icon(
             Icons.arrow_back_ios,
-            color: Colors.white,
+            color: Colors.black,
           ),
           SizedBox(
             width: 10.0,
           ),
           Text(
             buttonText,
-            style: TextStyle(fontSize: 18.0, color: Colors.white),
+            style: TextStyle(fontSize: 18.0, color: Colors.black),
           )
         ],
       ),

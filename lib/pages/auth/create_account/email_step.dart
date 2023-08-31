@@ -57,12 +57,12 @@ class OBAuthEmailStepPageState extends State<OBAuthEmailStepPage> {
                   ],
                 ))),
       ),
-      backgroundColor: Color(0xFFFF3939),
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         elevation: 0.0,
         child: Padding(
-          padding: EdgeInsets.only(bottom: 20.0 + MediaQuery.of(context).viewInsets.bottom, top: 20.0, left: 20.0, right: 20.0),
+          padding: EdgeInsets.only(bottom: 10),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,14 +139,14 @@ class OBAuthEmailStepPageState extends State<OBAuthEmailStepPage> {
         children: <Widget>[
           Icon(
             Icons.arrow_back_ios,
-            color: Colors.white,
+            color: Colors.black,
           ),
           const SizedBox(
             width: 10.0,
           ),
           Text(
             buttonText,
-            style: TextStyle(fontSize: 18.0, color: Colors.white),
+            style: TextStyle(fontSize: 18.0, color: Colors.black),
           )
         ],
       ),
@@ -162,10 +162,6 @@ class OBAuthEmailStepPageState extends State<OBAuthEmailStepPage> {
 
     return Column(
       children: <Widget>[
-        Text(
-          '💌',
-          style: TextStyle(fontSize: 45.0, color: Colors.white),
-        ),
         const SizedBox(
           height: 20.0,
         ),
@@ -174,7 +170,7 @@ class OBAuthEmailStepPageState extends State<OBAuthEmailStepPage> {
             style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white)),
+                color: Colors.black)),
       ],
     );
   }
@@ -194,7 +190,7 @@ class OBAuthEmailStepPageState extends State<OBAuthEmailStepPage> {
               color: Colors.transparent,
               child: OBAuthTextField(
                 autocorrect: false,
-                hintText: emailInputPlaceholder,
+                hintText: "johnnyappleseed@example.com",
                 validator: (String? email) {
                   String? validateEMail = _validationService.validateUserEmail(email?.trim());
                   if (validateEMail != null) return validateEMail;

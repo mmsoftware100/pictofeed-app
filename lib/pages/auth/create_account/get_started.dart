@@ -30,7 +30,7 @@ class OBAuthGetStartedPageState extends State<OBAuthGetStartedPage> {
     String nextText = _localizationService.auth__create_acc__next;
 
     return Scaffold(
-      backgroundColor: Color(0xFF151726),
+      backgroundColor: Colors.white,
       body: DecoratedBox(
         decoration: _buildGetStartedDecoration(),
         child:
