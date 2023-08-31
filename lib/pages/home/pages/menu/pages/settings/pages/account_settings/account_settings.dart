@@ -56,15 +56,15 @@ class OBAccountSettingsPage extends StatelessWidget {
                     context: context);
               },
             ),
-            ListTile(
-              leading: const OBIcon(OBIcons.language),
-              title: OBText(currentUserLanguage != null ? localizationService.drawer__account_settings_language(currentUserLanguage):
-              localizationService.drawer__account_settings_language_text),
-              onTap: () {
-                navigationService.navigateToUserLanguageSettings(
-                    context: context);
-              },
-            ),
+            //ListTile(
+            //  leading: const OBIcon(OBIcons.language),
+            //  title: OBText(currentUserLanguage != null ? localizationService.drawer__account_settings_language(currentUserLanguage):
+            //  localizationService.drawer__account_settings_language_text),
+            //  onTap: () {
+            //    navigationService.navigateToUserLanguageSettings(
+            //        context: context);
+            //  },
+            //),
             ListTile(
               leading: const OBIcon(OBIcons.block),
               title: OBText(localizationService.drawer__account_settings_blocked_users),
