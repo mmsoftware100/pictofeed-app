@@ -477,7 +477,7 @@ class LocalizationService {
 
   String get auth__create_acc__legal_desc_extra {
     return Intl.message(
-        "They contain important information about your experience in Pictofeed and you will have to accept to them",
+        "They contain important information about your experience on Pictofeed and you will have to accept to them",
         name: 'auth__create_acc__legal_desc_extra');
   }
 
