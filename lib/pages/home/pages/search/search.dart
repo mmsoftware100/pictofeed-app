@@ -69,7 +69,7 @@ class OBMainSearchPageState extends State<OBMainSearchPage>
   late Throttling _setScrollPositionThrottler;
 
   static const double OB_BOTTOM_TAB_BAR_HEIGHT = 50.0;
-  static const double HEIGHT_SEARCH_BAR = 76.0;
+  static const double HEIGHT_SEARCH_BAR = 80.0;
   static const double HEIGHT_TABS_SECTION = 52.0;
   static const double MIN_SCROLL_OFFSET_TO_ANIMATE_TABS = 250.0;
 
