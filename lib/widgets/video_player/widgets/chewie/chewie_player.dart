@@ -137,13 +137,6 @@ class ChewieState extends State<Chewie> {
     );
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-    if (isAndroid) {
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ]);
-    }
-
     if (!widget.controller!.allowedScreenSleep) {
       Wakelock.enable();
     }
@@ -156,10 +149,7 @@ class ChewieState extends State<Chewie> {
     // so we do not need to check Wakelock.isEnabled.
     Wakelock.disable();
 
-    SystemChrome.setEnabledSystemUIMode(
-        SystemUiMode.manual, overlays: widget.controller!.systemOverlaysAfterFullScreen);
-    SystemChrome.setPreferredOrientations(
-        widget.controller!.deviceOrientationsAfterFullScreen);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: widget.controller!.systemOverlaysAfterFullScreen);
   }
 }
 
@@ -195,11 +185,15 @@ class ChewieController extends ChangeNotifier {
     this.allowFullScreen = true,
     this.allowMuting = true,
     this.systemOverlaysAfterFullScreen = SystemUiOverlay.values,
+    this.deviceOrientationsFullScreen = const [
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
     this.deviceOrientationsAfterFullScreen = const [
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
     ],
     this.routePageBuilder,
   }) {
@@ -274,6 +268,9 @@ class ChewieController extends ChangeNotifier {
   /// Defines the system overlays visible after exiting fullscreen
   final List<SystemUiOverlay> systemOverlaysAfterFullScreen;
 
+  /// Defines the set of allowed device orientations during fullscreen
+  final List<DeviceOrientation> deviceOrientationsFullScreen;
+
   /// Defines the set of allowed device orientations after exiting fullscreen
   final List<DeviceOrientation> deviceOrientationsAfterFullScreen;
 
@@ -328,16 +325,24 @@ class ChewieController extends ChangeNotifier {
 
   void enterFullScreen() {
     _isFullScreen = true;
+    SystemChrome.setPreferredOrientations(deviceOrientationsFullScreen);
     notifyListeners();
   }
 
   void exitFullScreen() {
     _isFullScreen = false;
+    SystemChrome.setPreferredOrientations(deviceOrientationsAfterFullScreen);
     notifyListeners();
   }
 
   void toggleFullScreen() {
     _isFullScreen = !_isFullScreen;
+    if (_isFullScreen) {
+      SystemChrome.setPreferredOrientations(deviceOrientationsFullScreen);
+    } else {
+      SystemChrome.setPreferredOrientations(deviceOrientationsAfterFullScreen);
+    }
+
     notifyListeners();
   }
 
