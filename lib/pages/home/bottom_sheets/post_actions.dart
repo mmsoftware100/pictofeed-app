@@ -70,30 +70,6 @@ class OBPostActionsBottomSheetState extends State<OBPostActionsBottomSheet> {
           Post post = snapshot.data!;
           List<Widget> postActions = [];
 
-          if (widget.displayContext == OBPostDisplayContext.topPosts) {
-            postActions.add(OBExcludeCommunityFromTopPostsTile(
-              post: post,
-              onExcludedPostCommunity: () {
-                if (widget.onCommunityExcluded != null) {
-                  widget.onCommunityExcluded!(post.community);
-                }
-                _dismiss();
-              },
-              onUndoExcludedPostCommunity: () {
-                if (widget.onUndoCommunityExcluded != null) {
-                  widget.onUndoCommunityExcluded!(post.community);
-                }
-                _dismiss();
-              },
-            ));
-          } else if (widget.displayContext ==
-              OBPostDisplayContext.ownProfilePosts) {
-            postActions.add(OBExcludeCommunityFromProfilePostsTile(
-                post: post,
-                onPostCommunityExcludedFromProfilePosts:
-                    widget.onPostCommunityExcludedFromProfilePosts!));
-          }
-
           postActions.add(OBMutePostTile(
             post: post,
             onMutedPost: _dismiss,
