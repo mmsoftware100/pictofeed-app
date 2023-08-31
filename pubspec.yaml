@@ -178,6 +178,7 @@ flutter:
     - assets/images/fallbacks/cover-fallback.jpg
     - assets/images/fallbacks/avatar-fallback.jpg
     - assets/other/public_suffix_list.dat
+    - assets/ca/lets-encrypt-r3.pem
     - .env.json
 
   # An image asset can refer to one or more resolution-specific "variants", see

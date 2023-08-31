@@ -26,6 +26,8 @@ import 'package:Okuna/services/localization.dart';
 import 'package:Okuna/services/universal_links/universal_links.dart';
 import 'package:Okuna/widgets/toast.dart';
 import 'package:Okuna/translation/constants.dart';
+
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 import 'package:flutter\_localizations/flutter\_localizations.dart';
@@ -249,7 +251,19 @@ class _MyAppState extends State<MyApp> {
 Future<Null> main() async {
   MyApp app = MyApp();
 
-// Run the whole app in a zone to capture all uncaught errors.
+  WidgetsFlutterBinding.ensureInitialized();
+
+  ByteData data = await PlatformAssetBundle().load('assets/ca/lets-encrypt-r3.pem');
+  SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
+
+  // prevent app from rotating to horizontal on startup, this should be properly
+  // handled by the video player when trying to play a video fullscreen:
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  // Run the whole app in a zone to capture all uncaught errors.
   runZonedGuarded(() => runApp(app), (Object error, StackTrace stackTrace) {
     if (isInDebugMode) {
       print(error);
