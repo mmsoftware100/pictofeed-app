@@ -86,17 +86,19 @@ class OBPostCommentTextState extends State<OBPostCommentText> {
           ));
     }
 
-    User? loggedInUser = _userService.getLoggedInUser();
-    if (loggedInUser != null &&
-        loggedInUser.canTranslatePostComment(widget.postComment, widget.post)) {
-      return GestureDetector(
-        onTap: _toggleTranslatePostComment,
-        child: OBSecondaryText(
-                _localizationService.user__translate_show_original,
-                size: OBTextSize.large));
-    } else {
-      return SizedBox();
-    }
+    // TODO FIXME: fix this when/if we add back text translation
+    return SizedBox();
+    //User? loggedInUser = _userService.getLoggedInUser();
+    //if (loggedInUser != null &&
+    //    loggedInUser.canTranslatePostComment(widget.postComment, widget.post)) {
+    //  return GestureDetector(
+    //    onTap: _toggleTranslatePostComment,
+    //    child: OBSecondaryText(
+    //            _localizationService.user__translate_show_original,
+    //            size: OBTextSize.large));
+    //} else {
+    //  return SizedBox();
+    //}
   }
 
   void _toggleTranslatePostComment() async {

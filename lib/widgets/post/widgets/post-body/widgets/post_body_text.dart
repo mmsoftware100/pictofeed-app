@@ -91,7 +91,7 @@ class OBPostBodyTextState extends State<OBPostBodyText> {
   Widget _buildActionablePostText() {
     if (widget.post.isEdited != null && widget.post.isEdited!) {
       return OBCollapsibleSmartText(
-        text: _translatedText != null ? _translatedText : widget.post.text ?? "",
+        text: widget.post.text ?? "",
         trailingSmartTextElement: SecondaryTextElement(' (edited)'),
         maxlength: MAX_LENGTH_LIMIT,
         getChild: _buildTranslationButton,
@@ -100,7 +100,7 @@ class OBPostBodyTextState extends State<OBPostBodyText> {
       );
     } else {
       return OBCollapsibleSmartText(
-        text: _translatedText != null ? _translatedText : widget.post.text ?? "",
+        text: widget.post.text ?? "",
         maxlength: MAX_LENGTH_LIMIT,
         getChild: _buildTranslationButton,
         hashtagsMap: widget.post.hashtagsMap,
@@ -109,42 +109,44 @@ class OBPostBodyTextState extends State<OBPostBodyText> {
     }
   }
 
+  // TODO FIXME: If/When we do add text translation back, fix this:
   Widget _buildTranslationButton() {
-    if (_userService.getLoggedInUser() != null &&
-        !_userService.getLoggedInUser()!.canTranslatePost(widget.post)) {
-      return SizedBox();
-    }
-
-    if (_translationInProgress) {
-      return Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Container(
-            width: 10.0,
-            height: 10.0,
-            child: CircularProgressIndicator(strokeWidth: 2.0),
-          ));
-    }
-
-    return GestureDetector(
-      onTap: () async {
-        if (_translatedText == null) {
-          String translatedText = await _translatePostText();
-          _setTranslatedText(translatedText);
-        } else {
-          _setTranslatedText(null);
-        }
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: _translatedText != null
-            ? OBSecondaryText(
-                _localizationService.trans('user__translate_show_original'),
-                size: OBTextSize.large)
-            : OBSecondaryText(
-                _localizationService.trans('user__translate_see_translation'),
-                size: OBTextSize.large),
-      ),
-    );
+    return SizedBox();
+    //if (_userService.getLoggedInUser() != null &&
+    //    !_userService.getLoggedInUser()!.canTranslatePost(widget.post)) {
+    //  return SizedBox();
+    //}
+    //
+    //if (_translationInProgress) {
+    //  return Padding(
+    //      padding: EdgeInsets.all(10.0),
+    //      child: Container(
+    //        width: 10.0,
+    //        height: 10.0,
+    //        child: CircularProgressIndicator(strokeWidth: 2.0),
+    //      ));
+    //}
+    //
+    //return GestureDetector(
+    //  onTap: () async {
+    //    if (_translatedText == null) {
+    //      String translatedText = await _translatePostText();
+    //      _setTranslatedText(translatedText);
+    //    } else {
+    //      _setTranslatedText(null);
+    //    }
+    //  },
+    //  child: Padding(
+    //    padding: const EdgeInsets.only(bottom: 10),
+    //    child: _translatedText != null
+    //        ? OBSecondaryText(
+    //            _localizationService.trans('user__translate_show_original'),
+    //            size: OBTextSize.large)
+    //        : OBSecondaryText(
+    //            _localizationService.trans('user__translate_see_translation'),
+    //            size: OBTextSize.large),
+    //  ),
+    //);
   }
 
   void _copyText() {
