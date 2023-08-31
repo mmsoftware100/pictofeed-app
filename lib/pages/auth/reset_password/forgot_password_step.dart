@@ -77,7 +77,7 @@ class OBAuthForgotPasswordPageState extends State<OBAuthForgotPasswordPage> {
         color: Colors.transparent,
         elevation: 0.0,
         child: Padding(
-          padding: EdgeInsets.only(bottom: 20.0 + MediaQuery.of(context).viewInsets.bottom, top: 20.0, left: 20.0, right: 20.0),
+          padding: EdgeInsets.only(bottom: 10),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,13 +176,6 @@ class OBAuthForgotPasswordPageState extends State<OBAuthForgotPasswordPage> {
 
     return Column(
       children: <Widget>[
-        Text(
-          '😬',
-          style: TextStyle(fontSize: 45.0, color: Colors.black),
-        ),
-        const SizedBox(
-          height: 20.0,
-        ),
         Text(titleText,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold)),

@@ -287,7 +287,7 @@ class CreateAccountBloc {
           isOfLegalAge: true, // TODO: probably shouldn't always be true
           name: userRegistrationData.name ?? '',
           username: userRegistrationData.username ?? '',
-          token: userRegistrationData.token ?? '',
+          token: userRegistrationData.token ?? 'default-token',
           password: userRegistrationData.password ?? '',
           areGuidelinesAccepted: true, // TODO: probably shouldn't always be true
           avatar: userRegistrationData.avatar);

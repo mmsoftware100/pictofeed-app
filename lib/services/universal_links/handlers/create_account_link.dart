@@ -15,11 +15,9 @@ class CreateAccountLinkHandler extends UniversalLinkHandler {
       if (userService.isLoggedIn()) {
         print('User already logged in. Doing nothing with create account link');
       } else {
-        print(
-            'User not yet logged in. Sending to create account route with token');
+        print('User not yet logged in. Sending to create account route with token');
         final String token = _getAccountCreationTokenFromLink(link);
-        CreateAccountBloc createAccountBloc =
-            openbookProvider.createAccountBloc;
+        CreateAccountBloc createAccountBloc = openbookProvider.createAccountBloc;
         createAccountBloc.setToken(token);
         Navigator.pushReplacementNamed(context, '/auth/get-started');
       }

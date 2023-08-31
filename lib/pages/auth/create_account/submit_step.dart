@@ -137,13 +137,6 @@ class OBAuthSubmitPageState extends State<OBAuthSubmitPage> {
 
     return Column(
       children: <Widget>[
-        Text(
-          '🥚‍',
-          style: TextStyle(fontSize: 45.0, color: Colors.white),
-        ),
-        const SizedBox(
-          height: 20.0,
-        ),
         Text(loadingTitle,
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -151,9 +144,6 @@ class OBAuthSubmitPageState extends State<OBAuthSubmitPage> {
               fontWeight: FontWeight.bold,
               //color: Colors.white
             )),
-        const SizedBox(
-          height: 20.0,
-        ),
         Text(loadingDescription,
             textAlign: TextAlign.center,
             style: TextStyle(

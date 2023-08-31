@@ -15,7 +15,6 @@ class OBAuthDonePage extends StatefulWidget {
 class OBAuthDonePageState extends State<OBAuthDonePage> {
   late LocalizationService localizationService;
   late CreateAccountBloc createAccountBloc;
-  bool _isCommunitySelectionInProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +25,8 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                colorFilter: new ColorFilter.mode(
-                    Colors.white.withOpacity(0.1), BlendMode.dstATop),
-                image: new AssetImage('assets/images/confetti-background.gif'),
-                fit: BoxFit.cover)),
         padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: Center(child: SingleChildScrollView(child: _buildHooray())),
+        child: Center(child: SingleChildScrollView(child: _buildFinished())),
       ),
       bottomNavigationBar: _buildBottomBar(),
     );
@@ -44,7 +37,7 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
       color: Colors.transparent,
       elevation: 0.0,
       child: Container(
-        padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+        padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 30.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -63,7 +56,7 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
     );
   }
 
-  Widget _buildHooray() {
+  Widget _buildFinished() {
     String title = localizationService.auth__create_acc__done_title;
     String accCreated = localizationService.auth__create_acc__done_created;
     accCreated = 'Your acount has been created.';
@@ -72,14 +65,7 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
       mainAxisAlignment: MainAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Text(
-          '🐣‍',
-          style: TextStyle(fontSize: 45.0, color: Colors.white),
-        ),
-        const SizedBox(
-          height: 20.0,
-        ),
-        Text(title,
+        Text("Welcome to Pictofeed!",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24.0,
@@ -104,19 +90,13 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
     );
   }
 
-  void onCommunitySelectionInProgress(bool isCommunitySelectionInProgress) {
-    setState(() {
-      _isCommunitySelectionInProgress = isCommunitySelectionInProgress;
-    });
-  }
-
   Widget _buildContinueButton({required BuildContext context}) {
     String buttonText = localizationService.auth__login__login;
 
     return OBSuccessButton(
       minWidth: double.infinity,
       size: OBButtonSize.large,
-      isDisabled: _isCommunitySelectionInProgress,
+      isDisabled: false,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -127,7 +107,7 @@ class OBAuthDonePageState extends State<OBAuthDonePage> {
         ],
       ),
       onPressed: () {
-        Navigator.pushNamed(context, '/auth/suggested_communities');
+        Navigator.pushNamed(context, '/');
       },
     );
   }

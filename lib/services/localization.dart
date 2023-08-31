@@ -431,7 +431,7 @@ class LocalizationService {
   }
 
   String get auth__create_acc__done_title {
-    return Intl.message("Hooray!", name: 'auth__create_acc__done_title');
+    return Intl.message("Welcome to Pictofeed!", name: 'auth__create_acc__done_title');
   }
 
   String get auth__create_acc__done_description {

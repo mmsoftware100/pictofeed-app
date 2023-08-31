@@ -41,7 +41,7 @@ class OBAcceptStepPageState extends State<OBAcceptStepPage> {
                   ],
                 ))),
       ),
-      backgroundColor: Pigment.fromString('#007d9c'),
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         elevation: 0.0,
@@ -107,14 +107,14 @@ class OBAcceptStepPageState extends State<OBAcceptStepPage> {
         children: <Widget>[
           Icon(
             Icons.arrow_back_ios,
-            color: Colors.white,
+            color: Colors.black,
           ),
           SizedBox(
             width: 10.0,
           ),
           Text(
             buttonText,
-            style: TextStyle(fontSize: 18.0, color: Colors.white),
+            style: TextStyle(fontSize: 18.0, color: Colors.black),
           )
         ],
       ),
