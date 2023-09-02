@@ -833,7 +833,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "user__connections_header_users" : MessageLookupByLibrary.simpleMessage("Users"),
     "user__delete_account_confirmation_desc" : MessageLookupByLibrary.simpleMessage("Are you sure you want to delete your account?"),
     "user__delete_account_confirmation_desc_info" : MessageLookupByLibrary.simpleMessage("This is a permanent action and can\'t be undone."),
-    "user__delete_account_confirmation_goodbye" : MessageLookupByLibrary.simpleMessage("Goodbye"),
+    "user__delete_account_confirmation_goodbye" : MessageLookupByLibrary.simpleMessage("Your account has been deleted."),
     "user__delete_account_confirmation_no" : MessageLookupByLibrary.simpleMessage("No"),
     "user__delete_account_confirmation_title" : MessageLookupByLibrary.simpleMessage("Confirmation"),
     "user__delete_account_confirmation_yes" : MessageLookupByLibrary.simpleMessage("Yes"),

@@ -3085,7 +3085,7 @@ class LocalizationService {
   }
 
   String get user__delete_account_confirmation_goodbye {
-    return Intl.message("Goodbye 😢",
+    return Intl.message("Your account has been deleted.",
         name: 'user__delete_account_confirmation_goodbye');
   }
 

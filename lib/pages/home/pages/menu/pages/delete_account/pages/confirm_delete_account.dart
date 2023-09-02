@@ -116,7 +116,7 @@ class OBConfirmDeleteAccountState extends State<OBConfirmDeleteAccount> {
     try {
       await _userService.deleteAccountWithPassword(widget.userPassword);
       _toastService.info(message: _localizationService.user__delete_account_confirmation_goodbye, context: context);
-      Future.delayed(Duration(seconds: 3), () {
+      Future.delayed(Duration(seconds: 1), () {
         return _userService.logout();
       });
     } catch (error) {
