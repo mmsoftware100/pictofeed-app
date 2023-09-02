@@ -106,25 +106,25 @@ class OBMainMenuPage extends StatelessWidget {
                                 context: context);
                           },
                         ),
-                        StreamBuilder(
-                          stream: userService.loggedInUserChange,
-                          initialData: userService.getLoggedInUser(),
-                          builder: (BuildContext context,
-                              AsyncSnapshot<User?> snapshot) {
-                            User? loggedInUser = snapshot.data;
-
-                            if (loggedInUser == null) return const SizedBox();
-
-                            return ListTile(
-                              leading: const OBIcon(OBIcons.help),
-                              title: OBText(
-                                  localizationService.trans('drawer__help')),
-                              onTap: () async {
-                                intercomService.displayMessenger();
-                              },
-                            );
-                          },
-                        ),
+                        //StreamBuilder(
+                        //  stream: userService.loggedInUserChange,
+                        //  initialData: userService.getLoggedInUser(),
+                        //  builder: (BuildContext context,
+                        //      AsyncSnapshot<User?> snapshot) {
+                        //    User? loggedInUser = snapshot.data;
+                        //
+                        //    if (loggedInUser == null) return const SizedBox();
+                        //
+                        //    return ListTile(
+                        //      leading: const OBIcon(OBIcons.help),
+                        //      title: OBText(
+                        //          localizationService.trans('drawer__help')),
+                        //      onTap: () async {
+                        //        intercomService.displayMessenger();
+                        //      },
+                        //    );
+                        //  },
+                        //),
                         StreamBuilder(
                           stream: userService.loggedInUserChange,
                           initialData: userService.getLoggedInUser(),
