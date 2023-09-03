@@ -56,14 +56,6 @@ class OBConfirmRejectGuidelinesState extends State<OBConfirmRejectGuidelines> {
                   //crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Text(
-                      '😬',
-                      style: TextStyle(fontSize: 45.0),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
                     OBText(
                      localizationService.user__confirm_guidelines_reject_info,
                       textAlign: TextAlign.center,
@@ -82,16 +74,16 @@ class OBConfirmRejectGuidelinesState extends State<OBConfirmRejectGuidelines> {
                         openbookProvider.intercomService.displayMessenger();
                       },
                     ),
-                    ListTile(
-                      leading: const OBIcon(OBIcons.slackChannel),
-                      title: OBText(localizationService.user__confirm_guidelines_reject_chat_community),
-                      subtitle: OBSecondaryText(
-                          localizationService.user__confirm_guidelines_reject_join_slack),
-                      onTap: () {
-                        openbookProvider.urlLauncherService.launchUrl(
-                            'https://okuna.io/slack');
-                      },
-                    ),
+                    //ListTile(
+                    //  leading: const OBIcon(OBIcons.slackChannel),
+                    //  title: OBText(localizationService.user__confirm_guidelines_reject_chat_community),
+                    //  subtitle: OBSecondaryText(
+                    //      localizationService.user__confirm_guidelines_reject_join_slack),
+                    //  onTap: () {
+                    //    openbookProvider.urlLauncherService.launchUrl(
+                    //        'https://pictofeed.io/slack');
+                    //  },
+                    //),
                   ],
                 ),
               ),

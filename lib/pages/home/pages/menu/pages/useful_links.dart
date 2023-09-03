@@ -83,7 +83,7 @@ class OBUsefulLinksPage extends StatelessWidget {
                   subtitle: OBSecondaryText(_localizationService
                       .drawer__useful_links_guidelines_roadmap_desc),
                   onTap: () {
-                    urlLauncherService.launchUrl('https://okuna.io/roadmap');
+                    urlLauncherService.launchUrl('https://pictofeed.io/roadmap');
                   },
                 ),
                 ListTile(
@@ -135,7 +135,7 @@ class OBUsefulLinksPage extends StatelessWidget {
                   subtitle: OBSecondaryText(
                       _localizationService.drawer__useful_links_support_desc),
                   onTap: () {
-                    urlLauncherService.launchUrl('https://www.okuna.io/en/faq');
+                    urlLauncherService.launchUrl('https://www.pictofeed.io/en/faq');
                   },
                 )
               ],
