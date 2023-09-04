@@ -3,9 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 class ImageConverter {
-  static const MethodChannel _channel =
-      const MethodChannel('pictofeed.io/image_converter');
-
+  static const MethodChannel _channel = const MethodChannel('pictofeed.io/image_converter');
   static Future<List<int>> convertImage(List<int> imageData, [TargetFormat format = TargetFormat.JPEG]) async {
     String formatName;
     switch (format) {

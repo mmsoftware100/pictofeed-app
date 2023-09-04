@@ -23,6 +23,7 @@ import 'package:uuid/uuid.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
 
 export 'package:image_picker/image_picker.dart';
+import 'package:image/image.dart' as iimage;
 
 class MediaService {
   static Uuid _uuid = new Uuid();
@@ -195,17 +196,20 @@ class MediaService {
     var image = await fixExifRotation(media.file, deleteOriginal: true);
     String processedImageName = mediaUuid + '.jpg';
     File processedImage = File('$tempPath/$processedImageName');
-    List<int> convertedImageData =
-        await ImageConverter.convertImage(image.readAsBytesSync());
-    processedImage.writeAsBytesSync(convertedImageData);
+
+    // convert the image to a jpg
+    final newImage = iimage.decodeImage(image.readAsBytesSync());
+    if (newImage != null) {
+      processedImage.writeAsBytesSync(iimage.encodeJpg(newImage));
+    } else {
+      throw 'Unable to convert image';
+    }
 
     // We have a new processed copy, so we can delete our first copy.
     image.deleteSync();
 
-    if (!await _validationService.isImageAllowedSize(
-        processedImage, imageType)) {
-      throw FileTooLargeException(
-          _validationService.getAllowedImageSize(imageType));
+    if (!await _validationService.isImageAllowedSize(processedImage, imageType)) {
+      throw FileTooLargeException(_validationService.getAllowedImageSize(imageType));
     }
 
     MediaFile result;
@@ -249,7 +253,9 @@ class MediaService {
 
     await fixedImage.writeAsBytes(result);
 
-    if (deleteOriginal) await image.delete();
+    if (deleteOriginal) {
+      await image.delete();
+    }
 
     return fixedImage;
   }
