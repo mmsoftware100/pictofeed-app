@@ -1,7 +1,7 @@
 import 'package:Okuna/models/post.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
-import 'package:flutter_advanced_networkimage/transition.dart';
+import 'package:flutter_advanced_networkimage_2/provider.dart';
+import 'package:flutter_advanced_networkimage_2/transition.dart';
 
 class OBNotificationTilePostMediaPreview extends StatelessWidget {
   static final double postMediaPreviewSize = 40;

@@ -73,7 +73,7 @@ import 'package:Okuna/services/waitlist_service.dart';
 import 'package:crypto/crypto.dart';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:flutter_advanced_networkimage_2/provider.dart';
 import 'package:rxdart/rxdart.dart';
 export 'package:Okuna/services/httpie.dart';
 import 'package:path_provider/path_provider.dart';

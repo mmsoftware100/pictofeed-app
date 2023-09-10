@@ -3,7 +3,7 @@ import 'package:Okuna/provider.dart';
 import 'package:Okuna/services/user_preferences.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:flutter_advanced_networkimage_2/provider.dart';
 
 class OBHashtag extends StatelessWidget {
   final Hashtag hashtag;

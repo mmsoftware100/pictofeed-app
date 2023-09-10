@@ -1,7 +1,7 @@
 import 'package:Okuna/models/emoji.dart';
 import 'package:Okuna/models/emoji_group.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:flutter_advanced_networkimage_2/provider.dart';
 
 enum OBEmojiSize { small, medium, large }
 

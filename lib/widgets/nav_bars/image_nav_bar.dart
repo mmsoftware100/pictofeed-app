@@ -1,7 +1,7 @@
 import 'package:Okuna/pages/home/pages/hashtag/widgets/cupertino_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:flutter_advanced_networkimage_2/provider.dart';
 
 //AutomaticKeepAliveClientMixin
 /// A coloured navigation bar, used in communities.

@@ -1,7 +1,7 @@
 import 'package:Okuna/models/reactions_emoji_count.dart';
 import 'package:Okuna/widgets/theming/text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:flutter_advanced_networkimage_2/provider.dart';
 
 import 'buttons/button.dart';
 
