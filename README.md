@@ -1,1 +1,1 @@
-# Pictofeed mobile application repository
+# Pictofeed mobile app repository
