@@ -330,8 +330,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "6f92f20d5ac1aa1c7f035811c47201b471907226"
-      resolved-ref: "6f92f20d5ac1aa1c7f035811c47201b471907226"
+      ref: "37ea433613084facd244ab52807c50cf17ef9ad6"
+      resolved-ref: "37ea433613084facd244ab52807c50cf17ef9ad6"
       url: "https://github.com/pictofeed/flutter_advanced_networkimage.git"
     source: git
     version: "2.0.1"
