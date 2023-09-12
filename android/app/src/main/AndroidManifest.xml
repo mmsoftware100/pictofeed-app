@@ -67,7 +67,7 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
                         android:scheme="https"
-                        android:host="www.openbook.social"
+                        android:host="pictofeed.io"
                         android:pathPrefix="/api/auth/"/>
             </intent-filter>
             <intent-filter android:autoVerify="true">
