@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
               }
               return this.locale;
             },
-            title: 'Okuna',
+            title: 'Pictofeed',
             supportedLocales: supportedLocales,
             localizationsDelegates: [
               const LocalizationServiceDelegate(),
