@@ -38,13 +38,13 @@
             android:requestLegacyExternalStorage="true"
             android:label="Pictofeed"
             android:icon="@mipmap/ic_launcher"
-            android:usesCleartextTraffic="true"
-    >
+            android:usesCleartextTraffic="true">
         <meta-data
                 android:name="flutterEmbedding"
                 android:value="2" />
         <activity
                 android:name=".MainActivity"
+                android:exported="true"
                 android:launchMode="singleTop"
                 android:theme="@style/LaunchTheme"
                 android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
