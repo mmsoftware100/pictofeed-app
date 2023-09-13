@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:io' show Platform;
 
 import 'package:Okuna/delegates/localization_delegate.dart';
 import 'package:Okuna/pages/auth/create_account/accept_step.dart';
@@ -29,6 +30,7 @@ import 'package:Okuna/translation/constants.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_advanced_networkimage_2/provider.dart';
 import 'package:flutter\_localizations/flutter\_localizations.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -81,150 +83,200 @@ class _MyAppState extends State<MyApp> {
     }
 
     var textTheme = _defaultTextTheme();
+    var routes = {
+      /// The openbookProvider uses services available in the context
+      /// Their connection must be bootstrapped but no other way to execute
+      /// something before loading any route, therefore this ugliness.
+      '/': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBHomePage();
+      },
+      '/auth': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthLoginPage();
+      },
+      '/auth/token': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthCreateAccountPage();
+      },
+      '/auth/get-started': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthGetStartedPage();
+      },
+      '/auth/legal_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBLegalStepPage();
+      },
+      '/auth/accept_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAcceptStepPage();
+      },
+      '/auth/name_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthNameStepPage();
+      },
+      '/auth/email_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthEmailStepPage();
+      },
+      '/auth/username_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthUsernameStepPage();
+      },
+      '/auth/password_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthPasswordStepPage();
+      },
+      '/auth/submit_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthSubmitPage();
+      },
+      '/auth/done_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthDonePage();
+      },
+      '/auth/suggested_communities': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBSuggestedCommunitiesPage();
+      },
+      '/auth/login': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthLoginPage();
+      },
+      '/auth/forgot_password_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthForgotPasswordPage();
+      },
+      '/auth/verify_reset_password_link_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthVerifyPasswordPage();
+      },
+      '/auth/set_new_password_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthSetNewPasswordPage();
+      },
+      '/auth/password_reset_success_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBAuthPasswordResetSuccessPage();
+      },
+      '/waitlist/subscribe_email_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        return OBWaitlistSubscribePage();
+      },
+      '/waitlist/subscribe_done_step': (BuildContext context) {
+        bootstrapOpenbookProviderInContext(context);
+        WaitlistSubscribeArguments? args =
+            ModalRoute.of(context)?.settings.arguments as WaitlistSubscribeArguments?;
+        return OBWaitlistSubscribeDoneStep(count: args?.count ?? 0);
+      }
+    };
+
+    var app = null;
+    if (Platform.isAndroid) {
+      app = MaterialApp(
+          navigatorObservers: [routeObserver],
+          locale: this.locale,
+          debugShowCheckedModeBanner: false,
+          localeResolutionCallback: (deviceLocale, supportedLocales) {
+            // if no deviceLocale use english
+            if (deviceLocale == null) {
+              this.locale = Locale('en', 'US');
+              return this.locale;
+            }
+            // initialise locale from device
+            if (supportedLanguages.contains(deviceLocale.languageCode) &&
+                this.locale == null) {
+              Locale supportedMatchedLocale = supportedLocales.firstWhere(
+                  (Locale locale) =>
+                      locale.languageCode == deviceLocale.languageCode);
+              this.locale = supportedMatchedLocale;
+            } else if (this.locale == null) {
+              print(
+                  'Locale ${deviceLocale.languageCode} not supported, defaulting to en');
+              this.locale = Locale('en', 'US');
+            }
+            return this.locale;
+          },
+          title: 'Pictofeed',
+          supportedLocales: supportedLocales,
+          localizationsDelegates: [
+            const LocalizationServiceDelegate(),
+            GlobalCupertinoLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            const MaterialLocalizationPtBRDelegate(),
+            const CupertinoLocalizationPtBRDelegate(),
+            const MaterialLocalizationEsESDelegate(),
+            const CupertinoLocalizationEsESDelegate(),
+            const MaterialLocalizationSvSEDelegate(),
+            const CupertinoLocalizationSvSEDelegate(),
+          ],
+          theme: new ThemeData(
+              buttonTheme: ButtonThemeData(
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(2.0))),
+              // This is the theme of your application.
+              //
+              // Try running your application with "flutter run". You'll see the
+              // application has a blue toolbar. Then, without quitting the app, try
+              // changing the primarySwatch below to Colors.green and then invoke
+              // "hot reload" (press "r" in the console where you ran "flutter run",
+              // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
+              // counter didn't reset back to zero; the application is not restarted.
+              primarySwatch: Colors.grey,
+              fontFamily: 'NunitoSans',
+              textTheme: textTheme,
+              primaryTextTheme: textTheme),
+          routes: routes);
+    } else if (Platform.isIOS) {
+      app = CupertinoApp(
+          navigatorObservers: [routeObserver],
+          locale: this.locale,
+          debugShowCheckedModeBanner: false,
+          localeResolutionCallback: (deviceLocale, supportedLocales) {
+            // if no deviceLocale use english
+            if (deviceLocale == null) {
+              this.locale = Locale('en', 'US');
+              return this.locale;
+            }
+            // initialise locale from device
+            if (supportedLanguages.contains(deviceLocale.languageCode) &&
+                this.locale == null) {
+              Locale supportedMatchedLocale = supportedLocales.firstWhere(
+                  (Locale locale) =>
+                      locale.languageCode == deviceLocale.languageCode);
+              this.locale = supportedMatchedLocale;
+            } else if (this.locale == null) {
+              print(
+                  'Locale ${deviceLocale.languageCode} not supported, defaulting to en');
+              this.locale = Locale('en', 'US');
+            }
+            return this.locale;
+          },
+          title: 'Pictofeed',
+          supportedLocales: supportedLocales,
+          localizationsDelegates: [
+            const LocalizationServiceDelegate(),
+            GlobalCupertinoLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            const MaterialLocalizationPtBRDelegate(),
+            const CupertinoLocalizationPtBRDelegate(),
+            const MaterialLocalizationEsESDelegate(),
+            const CupertinoLocalizationEsESDelegate(),
+            const MaterialLocalizationSvSEDelegate(),
+            const CupertinoLocalizationSvSEDelegate(),
+          ],
+          theme: new CupertinoThemeData(
+              primaryColor: Colors.grey,
+              brightness: Brightness.light),
+          routes: routes);
+    }
+
     return OpenbookProvider(
       key: widget.openbookProviderKey,
       child: OBToast(
-        child: MaterialApp(
-            navigatorObservers: [routeObserver],
-            locale: this.locale,
-            debugShowCheckedModeBanner: false,
-            localeResolutionCallback: (deviceLocale, supportedLocales) {
-              // if no deviceLocale use english
-              if (deviceLocale == null) {
-                this.locale = Locale('en', 'US');
-                return this.locale;
-              }
-              // initialise locale from device
-              if (supportedLanguages.contains(deviceLocale.languageCode) &&
-                  this.locale == null) {
-                Locale supportedMatchedLocale = supportedLocales.firstWhere(
-                    (Locale locale) =>
-                        locale.languageCode == deviceLocale.languageCode);
-                this.locale = supportedMatchedLocale;
-              } else if (this.locale == null) {
-                print(
-                    'Locale ${deviceLocale.languageCode} not supported, defaulting to en');
-                this.locale = Locale('en', 'US');
-              }
-              return this.locale;
-            },
-            title: 'Pictofeed',
-            supportedLocales: supportedLocales,
-            localizationsDelegates: [
-              const LocalizationServiceDelegate(),
-              GlobalCupertinoLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              const MaterialLocalizationPtBRDelegate(),
-              const CupertinoLocalizationPtBRDelegate(),
-              const MaterialLocalizationEsESDelegate(),
-              const CupertinoLocalizationEsESDelegate(),
-              const MaterialLocalizationSvSEDelegate(),
-              const CupertinoLocalizationSvSEDelegate(),
-            ],
-            theme: new ThemeData(
-                buttonTheme: ButtonThemeData(
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(2.0))),
-                // This is the theme of your application.
-                //
-                // Try running your application with "flutter run". You'll see the
-                // application has a blue toolbar. Then, without quitting the app, try
-                // changing the primarySwatch below to Colors.green and then invoke
-                // "hot reload" (press "r" in the console where you ran "flutter run",
-                // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-                // counter didn't reset back to zero; the application is not restarted.
-                primarySwatch: Colors.grey,
-                fontFamily: 'NunitoSans',
-                textTheme: textTheme,
-                primaryTextTheme: textTheme),
-            routes: {
-              /// The openbookProvider uses services available in the context
-              /// Their connection must be bootstrapped but no other way to execute
-              /// something before loading any route, therefore this ugliness.
-              '/': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBHomePage();
-              },
-              '/auth': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthLoginPage();
-              },
-              '/auth/token': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthCreateAccountPage();
-              },
-              '/auth/get-started': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthGetStartedPage();
-              },
-              '/auth/legal_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBLegalStepPage();
-              },
-              '/auth/accept_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAcceptStepPage();
-              },
-              '/auth/name_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthNameStepPage();
-              },
-              '/auth/email_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthEmailStepPage();
-              },
-              '/auth/username_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthUsernameStepPage();
-              },
-              '/auth/password_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthPasswordStepPage();
-              },
-              '/auth/submit_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthSubmitPage();
-              },
-              '/auth/done_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthDonePage();
-              },
-              '/auth/suggested_communities': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBSuggestedCommunitiesPage();
-              },
-              '/auth/login': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthLoginPage();
-              },
-              '/auth/forgot_password_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthForgotPasswordPage();
-              },
-              '/auth/verify_reset_password_link_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthVerifyPasswordPage();
-              },
-              '/auth/set_new_password_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthSetNewPasswordPage();
-              },
-              '/auth/password_reset_success_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBAuthPasswordResetSuccessPage();
-              },
-              '/waitlist/subscribe_email_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                return OBWaitlistSubscribePage();
-              },
-              '/waitlist/subscribe_done_step': (BuildContext context) {
-                bootstrapOpenbookProviderInContext(context);
-                WaitlistSubscribeArguments? args =
-                    ModalRoute.of(context)?.settings.arguments as WaitlistSubscribeArguments?;
-                return OBWaitlistSubscribeDoneStep(count: args?.count ?? 0);
-              }
-            }),
+        child: app,
       ),
     );
   }
