@@ -3,9 +3,9 @@ import 'package:Okuna/services/httpie.dart';
 class DocumentsService {
   late HttpieService _httpService;
 
-  static const guidelinesUrl = 'https://info.pictofeed.io/docs/COMMUNITY_GUIDELINES.md';
-  static const privacyPolicyUrl = 'https://info.pictofeed.io/docs/PRIVACY_POLICY.md';
-  static const termsOfUsePolicyUrl = 'https://info.pictofeed.io/docs/TERMS_OF_USE.md';
+  static const guidelinesUrl = '';
+  static const privacyPolicyUrl = 'https://raw.githubusercontent.com/pictofeed/legal-docs/main/PRIVACY_POLICY.md';
+  static const termsOfUsePolicyUrl = 'https://raw.githubusercontent.com/pictofeed/legal-docs/main/TERMS_OF_USE.md';
 
   // Cache
   String _communityGuidelines = '';
